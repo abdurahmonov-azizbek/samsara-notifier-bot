@@ -317,3 +317,147 @@ first_name
 2025-03-22 07:03:38,862 - WARNING - Received SIGINT signal
 2025-03-22 07:03:38,863 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
 2025-03-22 07:03:38,863 - INFO - Polling stopped
+2025-03-22 07:08:06,232 - INFO - Starting...
+2025-03-22 07:08:06,233 - INFO - Start polling
+2025-03-22 07:08:07,034 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 07:08:07,863 - INFO - Update id=63043341 is handled. Duration 611 ms by bot id=7864064435
+2025-03-22 07:08:36,215 - INFO - Update id=63043342 is handled. Duration 173 ms by bot id=7864064435
+2025-03-22 07:09:06,522 - INFO - Update id=63043343 is handled. Duration 405 ms by bot id=7864064435
+2025-03-22 07:09:29,583 - INFO - Update id=63043344 is handled. Duration 222 ms by bot id=7864064435
+2025-03-22 07:09:42,334 - INFO - Update id=63043345 is handled. Duration 270 ms by bot id=7864064435
+2025-03-22 07:09:43,730 - INFO - Update id=63043346 is handled. Duration 210 ms by bot id=7864064435
+2025-03-22 07:09:44,797 - INFO - Update id=63043347 is handled. Duration 346 ms by bot id=7864064435
+2025-03-22 07:09:48,609 - INFO - Update id=63043348 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:09:49,795 - INFO - Deleted row where id = 1
+2025-03-22 07:09:50,247 - INFO - Update id=63043349 is handled. Duration 510 ms by bot id=7864064435
+2025-03-22 07:09:52,603 - INFO - Update id=63043350 is handled. Duration 614 ms by bot id=7864064435
+2025-03-22 07:10:00,154 - INFO - No user found with id: 7248456117
+2025-03-22 07:10:00,300 - INFO - Update id=63043351 is handled. Duration 218 ms by bot id=7864064435
+2025-03-22 07:10:07,731 - INFO - No user found with id: 7248456117
+2025-03-22 07:10:07,860 - INFO - Update id=63043352 is handled. Duration 196 ms by bot id=7864064435
+2025-03-22 07:10:08,865 - INFO - No user found with id: 7248456117
+2025-03-22 07:10:09,292 - INFO - Update id=63043353 is handled. Duration 509 ms by bot id=7864064435
+2025-03-22 07:10:13,697 - INFO - Update id=63043354 is handled. Duration 613 ms by bot id=7864064435
+2025-03-22 07:10:16,495 - INFO - Update id=63043355 is handled. Duration 319 ms by bot id=7864064435
+2025-03-22 07:10:31,924 - INFO - Update id=63043356 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 07:10:55,170 - INFO - Update id=63043357 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:10:57,730 - INFO - Update id=63043358 is handled. Duration 511 ms by bot id=7864064435
+2025-03-22 07:11:31,523 - INFO - Update id=63043359 is handled. Duration 197 ms by bot id=7864064435
+2025-03-22 07:11:43,425 - INFO - Update id=63043360 is handled. Duration 213 ms by bot id=7864064435
+2025-03-22 07:16:05,339 - INFO - Update id=63043361 is handled. Duration 201 ms by bot id=7864064435
+2025-03-22 07:16:18,344 - INFO - Update id=63043362 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 07:16:20,904 - INFO - Update id=63043363 is handled. Duration 360 ms by bot id=7864064435
+2025-03-22 07:16:43,780 - INFO - Update id=63043364 is handled. Duration 346 ms by bot id=7864064435
+2025-03-22 07:16:49,173 - INFO - Update id=63043365 is not handled. Duration 6 ms by bot id=7864064435
+2025-03-22 07:16:49,480 - INFO - Update id=63043366 is not handled. Duration 5 ms by bot id=7864064435
+2025-03-22 07:16:49,787 - INFO - Update id=63043367 is not handled. Duration 4 ms by bot id=7864064435
+2025-03-22 07:16:50,197 - INFO - Update id=63043368 is not handled. Duration 5 ms by bot id=7864064435
+2025-03-22 07:16:50,532 - INFO - Update id=63043369 is not handled. Duration 5 ms by bot id=7864064435
+2025-03-22 07:16:50,814 - INFO - Update id=63043370 is not handled. Duration 8 ms by bot id=7864064435
+2025-03-22 07:16:51,530 - INFO - Update id=63043371 is not handled. Duration 7 ms by bot id=7864064435
+2025-03-22 07:17:04,331 - INFO - Update id=63043372 is not handled. Duration 7 ms by bot id=7864064435
+2025-03-22 07:17:15,995 - INFO - Update id=63043373 is handled. Duration 511 ms by bot id=7864064435
+2025-03-22 07:17:18,378 - INFO - Update id=63043374 is handled. Duration 641 ms by bot id=7864064435
+2025-03-22 07:17:26,235 - INFO - Update id=63043375 is handled. Duration 201 ms by bot id=7864064435
+2025-03-22 07:17:37,328 - INFO - Update id=63043376 is handled. Duration 338 ms by bot id=7864064435
+2025-03-22 07:17:40,038 - INFO - Update id=63043377 is handled. Duration 693 ms by bot id=7864064435
+2025-03-22 07:17:40,366 - INFO - Update id=63043378 is handled. Duration 195 ms by bot id=7864064435
+2025-03-22 07:17:46,408 - INFO - Update id=63043379 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 07:18:07,093 - INFO - Update id=63043380 is handled. Duration 705 ms by bot id=7864064435
+2025-03-22 07:18:13,365 - INFO - Update id=63043381 is handled. Duration 229 ms by bot id=7864064435
+2025-03-22 07:18:19,894 - INFO - Update id=63043382 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 07:18:41,089 - INFO - Update id=63043383 is handled. Duration 305 ms by bot id=7864064435
+2025-03-22 07:18:48,342 - INFO - Company updated with id: 1
+2025-03-22 07:18:48,804 - INFO - Update id=63043384 is handled. Duration 545 ms by bot id=7864064435
+2025-03-22 07:18:55,537 - INFO - Update id=63043385 is handled. Duration 413 ms by bot id=7864064435
+2025-03-22 07:19:08,767 - INFO - Update id=63043386 is handled. Duration 643 ms by bot id=7864064435
+2025-03-22 07:19:17,134 - INFO - Update id=63043387 is handled. Duration 305 ms by bot id=7864064435
+2025-03-22 07:19:19,899 - INFO - Update id=63043388 is handled. Duration 201 ms by bot id=7864064435
+2025-03-22 07:19:28,315 - INFO - Update id=63043389 is handled. Duration 222 ms by bot id=7864064435
+2025-03-22 07:19:37,628 - INFO - Update id=63043390 is handled. Duration 307 ms by bot id=7864064435
+2025-03-22 07:19:54,739 - ERROR - Error while updating user: User.__init__() missing 1 required positional argument: 'balance'
+2025-03-22 07:19:55,022 - INFO - Update id=63043391 is handled. Duration 288 ms by bot id=7864064435
+2025-03-22 07:20:05,167 - WARNING - Received SIGINT signal
+2025-03-22 07:20:05,168 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 07:20:05,168 - INFO - Polling stopped
+2025-03-22 07:20:44,367 - INFO - Starting...
+2025-03-22 07:20:44,368 - INFO - Start polling
+2025-03-22 07:20:45,209 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 07:20:56,900 - INFO - Update id=63043392 is handled. Duration 641 ms by bot id=7864064435
+2025-03-22 07:20:59,739 - INFO - Update id=63043393 is handled. Duration 510 ms by bot id=7864064435
+2025-03-22 07:21:01,582 - INFO - Update id=63043394 is handled. Duration 305 ms by bot id=7864064435
+2025-03-22 07:21:04,551 - INFO - Update id=63043395 is handled. Duration 200 ms by bot id=7864064435
+2025-03-22 07:21:09,159 - INFO - Update id=63043396 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:21:11,638 - INFO - Update id=63043397 is handled. Duration 427 ms by bot id=7864064435
+2025-03-22 07:21:26,568 - INFO - Update id=63043398 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 07:21:30,151 - INFO - Update id=63043399 is handled. Duration 304 ms by bot id=7864064435
+2025-03-22 07:21:35,170 - INFO - Update id=63043400 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:21:42,337 - INFO - Update id=63043401 is handled. Duration 288 ms by bot id=7864064435
+2025-03-22 07:21:47,260 - ERROR - Error while updating user: module 'services.user_service' has no attribute 'update'
+2025-03-22 07:21:47,457 - INFO - Update id=63043402 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 07:22:41,470 - WARNING - Received SIGINT signal
+2025-03-22 07:22:41,470 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 07:22:41,470 - INFO - Polling stopped
+2025-03-22 07:23:32,707 - INFO - Starting...
+2025-03-22 07:23:32,707 - INFO - Start polling
+2025-03-22 07:23:33,233 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 07:23:37,656 - INFO - Update id=63043403 is handled. Duration 717 ms by bot id=7864064435
+2025-03-22 07:23:39,483 - INFO - Update id=63043404 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 07:23:40,507 - INFO - Update id=63043405 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 07:23:45,184 - INFO - Update id=63043406 is handled. Duration 172 ms by bot id=7864064435
+2025-03-22 07:23:46,958 - INFO - Update id=63043407 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 07:23:47,701 - INFO - Update id=63043408 is handled. Duration 194 ms by bot id=7864064435
+2025-03-22 07:23:49,957 - INFO - Update id=63043409 is handled. Duration 481 ms by bot id=7864064435
+2025-03-22 07:23:53,106 - INFO - Update id=63043410 is handled. Duration 207 ms by bot id=7864064435
+2025-03-22 07:23:54,275 - INFO - Deleted row where id = 2
+2025-03-22 07:23:54,448 - INFO - Update id=63043411 is handled. Duration 219 ms by bot id=7864064435
+2025-03-22 07:23:56,174 - INFO - Update id=63043412 is handled. Duration 406 ms by bot id=7864064435
+2025-03-22 07:23:57,917 - INFO - Update id=63043413 is handled. Duration 410 ms by bot id=7864064435
+2025-03-22 07:24:05,935 - INFO - No user found with id: 7248456117
+2025-03-22 07:24:06,107 - INFO - Update id=63043414 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 07:24:15,118 - INFO - Update id=63043415 is handled. Duration 307 ms by bot id=7864064435
+2025-03-22 07:24:49,525 - INFO - Update id=63043416 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 07:25:07,837 - INFO - No user found with id: 7248456117
+2025-03-22 07:25:07,959 - INFO - Update id=63043417 is handled. Duration 205 ms by bot id=7864064435
+2025-03-22 07:25:18,639 - INFO - Update id=63043418 is handled. Duration 440 ms by bot id=7864064435
+2025-03-22 07:25:24,034 - INFO - Update id=63043419 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:25:31,613 - INFO - Update id=63043420 is handled. Duration 199 ms by bot id=7864064435
+2025-03-22 07:25:45,026 - INFO - Update id=63043421 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:25:47,018 - INFO - Update id=63043422 is handled. Duration 449 ms by bot id=7864064435
+2025-03-22 07:26:18,519 - INFO - Update id=63043423 is handled. Duration 519 ms by bot id=7864064435
+2025-03-22 07:26:20,456 - INFO - Update id=63043424 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:26:29,570 - INFO - Update id=63043425 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 07:26:57,627 - INFO - Update id=63043426 is handled. Duration 280 ms by bot id=7864064435
+2025-03-22 07:27:03,567 - INFO - Update id=63043427 is handled. Duration 306 ms by bot id=7864064435
+2025-03-22 07:27:05,678 - INFO - Update id=63043428 is handled. Duration 462 ms by bot id=7864064435
+2025-03-22 07:27:21,997 - INFO - Update id=63043429 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:27:28,046 - INFO - Update id=63043430 is not handled. Duration 4 ms by bot id=7864064435
+2025-03-22 07:27:40,328 - INFO - Update id=63043431 is handled. Duration 407 ms by bot id=7864064435
+2025-03-22 07:27:41,483 - INFO - Update id=63043432 is handled. Duration 539 ms by bot id=7864064435
+2025-03-22 07:27:46,370 - INFO - Update id=63043433 is handled. Duration 174 ms by bot id=7864064435
+2025-03-22 07:27:51,600 - INFO - Update id=63043434 is handled. Duration 312 ms by bot id=7864064435
+2025-03-22 07:27:52,938 - INFO - Update id=63043435 is handled. Duration 320 ms by bot id=7864064435
+2025-03-22 07:27:54,169 - INFO - Update id=63043436 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 07:27:59,375 - INFO - Update id=63043437 is handled. Duration 1021 ms by bot id=7864064435
+2025-03-22 07:28:14,018 - INFO - Update id=63043438 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:28:19,650 - INFO - Update id=63043439 is handled. Duration 192 ms by bot id=7864064435
+2025-03-22 07:28:29,070 - INFO - Update id=63043440 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 07:28:37,956 - INFO - Company updated with id: 6
+2025-03-22 07:28:38,107 - INFO - Update id=63043441 is handled. Duration 228 ms by bot id=7864064435
+2025-03-22 07:28:40,233 - INFO - Update id=63043442 is handled. Duration 375 ms by bot id=7864064435
+2025-03-22 07:28:56,720 - INFO - Update id=63043443 is handled. Duration 201 ms by bot id=7864064435
+2025-03-22 07:28:59,483 - INFO - Update id=63043444 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 07:29:07,909 - INFO - Update id=63043445 is handled. Duration 231 ms by bot id=7864064435
+2025-03-22 07:29:15,837 - INFO - Company updated with id: 5
+2025-03-22 07:29:15,968 - INFO - Update id=63043446 is handled. Duration 201 ms by bot id=7864064435
+2025-03-22 07:29:18,122 - INFO - Update id=63043447 is handled. Duration 512 ms by bot id=7864064435
+2025-03-22 07:29:26,006 - INFO - Update id=63043448 is handled. Duration 408 ms by bot id=7864064435
+2025-03-22 07:29:36,962 - INFO - Update id=63043449 is handled. Duration 305 ms by bot id=7864064435
+2025-03-22 07:29:40,239 - INFO - Update id=63043450 is handled. Duration 187 ms by bot id=7864064435
+2025-03-22 07:29:46,076 - INFO - Update id=63043451 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 07:29:58,159 - INFO - Update id=63043452 is handled. Duration 188 ms by bot id=7864064435
+2025-03-22 07:30:18,230 - INFO - Update id=63043453 is handled. Duration 306 ms by bot id=7864064435
+2025-03-22 07:30:20,367 - INFO - Update id=63043454 is handled. Duration 600 ms by bot id=7864064435
+2025-03-22 07:31:30,456 - WARNING - Received SIGTERM signal
+2025-03-22 07:31:30,463 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 07:31:30,464 - INFO - Polling stopped

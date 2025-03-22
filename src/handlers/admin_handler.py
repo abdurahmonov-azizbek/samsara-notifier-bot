@@ -313,7 +313,8 @@ async def save_updated_user(message: Message, state: FSMContext):
             id=data['id'],
             telegram_id=data['telegram_id'],
             full_name=data['full_name'],
-            company_id=company_id
+            company_id=company_id,
+            balance=0
         )
         await user_service.update(user)
         await message.answer("✅ User successfully updated", reply_markup=keyboards.admin_menu)

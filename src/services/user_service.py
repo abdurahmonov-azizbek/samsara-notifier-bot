@@ -67,6 +67,24 @@ async def create(user: User):
     finally:
         await conn.close()  
 
+async def update(user: User):
+    conn = await db.get_db_connection()
+    query = f"UPDATE {constants.USER_TABLE} SET telegram_id = $1, full_name = $2, company_id = $3, balance = $4 WHERE id = $5"
+
+    try:
+        await conn.execute(
+            query,
+            user.telegram_id,
+            user.full_name,
+            user.company_id,
+            user.balance,
+            user.id
+        )
+    except Exception as ex:
+        logger.error(f"Error with updating user: {ex}")
+    finally:
+        await conn.close()
+
 async def delete_by_id(id: int, id_column: str | None = "id"):
     conn = await db.get_db_connection()
     query = f"DELETE FROM {constants.USER_TABLE} WHERE {id_column} = $1"
