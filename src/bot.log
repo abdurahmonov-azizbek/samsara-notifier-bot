@@ -1,0 +1,319 @@
+2025-03-22 05:12:47,534 - INFO - Starting...
+2025-03-22 05:12:47,534 - INFO - Start polling
+2025-03-22 05:13:01,132 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:13:13,359 - INFO - Update id=63043210 is handled. Duration 523 ms by bot id=7864064435
+2025-03-22 05:13:15,703 - INFO - Update id=63043211 is not handled. Duration 0 ms by bot id=7864064435
+2025-03-22 05:13:24,167 - INFO - Update id=63043212 is not handled. Duration 0 ms by bot id=7864064435
+2025-03-22 05:14:14,364 - INFO - Update id=63043213 is handled. Duration 134 ms by bot id=7864064435
+2025-03-22 05:14:26,052 - INFO - Update id=63043214 is not handled. Duration 0 ms by bot id=7864064435
+2025-03-22 05:14:30,045 - INFO - Update id=63043215 is not handled. Duration 0 ms by bot id=7864064435
+2025-03-22 05:14:31,377 - INFO - Update id=63043216 is not handled. Duration 0 ms by bot id=7864064435
+2025-03-22 05:14:36,571 - WARNING - Received SIGINT signal
+2025-03-22 05:14:36,572 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:14:36,572 - INFO - Polling stopped
+2025-03-22 05:15:03,566 - INFO - Starting...
+2025-03-22 05:15:03,566 - INFO - Start polling
+2025-03-22 05:15:03,878 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:15:07,875 - INFO - No user found with id: 7248456117
+2025-03-22 05:15:08,455 - INFO - Update id=63043217 is handled. Duration 609 ms by bot id=7864064435
+2025-03-22 05:15:23,947 - WARNING - Received SIGINT signal
+2025-03-22 05:15:23,948 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:15:23,948 - INFO - Polling stopped
+2025-03-22 05:15:27,714 - INFO - Starting...
+2025-03-22 05:15:27,714 - INFO - Start polling
+2025-03-22 05:15:28,214 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:15:37,057 - INFO - No user found with id: 7248456117
+2025-03-22 05:15:37,641 - INFO - Update id=63043218 is handled. Duration 612 ms by bot id=7864064435
+2025-03-22 05:16:27,907 - INFO - Update id=63043219 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 05:16:30,334 - WARNING - Received SIGINT signal
+2025-03-22 05:16:30,335 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:16:30,335 - INFO - Polling stopped
+2025-03-22 05:16:46,380 - INFO - Starting...
+2025-03-22 05:16:46,380 - INFO - Start polling
+2025-03-22 05:16:46,962 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:16:49,217 - INFO - Update id=63043220 is handled. Duration 610 ms by bot id=7864064435
+2025-03-22 05:17:13,602 - WARNING - Received SIGINT signal
+2025-03-22 05:17:13,603 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:17:13,603 - INFO - Polling stopped
+2025-03-22 05:17:17,171 - INFO - Starting...
+2025-03-22 05:17:17,172 - INFO - Start polling
+2025-03-22 05:17:17,984 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:17:21,063 - INFO - Update id=63043221 is handled. Duration 611 ms by bot id=7864064435
+2025-03-22 05:17:39,357 - WARNING - Received SIGINT signal
+2025-03-22 05:17:39,358 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:17:39,358 - INFO - Polling stopped
+2025-03-22 05:17:46,595 - INFO - Starting...
+2025-03-22 05:17:46,595 - INFO - Start polling
+2025-03-22 05:17:47,066 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:18:42,164 - ERROR - Error in start command: Telegram server says - Bad Request: unsupported parse_mode
+2025-03-22 05:18:42,359 - INFO - Update id=63043222 is handled. Duration 920 ms by bot id=7864064435
+2025-03-22 05:18:47,150 - WARNING - Received SIGINT signal
+2025-03-22 05:18:47,150 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:18:47,150 - INFO - Polling stopped
+2025-03-22 05:18:55,701 - INFO - Starting...
+2025-03-22 05:18:55,702 - INFO - Start polling
+2025-03-22 05:18:56,292 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:18:59,059 - INFO - Update id=63043223 is handled. Duration 610 ms by bot id=7864064435
+2025-03-22 05:19:00,786 - WARNING - Received SIGINT signal
+2025-03-22 05:19:00,786 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:19:00,786 - INFO - Polling stopped
+2025-03-22 05:19:35,364 - INFO - Starting...
+2025-03-22 05:19:35,364 - INFO - Start polling
+2025-03-22 05:19:36,123 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:19:37,450 - INFO - Update id=63043224 is handled. Duration 597 ms by bot id=7864064435
+2025-03-22 05:20:22,941 - WARNING - Received SIGINT signal
+2025-03-22 05:20:22,942 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:20:22,942 - INFO - Polling stopped
+2025-03-22 05:55:14,137 - INFO - Starting...
+2025-03-22 05:55:14,137 - INFO - Start polling
+2025-03-22 05:55:14,854 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:55:21,209 - INFO - Update id=63043225 is handled. Duration 714 ms by bot id=7864064435
+2025-03-22 05:55:22,939 - INFO - Update id=63043226 is not handled. Duration 0 ms by bot id=7864064435
+2025-03-22 05:55:24,167 - INFO - Update id=63043227 is handled. Duration 199 ms by bot id=7864064435
+2025-03-22 05:55:25,396 - INFO - Update id=63043228 is handled. Duration 186 ms by bot id=7864064435
+2025-03-22 05:55:27,751 - INFO - Update id=63043229 is handled. Duration 173 ms by bot id=7864064435
+2025-03-22 05:55:28,980 - INFO - Update id=63043230 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 05:55:32,497 - INFO - Update id=63043231 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 05:55:57,242 - INFO - Update id=63043232 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 05:56:01,952 - ERROR - Error in ask_api_key function: Telegram server says - Bad Request: can't parse entities: Can't find end tag corresponding to start tag "b"
+2025-03-22 05:56:02,158 - INFO - Update id=63043233 is handled. Duration 409 ms by bot id=7864064435
+2025-03-22 05:56:24,381 - WARNING - Received SIGINT signal
+2025-03-22 05:56:24,382 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:56:24,382 - INFO - Polling stopped
+2025-03-22 05:56:28,006 - INFO - Starting...
+2025-03-22 05:56:28,006 - INFO - Start polling
+2025-03-22 05:56:28,685 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:56:31,886 - INFO - Update id=63043234 is handled. Duration 737 ms by bot id=7864064435
+2025-03-22 05:56:32,980 - INFO - Update id=63043235 is handled. Duration 279 ms by bot id=7864064435
+2025-03-22 05:56:40,865 - INFO - Update id=63043236 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 05:56:52,923 - ERROR - Error while saving company: Company.__init__() missing 1 required positional argument: 'id'
+2025-03-22 05:56:53,055 - INFO - Update id=63043237 is handled. Duration 132 ms by bot id=7864064435
+2025-03-22 05:57:08,998 - WARNING - Received SIGINT signal
+2025-03-22 05:57:08,998 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:57:08,999 - INFO - Polling stopped
+2025-03-22 05:57:13,315 - INFO - Starting...
+2025-03-22 05:57:13,315 - INFO - Start polling
+2025-03-22 05:57:14,251 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:57:17,752 - INFO - Update id=63043238 is handled. Duration 624 ms by bot id=7864064435
+2025-03-22 05:57:18,753 - INFO - Update id=63043239 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 05:57:23,157 - INFO - Update id=63043240 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 05:57:53,366 - INFO - Update id=63043241 is handled. Duration 205 ms by bot id=7864064435
+2025-03-22 05:59:02,996 - WARNING - Received SIGINT signal
+2025-03-22 05:59:02,997 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:59:02,997 - INFO - Polling stopped
+2025-03-22 05:59:15,179 - INFO - Starting...
+2025-03-22 05:59:15,180 - INFO - Start polling
+2025-03-22 05:59:15,902 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 05:59:17,974 - INFO - Update id=63043242 is handled. Duration 513 ms by bot id=7864064435
+2025-03-22 05:59:21,428 - INFO - Update id=63043243 is handled. Duration 172 ms by bot id=7864064435
+2025-03-22 05:59:25,661 - ERROR - Eror with creating company: null value in column "id" of relation "company" violates not-null constraint
+DETAIL:  Failing row contains (null, Test Trucking, 1b96a916-0704-11f0-b4d8-b4b5b6dd74ed).
+2025-03-22 05:59:25,933 - INFO - Update id=63043244 is handled. Duration 306 ms by bot id=7864064435
+2025-03-22 06:01:46,874 - WARNING - Received SIGINT signal
+2025-03-22 06:01:46,874 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:01:46,874 - INFO - Polling stopped
+2025-03-22 06:02:22,023 - INFO - Starting...
+2025-03-22 06:02:22,024 - INFO - Start polling
+2025-03-22 06:02:22,578 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:02:25,966 - INFO - Update id=63043245 is handled. Duration 610 ms by bot id=7864064435
+2025-03-22 06:02:30,254 - INFO - Update id=63043246 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 06:02:33,955 - INFO - Update id=63043247 is handled. Duration 184 ms by bot id=7864064435
+2025-03-22 06:02:47,048 - INFO - Update id=63043248 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:02:56,071 - INFO - Update id=63043249 is handled. Duration 210 ms by bot id=7864064435
+2025-03-22 06:03:21,249 - INFO - Update id=63043250 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:03:56,432 - WARNING - Received SIGINT signal
+2025-03-22 06:03:56,432 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:03:56,433 - INFO - Polling stopped
+2025-03-22 06:09:51,649 - INFO - Starting...
+2025-03-22 06:09:51,649 - INFO - Start polling
+2025-03-22 06:09:52,319 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:09:55,297 - INFO - Update id=63043251 is handled. Duration 710 ms by bot id=7864064435
+2025-03-22 06:09:56,002 - INFO - Update id=63043252 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:09:57,333 - INFO - Update id=63043253 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:10:02,627 - INFO - Update id=63043254 is handled. Duration 173 ms by bot id=7864064435
+2025-03-22 06:10:04,195 - INFO - Update id=63043255 is handled. Duration 205 ms by bot id=7864064435
+2025-03-22 06:10:11,133 - INFO - Update id=63043256 is handled. Duration 198 ms by bot id=7864064435
+2025-03-22 06:10:12,141 - INFO - Update id=63043257 is handled. Duration 177 ms by bot id=7864064435
+2025-03-22 06:10:13,717 - INFO - Update id=63043258 is handled. Duration 201 ms by bot id=7864064435
+2025-03-22 06:10:18,530 - INFO - Update id=63043259 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:10:21,155 - WARNING - Received SIGINT signal
+2025-03-22 06:10:21,155 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:10:21,155 - INFO - Polling stopped
+2025-03-22 06:11:48,185 - INFO - Starting...
+2025-03-22 06:11:48,185 - INFO - Start polling
+2025-03-22 06:11:48,850 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:11:51,930 - INFO - Update id=63043260 is handled. Duration 507 ms by bot id=7864064435
+2025-03-22 06:11:52,954 - INFO - Update id=63043261 is handled. Duration 215 ms by bot id=7864064435
+2025-03-22 06:11:53,969 - ERROR - Error fetching all companies: 'coroutine' object has no attribute 'fetch'
+2025-03-22 06:11:53,969 - ERROR - Error while showing all companies: object NoneType can't be used in 'await' expression
+2025-03-22 06:11:54,183 - INFO - Update id=63043262 is handled. Duration 214 ms by bot id=7864064435
+2025-03-22 06:12:41,115 - WARNING - Received SIGINT signal
+2025-03-22 06:12:41,116 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:12:41,116 - INFO - Polling stopped
+2025-03-22 06:12:45,091 - INFO - Starting...
+2025-03-22 06:12:45,092 - INFO - Start polling
+2025-03-22 06:12:45,787 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:12:55,623 - INFO - Update id=63043263 is handled. Duration 612 ms by bot id=7864064435
+2025-03-22 06:13:32,515 - WARNING - Received SIGINT signal
+2025-03-22 06:13:32,515 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:13:32,516 - INFO - Polling stopped
+2025-03-22 06:13:38,956 - INFO - Starting...
+2025-03-22 06:13:38,956 - INFO - Start polling
+2025-03-22 06:13:39,648 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:13:41,900 - INFO - Update id=63043264 is handled. Duration 809 ms by bot id=7864064435
+2025-03-22 06:13:44,465 - INFO - Update id=63043265 is handled. Duration 145 ms by bot id=7864064435
+2025-03-22 06:13:54,390 - INFO - Update id=63043266 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:13:59,612 - INFO - Update id=63043267 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:14:01,885 - INFO - Update id=63043268 is handled. Duration 327 ms by bot id=7864064435
+2025-03-22 06:14:08,968 - WARNING - Received SIGINT signal
+2025-03-22 06:14:08,968 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:14:08,968 - INFO - Polling stopped
+2025-03-22 06:14:46,078 - INFO - Starting...
+2025-03-22 06:14:46,078 - INFO - Start polling
+2025-03-22 06:14:46,723 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:14:47,537 - INFO - Update id=63043269 is handled. Duration 602 ms by bot id=7864064435
+2025-03-22 06:15:51,535 - INFO - Update id=63043270 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:15:52,662 - INFO - Update id=63043271 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:15:53,993 - INFO - Update id=63043272 is handled. Duration 511 ms by bot id=7864064435
+2025-03-22 06:15:55,941 - INFO - Update id=63043273 is not handled. Duration 0 ms by bot id=7864064435
+2025-03-22 06:15:56,555 - INFO - Update id=63043274 is not handled. Duration 0 ms by bot id=7864064435
+2025-03-22 06:16:01,674 - INFO - Update id=63043275 is handled. Duration 409 ms by bot id=7864064435
+2025-03-22 06:16:07,541 - INFO - No user found with id: 7248456117
+2025-03-22 06:16:07,752 - INFO - Update id=63043276 is handled. Duration 241 ms by bot id=7864064435
+2025-03-22 06:16:49,451 - WARNING - Received SIGINT signal
+2025-03-22 06:16:49,451 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:16:49,451 - INFO - Polling stopped
+2025-03-22 06:17:54,405 - INFO - Starting...
+2025-03-22 06:17:54,406 - INFO - Start polling
+2025-03-22 06:17:55,240 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:18:00,457 - INFO - Update id=63043277 is handled. Duration 803 ms by bot id=7864064435
+2025-03-22 06:18:05,271 - INFO - Update id=63043278 is handled. Duration 409 ms by bot id=7864064435
+2025-03-22 06:18:12,233 - INFO - Update id=63043279 is handled. Duration 306 ms by bot id=7864064435
+2025-03-22 06:18:13,155 - INFO - Update id=63043280 is handled. Duration 201 ms by bot id=7864064435
+2025-03-22 06:18:14,489 - INFO - Update id=63043281 is handled. Duration 411 ms by bot id=7864064435
+2025-03-22 06:18:16,024 - INFO - Update id=63043282 is not handled. Duration 1 ms by bot id=7864064435
+2025-03-22 06:18:26,108 - WARNING - Received SIGINT signal
+2025-03-22 06:18:26,108 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:18:26,108 - INFO - Polling stopped
+2025-03-22 06:31:11,226 - INFO - Starting...
+2025-03-22 06:31:11,226 - INFO - Start polling
+2025-03-22 06:31:11,913 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:31:17,820 - INFO - Update id=63043283 is handled. Duration 336 ms by bot id=7864064435
+2025-03-22 06:31:21,124 - INFO - Update id=63043284 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:31:21,943 - INFO - Update id=63043285 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:31:23,368 - INFO - Update id=63043286 is handled. Duration 297 ms by bot id=7864064435
+2025-03-22 06:31:25,322 - INFO - Update id=63043287 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:31:29,624 - INFO - Update id=63043288 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:31:34,129 - INFO - Update id=63043289 is handled. Duration 306 ms by bot id=7864064435
+2025-03-22 06:31:38,571 - INFO - Company updated with id: 4
+2025-03-22 06:31:38,737 - INFO - Update id=63043290 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:31:40,657 - INFO - Update id=63043291 is handled. Duration 383 ms by bot id=7864064435
+2025-03-22 06:32:22,450 - WARNING - Received SIGINT signal
+2025-03-22 06:32:22,451 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:32:22,451 - INFO - Polling stopped
+2025-03-22 06:32:25,538 - INFO - Starting...
+2025-03-22 06:32:25,538 - INFO - Start polling
+2025-03-22 06:32:26,255 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:32:29,425 - INFO - Update id=63043292 is handled. Duration 804 ms by bot id=7864064435
+2025-03-22 06:32:41,673 - INFO - Update id=63043293 is not handled. Duration 1 ms by bot id=7864064435
+2025-03-22 06:32:52,087 - WARNING - Received SIGINT signal
+2025-03-22 06:32:52,088 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:32:52,092 - INFO - Polling stopped
+2025-03-22 06:36:37,237 - INFO - Starting...
+2025-03-22 06:36:37,237 - INFO - Start polling
+2025-03-22 06:36:37,855 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:36:41,248 - INFO - Update id=63043294 is handled. Duration 643 ms by bot id=7864064435
+2025-03-22 06:36:42,493 - INFO - Deleted row where id = 5
+2025-03-22 06:36:42,694 - INFO - Update id=63043295 is handled. Duration 234 ms by bot id=7864064435
+2025-03-22 06:36:46,347 - INFO - Update id=63043296 is handled. Duration 818 ms by bot id=7864064435
+2025-03-22 06:36:47,985 - INFO - Update id=63043297 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:36:57,244 - INFO - Deleted row where id = 4
+2025-03-22 06:36:57,406 - INFO - Update id=63043298 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:36:59,616 - INFO - Update id=63043299 is handled. Duration 365 ms by bot id=7864064435
+2025-03-22 06:37:07,874 - WARNING - Received SIGINT signal
+2025-03-22 06:37:07,874 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:37:07,874 - INFO - Polling stopped
+2025-03-22 06:44:17,397 - INFO - Starting...
+2025-03-22 06:44:17,398 - INFO - Start polling
+2025-03-22 06:44:17,851 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:44:18,853 - INFO - Update id=63043300 is handled. Duration 804 ms by bot id=7864064435
+2025-03-22 06:44:20,908 - INFO - Update id=63043301 is handled. Duration 210 ms by bot id=7864064435
+2025-03-22 06:44:22,746 - INFO - Update id=63043302 is handled. Duration 206 ms by bot id=7864064435
+2025-03-22 06:44:23,973 - INFO - Update id=63043303 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:44:25,212 - INFO - Update id=63043304 is handled. Duration 418 ms by bot id=7864064435
+2025-03-22 06:44:27,147 - INFO - Update id=63043305 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:44:47,218 - INFO - Update id=63043306 is handled. Duration 186 ms by bot id=7864064435
+2025-03-22 06:44:54,079 - INFO - Update id=63043307 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:44:59,000 - ERROR - Error while saving user: 3 validation errors for User
+id
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.10/v/int_type
+is_bot
+  Field required [type=missing, input_value={'id': None, 'telegram_id...ob SJ', 'company_id': 2}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+first_name
+  Field required [type=missing, input_value={'id': None, 'telegram_id...ob SJ', 'company_id': 2}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/missing
+2025-03-22 06:44:59,198 - INFO - Update id=63043308 is handled. Duration 199 ms by bot id=7864064435
+2025-03-22 06:45:31,636 - WARNING - Received SIGINT signal
+2025-03-22 06:45:31,637 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:45:31,637 - INFO - Polling stopped
+2025-03-22 06:48:48,690 - INFO - Starting...
+2025-03-22 06:48:48,690 - INFO - Start polling
+2025-03-22 06:48:49,178 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:48:50,845 - INFO - Update id=63043309 is handled. Duration 600 ms by bot id=7864064435
+2025-03-22 06:48:52,568 - INFO - Update id=63043310 is handled. Duration 198 ms by bot id=7864064435
+2025-03-22 06:48:57,606 - INFO - Update id=63043311 is handled. Duration 120 ms by bot id=7864064435
+2025-03-22 06:49:01,785 - INFO - Update id=63043312 is handled. Duration 200 ms by bot id=7864064435
+2025-03-22 06:49:07,829 - ERROR - Error while saving user: User.__init__() missing 1 required positional argument: 'balance'
+2025-03-22 06:49:08,134 - INFO - Update id=63043313 is handled. Duration 307 ms by bot id=7864064435
+2025-03-22 06:49:35,902 - WARNING - Received SIGINT signal
+2025-03-22 06:49:35,902 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:49:35,902 - INFO - Polling stopped
+2025-03-22 06:49:41,611 - INFO - Starting...
+2025-03-22 06:49:41,612 - INFO - Start polling
+2025-03-22 06:49:42,013 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:49:43,885 - INFO - Update id=63043314 is handled. Duration 609 ms by bot id=7864064435
+2025-03-22 06:49:45,611 - INFO - Update id=63043315 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:49:49,196 - INFO - Update id=63043316 is handled. Duration 307 ms by bot id=7864064435
+2025-03-22 06:49:50,937 - INFO - Update id=63043317 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:49:52,898 - INFO - Update id=63043318 is handled. Duration 219 ms by bot id=7864064435
+2025-03-22 06:49:54,732 - INFO - Update id=63043319 is handled. Duration 515 ms by bot id=7864064435
+2025-03-22 06:49:55,852 - INFO - Update id=63043320 is handled. Duration 399 ms by bot id=7864064435
+2025-03-22 06:52:13,478 - INFO - Update id=63043321 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:52:14,261 - INFO - Deleted row where id = 6
+2025-03-22 06:52:14,405 - INFO - Update id=63043322 is handled. Duration 176 ms by bot id=7864064435
+2025-03-22 06:52:17,062 - INFO - Update id=63043323 is handled. Duration 408 ms by bot id=7864064435
+2025-03-22 06:52:18,189 - INFO - Update id=63043324 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:52:19,827 - INFO - Update id=63043325 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:52:21,056 - INFO - Update id=63043326 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 06:52:22,623 - INFO - Update id=63043327 is handled. Duration 234 ms by bot id=7864064435
+2025-03-22 06:52:23,616 - INFO - Update id=63043328 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:52:24,333 - INFO - Update id=63043329 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:52:25,361 - ERROR - Error while updating user: User.__init__() missing 1 required positional argument: 'balance'
+2025-03-22 06:52:25,561 - INFO - Update id=63043330 is handled. Duration 204 ms by bot id=7864064435
+2025-03-22 06:52:29,862 - INFO - Update id=63043331 is handled. Duration 203 ms by bot id=7864064435
+2025-03-22 06:52:56,684 - WARNING - Received SIGINT signal
+2025-03-22 06:52:56,685 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:52:56,685 - INFO - Polling stopped
+2025-03-22 06:53:08,215 - INFO - Starting...
+2025-03-22 06:53:08,216 - INFO - Start polling
+2025-03-22 06:53:08,984 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:53:18,827 - INFO - Update id=63043332 is handled. Duration 614 ms by bot id=7864064435
+2025-03-22 06:53:25,671 - INFO - Update id=63043333 is not handled. Duration 2 ms by bot id=7864064435
+2025-03-22 06:53:30,999 - INFO - Update id=63043334 is not handled. Duration 2 ms by bot id=7864064435
+2025-03-22 06:53:32,540 - INFO - Update id=63043335 is not handled. Duration 1 ms by bot id=7864064435
+2025-03-22 06:53:33,354 - INFO - Update id=63043336 is not handled. Duration 1 ms by bot id=7864064435
+2025-03-22 06:53:34,947 - WARNING - Received SIGINT signal
+2025-03-22 06:53:34,948 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:53:34,948 - INFO - Polling stopped
+2025-03-22 06:54:17,456 - INFO - Starting...
+2025-03-22 06:54:17,457 - INFO - Start polling
+2025-03-22 06:54:18,044 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 06:54:19,036 - INFO - Update id=63043337 is handled. Duration 604 ms by bot id=7864064435
+2025-03-22 06:55:21,178 - INFO - Update id=63043338 is handled. Duration 202 ms by bot id=7864064435
+2025-03-22 06:55:24,152 - INFO - Update id=63043339 is not handled. Duration 2 ms by bot id=7864064435
+2025-03-22 06:55:36,846 - INFO - Update id=63043340 is not handled. Duration 1 ms by bot id=7864064435
+2025-03-22 07:03:38,862 - WARNING - Received SIGINT signal
+2025-03-22 07:03:38,863 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-22 07:03:38,863 - INFO - Polling stopped
