@@ -98,6 +98,36 @@ class SamsaraClient:
                     break
         return None
 
+    async def get_safety_score(self, truck_id):
+        safety_endpoint = f"v1/fleet/vehicles/{truck_id}/safety/score"
+        start_time_ms = int((time.time() - 24 * 3600) * 1000)
+        end_time_ms = int(time.time() * 1000)
+        stats_params = {
+            "vehicleId": str(truck_id),
+            "startMs": start_time_ms,
+            "endMs": end_time_ms
+        }
+        safety_data = await self.fetch_data(safety_endpoint, stats_params)
+
+        if safety_data:
+            return safety_data
+        return None
+
+    async def get_hursh_events(self, truck_id):
+        safety_endpoint = f"v1/fleet/vehicles/{truck_id}/safety/harsh_event"
+        start_time_ms = int((time.time() - 24 * 3600) * 1000)
+        end_time_ms = int(time.time() * 1000)
+        stats_params = {
+            "vehicleId": str(truck_id),
+            "startMs": start_time_ms,
+            "endMs": end_time_ms
+        }
+        safety_data = await self.fetch_data(safety_endpoint, stats_params)
+
+        if safety_data:
+            return safety_data
+        return None
+
     async def get_truck_details(self, truck_id):
         start_time_ms = int((time.time() - 3600) * 1000)
         end_time_ms = int(time.time() * 1000)
@@ -201,9 +231,25 @@ class SamsaraClient:
         if trucks and len(trucks) > 0:
             for truck in trucks:
                 truck_id = truck.get("id")
+                safety_score = await self.get_safety_score(truck_id)
+                print(f"Truck {truck_id} Safety Score:", json.dumps(safety_score, indent=2))
+                crush = await self.get_hursh_events(truck_id)
+                print(f"Truck {truck_id} Hursh:", json.dumps(crush, indent=2))
                 truck_details = await self.get_truck_details(truck_id)
                 if truck_details and truck_details.get("engine_state") == 'Running':
                     print(f"Truck {truck_id} Details:", json.dumps(truck_details, indent=2))
         else:
             print("No trucks found to get details.")
 
+
+# async def main():
+#     api_token = "samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6"
+#     client = SamsaraClient(api_token)
+#     await client.run()
+
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except RuntimeError as e:
+        print(f"Runtime error: {e}")
