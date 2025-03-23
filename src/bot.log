@@ -1069,3 +1069,1162 @@ asyncpg.exceptions.InvalidPasswordError: password authentication failed for user
 2025-03-23 18:02:48,251 - WARNING - Sleep for 1.552011 seconds and try again... (tryings = 2, bot id = 7864064435)
 2025-03-23 18:02:54,375 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
 2025-03-23 18:02:54,375 - WARNING - Sleep for 1.754882 seconds and try again... (tryings = 3, bot id = 7864064435)
+2025-03-23 18:03:01,043 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:03:01,043 - WARNING - Sleep for 2.276674 seconds and try again... (tryings = 4, bot id = 7864064435)
+2025-03-23 18:03:08,717 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:03:08,718 - WARNING - Sleep for 2.988994 seconds and try again... (tryings = 5, bot id = 7864064435)
+2025-03-23 18:03:17,687 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:03:17,687 - WARNING - Sleep for 4.042406 seconds and try again... (tryings = 6, bot id = 7864064435)
+2025-03-23 18:03:25,525 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:03:25,525 - WARNING - Sleep for 5.144539 seconds and try again... (tryings = 7, bot id = 7864064435)
+2025-03-23 18:03:35,787 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:03:35,787 - WARNING - Sleep for 5.082895 seconds and try again... (tryings = 8, bot id = 7864064435)
+2025-03-23 18:03:46,131 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:03:46,131 - WARNING - Sleep for 5.007522 seconds and try again... (tryings = 9, bot id = 7864064435)
+2025-03-23 18:03:56,408 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:03:56,409 - WARNING - Sleep for 4.838000 seconds and try again... (tryings = 10, bot id = 7864064435)
+2025-03-23 18:04:06,755 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:04:06,755 - WARNING - Sleep for 5.013887 seconds and try again... (tryings = 11, bot id = 7864064435)
+2025-03-23 18:04:17,149 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:04:17,149 - WARNING - Sleep for 4.967566 seconds and try again... (tryings = 12, bot id = 7864064435)
+2025-03-23 18:04:19,441 - INFO - Polling stopped
+2025-03-23 18:04:19,443 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 18:04:22,229 - INFO - Starting...
+2025-03-23 18:04:22,229 - INFO - Start polling
+2025-03-23 18:04:22,230 - INFO - Running truck synchronization...
+2025-03-23 18:04:23,646 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 18:04:29,466 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:04:29,466 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7864064435)
+2025-03-23 18:04:38,619 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:04:38,619 - WARNING - Sleep for 1.335074 seconds and try again... (tryings = 1, bot id = 7864064435)
+2025-03-23 18:04:48,620 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:04:48,620 - WARNING - Sleep for 1.656071 seconds and try again... (tryings = 2, bot id = 7864064435)
+2025-03-23 18:04:57,846 - INFO - Connection established (tryings = 3, bot id = 7864064435)
+2025-03-23 18:04:58,195 - INFO - Update id=63043661 is handled. Duration 343 ms by bot id=7864064435
+2025-03-23 18:04:58,589 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:04:58,589 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7864064435)
+2025-03-23 18:05:08,170 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:05:08,170 - WARNING - Sleep for 1.414460 seconds and try again... (tryings = 1, bot id = 7864064435)
+2025-03-23 18:05:17,769 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:05:17,769 - WARNING - Sleep for 1.852288 seconds and try again... (tryings = 2, bot id = 7864064435)
+2025-03-23 18:05:28,060 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:05:28,061 - WARNING - Sleep for 2.343238 seconds and try again... (tryings = 3, bot id = 7864064435)
+2025-03-23 18:05:38,768 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:05:38,768 - WARNING - Sleep for 3.121476 seconds and try again... (tryings = 4, bot id = 7864064435)
+2025-03-23 18:05:47,240 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:05:47,240 - WARNING - Sleep for 4.062393 seconds and try again... (tryings = 5, bot id = 7864064435)
+2025-03-23 18:05:56,619 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:05:56,619 - WARNING - Sleep for 5.037883 seconds and try again... (tryings = 6, bot id = 7864064435)
+2025-03-23 18:06:07,190 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:06:07,190 - WARNING - Sleep for 4.807467 seconds and try again... (tryings = 7, bot id = 7864064435)
+2025-03-23 18:06:17,520 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:06:17,521 - WARNING - Sleep for 5.080281 seconds and try again... (tryings = 8, bot id = 7864064435)
+2025-03-23 18:06:22,399 - INFO - Running truck synchronization...
+2025-03-23 18:06:28,082 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:06:28,082 - WARNING - Sleep for 5.009987 seconds and try again... (tryings = 9, bot id = 7864064435)
+2025-03-23 18:06:38,981 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:06:38,981 - WARNING - Sleep for 4.968847 seconds and try again... (tryings = 10, bot id = 7864064435)
+2025-03-23 18:06:49,231 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:06:49,231 - WARNING - Sleep for 5.143458 seconds and try again... (tryings = 11, bot id = 7864064435)
+2025-03-23 18:06:59,351 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:06:59,352 - WARNING - Sleep for 5.026022 seconds and try again... (tryings = 12, bot id = 7864064435)
+2025-03-23 18:07:10,005 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:07:10,005 - WARNING - Sleep for 4.884941 seconds and try again... (tryings = 13, bot id = 7864064435)
+2025-03-23 18:07:20,391 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:07:20,391 - WARNING - Sleep for 4.885750 seconds and try again... (tryings = 14, bot id = 7864064435)
+2025-03-23 18:07:31,611 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:07:31,612 - WARNING - Sleep for 5.082431 seconds and try again... (tryings = 15, bot id = 7864064435)
+2025-03-23 18:07:42,028 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:07:42,029 - WARNING - Sleep for 5.077776 seconds and try again... (tryings = 16, bot id = 7864064435)
+2025-03-23 18:07:52,281 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:07:52,281 - WARNING - Sleep for 4.992188 seconds and try again... (tryings = 17, bot id = 7864064435)
+2025-03-23 18:08:02,684 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:08:02,684 - WARNING - Sleep for 5.127480 seconds and try again... (tryings = 18, bot id = 7864064435)
+2025-03-23 18:08:13,283 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:08:13,283 - WARNING - Sleep for 4.936355 seconds and try again... (tryings = 19, bot id = 7864064435)
+2025-03-23 18:08:22,472 - INFO - Running truck synchronization...
+2025-03-23 18:08:23,449 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:08:23,449 - WARNING - Sleep for 5.003970 seconds and try again... (tryings = 20, bot id = 7864064435)
+2025-03-23 18:08:33,824 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:08:33,824 - WARNING - Sleep for 5.082571 seconds and try again... (tryings = 21, bot id = 7864064435)
+2025-03-23 18:08:44,169 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:08:44,169 - WARNING - Sleep for 4.974979 seconds and try again... (tryings = 22, bot id = 7864064435)
+2025-03-23 18:08:54,431 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:08:54,431 - WARNING - Sleep for 5.181082 seconds and try again... (tryings = 23, bot id = 7864064435)
+2025-03-23 18:09:05,011 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:09:05,011 - WARNING - Sleep for 4.992808 seconds and try again... (tryings = 24, bot id = 7864064435)
+2025-03-23 18:09:15,995 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:09:15,995 - WARNING - Sleep for 4.907961 seconds and try again... (tryings = 25, bot id = 7864064435)
+2025-03-23 18:09:26,367 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:09:26,367 - WARNING - Sleep for 5.083167 seconds and try again... (tryings = 26, bot id = 7864064435)
+2025-03-23 18:09:36,642 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:09:36,643 - WARNING - Sleep for 5.073173 seconds and try again... (tryings = 27, bot id = 7864064435)
+2025-03-23 18:09:47,259 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:09:47,259 - WARNING - Sleep for 5.076027 seconds and try again... (tryings = 28, bot id = 7864064435)
+2025-03-23 18:09:57,606 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:09:57,606 - WARNING - Sleep for 5.096813 seconds and try again... (tryings = 29, bot id = 7864064435)
+2025-03-23 18:10:08,153 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:10:08,153 - WARNING - Sleep for 4.977808 seconds and try again... (tryings = 30, bot id = 7864064435)
+2025-03-23 18:10:18,493 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:10:18,493 - WARNING - Sleep for 5.133338 seconds and try again... (tryings = 31, bot id = 7864064435)
+2025-03-23 18:10:22,642 - INFO - Running truck synchronization...
+2025-03-23 18:10:28,859 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:10:28,859 - WARNING - Sleep for 4.872820 seconds and try again... (tryings = 32, bot id = 7864064435)
+2025-03-23 18:10:39,286 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:10:39,286 - WARNING - Sleep for 5.065045 seconds and try again... (tryings = 33, bot id = 7864064435)
+2025-03-23 18:10:49,543 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:10:49,543 - WARNING - Sleep for 5.019654 seconds and try again... (tryings = 34, bot id = 7864064435)
+2025-03-23 18:10:59,859 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:10:59,859 - WARNING - Sleep for 5.013231 seconds and try again... (tryings = 35, bot id = 7864064435)
+2025-03-23 18:11:10,199 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:11:10,199 - WARNING - Sleep for 4.856828 seconds and try again... (tryings = 36, bot id = 7864064435)
+2025-03-23 18:11:20,333 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:11:20,333 - WARNING - Sleep for 5.095335 seconds and try again... (tryings = 37, bot id = 7864064435)
+2025-03-23 18:11:30,669 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:11:30,669 - WARNING - Sleep for 4.957342 seconds and try again... (tryings = 38, bot id = 7864064435)
+2025-03-23 18:11:40,952 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:11:40,952 - WARNING - Sleep for 4.901673 seconds and try again... (tryings = 39, bot id = 7864064435)
+2025-03-23 18:11:52,543 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:11:52,543 - WARNING - Sleep for 5.088840 seconds and try again... (tryings = 40, bot id = 7864064435)
+2025-03-23 18:12:02,932 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:12:02,933 - WARNING - Sleep for 5.133867 seconds and try again... (tryings = 41, bot id = 7864064435)
+2025-03-23 18:12:13,488 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:12:13,488 - WARNING - Sleep for 4.949383 seconds and try again... (tryings = 42, bot id = 7864064435)
+2025-03-23 18:12:22,703 - INFO - Running truck synchronization...
+2025-03-23 18:12:24,314 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:12:24,314 - WARNING - Sleep for 4.946845 seconds and try again... (tryings = 43, bot id = 7864064435)
+2025-03-23 18:12:34,602 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:12:34,602 - WARNING - Sleep for 4.987396 seconds and try again... (tryings = 44, bot id = 7864064435)
+2025-03-23 18:12:45,162 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:12:45,162 - WARNING - Sleep for 5.027082 seconds and try again... (tryings = 45, bot id = 7864064435)
+2025-03-23 18:12:55,455 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:12:55,455 - WARNING - Sleep for 5.064326 seconds and try again... (tryings = 46, bot id = 7864064435)
+2025-03-23 18:13:05,707 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:13:05,707 - WARNING - Sleep for 5.055838 seconds and try again... (tryings = 47, bot id = 7864064435)
+2025-03-23 18:13:16,149 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:13:16,149 - WARNING - Sleep for 4.905679 seconds and try again... (tryings = 48, bot id = 7864064435)
+2025-03-23 18:13:26,149 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:13:26,149 - WARNING - Sleep for 4.907076 seconds and try again... (tryings = 49, bot id = 7864064435)
+2025-03-23 18:13:36,356 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:13:36,356 - WARNING - Sleep for 4.996242 seconds and try again... (tryings = 50, bot id = 7864064435)
+2025-03-23 18:13:46,813 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:13:46,813 - WARNING - Sleep for 5.097918 seconds and try again... (tryings = 51, bot id = 7864064435)
+2025-03-23 18:13:57,309 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:13:57,310 - WARNING - Sleep for 5.002000 seconds and try again... (tryings = 52, bot id = 7864064435)
+2025-03-23 18:14:07,753 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:14:07,753 - WARNING - Sleep for 5.084734 seconds and try again... (tryings = 53, bot id = 7864064435)
+2025-03-23 18:14:18,032 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:14:18,033 - WARNING - Sleep for 5.037246 seconds and try again... (tryings = 54, bot id = 7864064435)
+2025-03-23 18:14:22,757 - INFO - Running truck synchronization...
+2025-03-23 18:14:28,474 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:14:28,474 - WARNING - Sleep for 4.871574 seconds and try again... (tryings = 55, bot id = 7864064435)
+2025-03-23 18:14:38,788 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:14:38,788 - WARNING - Sleep for 4.856729 seconds and try again... (tryings = 56, bot id = 7864064435)
+2025-03-23 18:14:48,805 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:14:48,805 - WARNING - Sleep for 5.254086 seconds and try again... (tryings = 57, bot id = 7864064435)
+2025-03-23 18:14:59,438 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:14:59,438 - WARNING - Sleep for 5.091005 seconds and try again... (tryings = 58, bot id = 7864064435)
+2025-03-23 18:15:09,766 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:15:09,766 - WARNING - Sleep for 4.894513 seconds and try again... (tryings = 59, bot id = 7864064435)
+2025-03-23 18:15:20,564 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:15:20,564 - WARNING - Sleep for 4.959259 seconds and try again... (tryings = 60, bot id = 7864064435)
+2025-03-23 18:15:30,694 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:15:30,694 - WARNING - Sleep for 4.950649 seconds and try again... (tryings = 61, bot id = 7864064435)
+2025-03-23 18:15:41,314 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:15:41,314 - WARNING - Sleep for 5.051414 seconds and try again... (tryings = 62, bot id = 7864064435)
+2025-03-23 18:15:51,549 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:15:51,549 - WARNING - Sleep for 5.045802 seconds and try again... (tryings = 63, bot id = 7864064435)
+2025-03-23 18:16:02,058 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:16:02,059 - WARNING - Sleep for 4.993089 seconds and try again... (tryings = 64, bot id = 7864064435)
+2025-03-23 18:16:12,725 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:16:12,725 - WARNING - Sleep for 5.029391 seconds and try again... (tryings = 65, bot id = 7864064435)
+2025-03-23 18:16:22,929 - INFO - Running truck synchronization...
+2025-03-23 18:16:22,980 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:16:22,981 - WARNING - Sleep for 5.109499 seconds and try again... (tryings = 66, bot id = 7864064435)
+2025-03-23 18:16:33,425 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:16:33,425 - WARNING - Sleep for 4.900810 seconds and try again... (tryings = 67, bot id = 7864064435)
+2025-03-23 18:16:43,553 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:16:43,553 - WARNING - Sleep for 5.110008 seconds and try again... (tryings = 68, bot id = 7864064435)
+2025-03-23 18:16:53,939 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:16:53,939 - WARNING - Sleep for 5.035009 seconds and try again... (tryings = 69, bot id = 7864064435)
+2025-03-23 18:17:05,314 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:17:05,315 - WARNING - Sleep for 5.098012 seconds and try again... (tryings = 70, bot id = 7864064435)
+2025-03-23 18:17:15,804 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:17:15,804 - WARNING - Sleep for 4.944456 seconds and try again... (tryings = 71, bot id = 7864064435)
+2025-03-23 18:17:25,794 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:17:25,794 - WARNING - Sleep for 5.086296 seconds and try again... (tryings = 72, bot id = 7864064435)
+2025-03-23 18:17:36,193 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:17:36,194 - WARNING - Sleep for 4.977042 seconds and try again... (tryings = 73, bot id = 7864064435)
+2025-03-23 18:17:46,498 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:17:46,499 - WARNING - Sleep for 5.098974 seconds and try again... (tryings = 74, bot id = 7864064435)
+2025-03-23 18:17:57,515 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:17:57,515 - WARNING - Sleep for 4.975457 seconds and try again... (tryings = 75, bot id = 7864064435)
+2025-03-23 18:18:07,655 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:18:07,655 - WARNING - Sleep for 5.017209 seconds and try again... (tryings = 76, bot id = 7864064435)
+2025-03-23 18:18:18,052 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:18:18,052 - WARNING - Sleep for 5.050637 seconds and try again... (tryings = 77, bot id = 7864064435)
+2025-03-23 18:18:22,994 - INFO - Running truck synchronization...
+2025-03-23 18:18:28,460 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:18:28,461 - WARNING - Sleep for 4.717444 seconds and try again... (tryings = 78, bot id = 7864064435)
+2025-03-23 18:18:38,606 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:18:38,606 - WARNING - Sleep for 4.952234 seconds and try again... (tryings = 79, bot id = 7864064435)
+2025-03-23 18:18:48,870 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:18:48,870 - WARNING - Sleep for 5.258452 seconds and try again... (tryings = 80, bot id = 7864064435)
+2025-03-23 18:18:59,405 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:18:59,405 - WARNING - Sleep for 4.991731 seconds and try again... (tryings = 81, bot id = 7864064435)
+2025-03-23 18:19:09,846 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:19:09,846 - WARNING - Sleep for 4.926814 seconds and try again... (tryings = 82, bot id = 7864064435)
+2025-03-23 18:19:20,122 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:19:20,122 - WARNING - Sleep for 5.098520 seconds and try again... (tryings = 83, bot id = 7864064435)
+2025-03-23 18:19:30,632 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:19:30,632 - WARNING - Sleep for 5.030184 seconds and try again... (tryings = 84, bot id = 7864064435)
+2025-03-23 18:19:41,336 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:19:41,336 - WARNING - Sleep for 4.868604 seconds and try again... (tryings = 85, bot id = 7864064435)
+2025-03-23 18:19:51,516 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:19:51,516 - WARNING - Sleep for 5.022605 seconds and try again... (tryings = 86, bot id = 7864064435)
+2025-03-23 18:20:02,006 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:20:02,007 - WARNING - Sleep for 5.040456 seconds and try again... (tryings = 87, bot id = 7864064435)
+2025-03-23 18:20:12,868 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:20:12,869 - WARNING - Sleep for 4.902312 seconds and try again... (tryings = 88, bot id = 7864064435)
+2025-03-23 18:20:22,971 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:20:22,972 - WARNING - Sleep for 5.147962 seconds and try again... (tryings = 89, bot id = 7864064435)
+2025-03-23 18:20:23,063 - INFO - Running truck synchronization...
+2025-03-23 18:20:33,417 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:20:33,417 - WARNING - Sleep for 5.098194 seconds and try again... (tryings = 90, bot id = 7864064435)
+2025-03-23 18:20:43,723 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:20:43,723 - WARNING - Sleep for 4.946400 seconds and try again... (tryings = 91, bot id = 7864064435)
+2025-03-23 18:20:53,880 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:20:53,880 - WARNING - Sleep for 4.996640 seconds and try again... (tryings = 92, bot id = 7864064435)
+2025-03-23 18:21:03,998 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:21:03,999 - WARNING - Sleep for 4.887213 seconds and try again... (tryings = 93, bot id = 7864064435)
+2025-03-23 18:21:05,862 - INFO - Polling stopped
+2025-03-23 18:21:05,863 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 18:21:08,626 - INFO - Starting...
+2025-03-23 18:21:08,626 - INFO - Start polling
+2025-03-23 18:21:08,626 - INFO - Running truck synchronization...
+2025-03-23 18:21:08,952 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 18:21:14,270 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:21:14,270 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7864064435)
+2025-03-23 18:21:18,649 - INFO - Connection established (tryings = 1, bot id = 7864064435)
+2025-03-23 18:21:19,528 - INFO - Update id=63043662 is handled. Duration 890 ms by bot id=7864064435
+2025-03-23 18:21:23,418 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:21:23,419 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7864064435)
+2025-03-23 18:21:32,642 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:21:32,642 - WARNING - Sleep for 1.416143 seconds and try again... (tryings = 1, bot id = 7864064435)
+2025-03-23 18:21:42,334 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:21:42,334 - WARNING - Sleep for 1.837883 seconds and try again... (tryings = 2, bot id = 7864064435)
+2025-03-23 18:21:52,489 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:21:52,489 - WARNING - Sleep for 2.290341 seconds and try again... (tryings = 3, bot id = 7864064435)
+2025-03-23 18:22:03,065 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:22:03,066 - WARNING - Sleep for 3.060682 seconds and try again... (tryings = 4, bot id = 7864064435)
+2025-03-23 18:22:11,647 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:22:11,647 - WARNING - Sleep for 4.081938 seconds and try again... (tryings = 5, bot id = 7864064435)
+2025-03-23 18:22:21,116 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:22:21,117 - WARNING - Sleep for 5.070907 seconds and try again... (tryings = 6, bot id = 7864064435)
+2025-03-23 18:22:30,460 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:22:30,460 - WARNING - Sleep for 4.909477 seconds and try again... (tryings = 7, bot id = 7864064435)
+2025-03-23 18:22:39,689 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:22:39,689 - WARNING - Sleep for 5.214440 seconds and try again... (tryings = 8, bot id = 7864064435)
+2025-03-23 18:22:49,694 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:22:49,694 - WARNING - Sleep for 4.782497 seconds and try again... (tryings = 9, bot id = 7864064435)
+2025-03-23 18:22:59,490 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:22:59,491 - WARNING - Sleep for 5.020205 seconds and try again... (tryings = 10, bot id = 7864064435)
+2025-03-23 18:23:08,806 - INFO - Running truck synchronization...
+2025-03-23 18:23:10,247 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:23:10,247 - WARNING - Sleep for 4.839999 seconds and try again... (tryings = 11, bot id = 7864064435)
+2025-03-23 18:23:17,581 - INFO - Polling stopped
+2025-03-23 18:23:17,581 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 18:23:20,319 - INFO - Starting...
+2025-03-23 18:23:20,320 - INFO - Start polling
+2025-03-23 18:23:20,320 - INFO - Running truck synchronization...
+2025-03-23 18:23:33,485 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 18:23:38,748 - INFO - Update id=760402467 is handled. Duration 344 ms by bot id=6318766162
+2025-03-23 18:23:40,085 - INFO - Update id=760402468 is handled. Duration 297 ms by bot id=6318766162
+2025-03-23 18:23:45,109 - INFO - Update id=760402469 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:24:03,460 - INFO - Update id=760402470 is handled. Duration 594 ms by bot id=6318766162
+2025-03-23 18:24:10,274 - INFO - Update id=760402471 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:24:24,964 - INFO - Update id=760402472 is handled. Duration 109 ms by bot id=6318766162
+2025-03-23 18:24:29,199 - INFO - Update id=760402473 is handled. Duration 297 ms by bot id=6318766162
+2025-03-23 18:24:31,646 - INFO - Update id=760402474 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:24:33,551 - INFO - Update id=760402475 is handled. Duration 141 ms by bot id=6318766162
+2025-03-23 18:25:20,520 - INFO - Running truck synchronization...
+2025-03-23 18:25:23,087 - INFO - Truck created!
+2025-03-23 18:25:23,141 - INFO - Truck created!
+2025-03-23 18:25:23,310 - INFO - Truck created!
+2025-03-23 18:25:23,367 - INFO - Truck created!
+2025-03-23 18:25:23,425 - INFO - Truck created!
+2025-03-23 18:25:23,484 - INFO - Truck created!
+2025-03-23 18:25:23,651 - INFO - Truck created!
+2025-03-23 18:25:23,706 - INFO - Truck created!
+2025-03-23 18:25:23,761 - INFO - Truck created!
+2025-03-23 18:25:23,951 - INFO - Truck created!
+2025-03-23 18:25:24,013 - INFO - Truck created!
+2025-03-23 18:25:24,073 - INFO - Truck created!
+2025-03-23 18:25:24,129 - INFO - Truck created!
+2025-03-23 18:25:24,185 - INFO - Truck created!
+2025-03-23 18:25:24,239 - INFO - Truck created!
+2025-03-23 18:25:24,295 - INFO - Truck created!
+2025-03-23 18:25:24,350 - INFO - Truck created!
+2025-03-23 18:25:24,404 - INFO - Truck created!
+2025-03-23 18:25:24,460 - INFO - Truck created!
+2025-03-23 18:25:24,511 - INFO - Truck created!
+2025-03-23 18:25:24,564 - INFO - Truck created!
+2025-03-23 18:25:24,618 - INFO - Truck created!
+2025-03-23 18:25:24,674 - INFO - Truck created!
+2025-03-23 18:25:24,731 - INFO - Truck created!
+2025-03-23 18:25:24,786 - INFO - Truck created!
+2025-03-23 18:25:24,839 - INFO - Truck created!
+2025-03-23 18:25:24,893 - INFO - Truck created!
+2025-03-23 18:25:25,061 - INFO - Truck created!
+2025-03-23 18:25:25,216 - INFO - Truck created!
+2025-03-23 18:25:25,371 - INFO - Truck created!
+2025-03-23 18:25:25,425 - INFO - Truck created!
+2025-03-23 18:25:25,477 - INFO - Truck created!
+2025-03-23 18:25:25,529 - INFO - Truck created!
+2025-03-23 18:25:25,694 - INFO - Truck created!
+2025-03-23 18:25:25,746 - INFO - Truck created!
+2025-03-23 18:25:25,800 - INFO - Truck created!
+2025-03-23 18:25:25,957 - INFO - Truck created!
+2025-03-23 18:25:26,009 - INFO - Truck created!
+2025-03-23 18:25:26,061 - INFO - Truck created!
+2025-03-23 18:25:26,113 - INFO - Truck created!
+2025-03-23 18:25:26,165 - INFO - Truck created!
+2025-03-23 18:25:26,217 - INFO - Truck created!
+2025-03-23 18:25:26,377 - INFO - Truck created!
+2025-03-23 18:25:26,531 - INFO - Truck created!
+2025-03-23 18:25:26,584 - INFO - Truck created!
+2025-03-23 18:25:26,637 - INFO - Truck created!
+2025-03-23 18:25:26,690 - INFO - Truck created!
+2025-03-23 18:25:26,743 - INFO - Truck created!
+2025-03-23 18:25:26,798 - INFO - Truck created!
+2025-03-23 18:25:26,964 - INFO - Truck created!
+2025-03-23 18:25:27,020 - INFO - Truck created!
+2025-03-23 18:25:27,073 - INFO - Truck created!
+2025-03-23 18:25:27,127 - INFO - Truck created!
+2025-03-23 18:25:27,178 - INFO - Truck created!
+2025-03-23 18:25:27,233 - INFO - Truck created!
+2025-03-23 18:25:27,287 - INFO - Truck created!
+2025-03-23 18:25:27,444 - INFO - Truck created!
+2025-03-23 18:27:27,454 - INFO - Running truck synchronization...
+2025-03-23 18:29:29,463 - INFO - Running truck synchronization...
+2025-03-23 18:31:31,487 - INFO - Running truck synchronization...
+2025-03-23 18:31:41,992 - INFO - Polling stopped
+2025-03-23 18:31:41,992 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 18:31:45,075 - INFO - Starting...
+2025-03-23 18:31:45,076 - INFO - Start polling
+2025-03-23 18:31:45,076 - INFO - Running truck synchronization...
+2025-03-23 18:31:46,514 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 18:31:53,303 - INFO - Update id=760402476 is handled. Duration 360 ms by bot id=6318766162
+2025-03-23 18:31:54,408 - INFO - Update id=760402477 is handled. Duration 155 ms by bot id=6318766162
+2025-03-23 18:32:00,840 - INFO - Update id=760402478 is handled. Duration 218 ms by bot id=6318766162
+2025-03-23 18:32:03,373 - INFO - Update id=760402479 is handled. Duration 188 ms by bot id=6318766162
+2025-03-23 18:32:05,767 - INFO - Update id=760402480 is handled. Duration 515 ms by bot id=6318766162
+2025-03-23 18:32:07,479 - INFO - Update id=760402481 is handled. Duration 452 ms by bot id=6318766162
+2025-03-23 18:32:08,426 - INFO - Update id=760402482 is handled. Duration 406 ms by bot id=6318766162
+2025-03-23 18:32:09,544 - INFO - Update id=760402483 is handled. Duration 625 ms by bot id=6318766162
+2025-03-23 18:32:10,400 - INFO - Update id=760402484 is handled. Duration 328 ms by bot id=6318766162
+2025-03-23 18:32:12,411 - INFO - Update id=760402485 is handled. Duration 1000 ms by bot id=6318766162
+2025-03-23 18:32:12,850 - INFO - Update id=760402486 is handled. Duration 515 ms by bot id=6318766162
+2025-03-23 18:32:13,726 - INFO - Update id=760402487 is handled. Duration 500 ms by bot id=6318766162
+2025-03-23 18:32:14,384 - INFO - Update id=760402488 is handled. Duration 313 ms by bot id=6318766162
+2025-03-23 18:32:15,727 - INFO - Update id=760402489 is handled. Duration 468 ms by bot id=6318766162
+2025-03-23 18:32:16,803 - INFO - Update id=760402490 is handled. Duration 672 ms by bot id=6318766162
+2025-03-23 18:32:17,912 - INFO - Update id=760402491 is handled. Duration 890 ms by bot id=6318766162
+2025-03-23 18:32:21,551 - INFO - Update id=760402492 is handled. Duration 406 ms by bot id=6318766162
+2025-03-23 18:32:23,060 - INFO - Update id=760402493 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:32:25,731 - INFO - Update id=760402494 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:32:27,339 - INFO - Update id=760402495 is handled. Duration 187 ms by bot id=6318766162
+2025-03-23 18:32:29,458 - INFO - Update id=760402496 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:33:37,556 - INFO - Update id=760402497 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:33:38,713 - ERROR - Error in ask_full_name: invalid literal for int() with base 10: 'wqeqe'
+2025-03-23 18:33:39,257 - INFO - Update id=760402498 is handled. Duration 547 ms by bot id=6318766162
+2025-03-23 18:33:41,846 - INFO - Update id=760402499 is handled. Duration 156 ms by bot id=6318766162
+2025-03-23 18:33:43,301 - INFO - Update id=760402500 is handled. Duration 266 ms by bot id=6318766162
+2025-03-23 18:33:47,800 - INFO - Running truck synchronization...
+2025-03-23 18:33:52,483 - INFO - Truck created!
+2025-03-23 18:33:52,537 - INFO - Truck created!
+2025-03-23 18:33:52,590 - INFO - Truck created!
+2025-03-23 18:33:52,642 - INFO - Truck created!
+2025-03-23 18:33:52,697 - INFO - Truck created!
+2025-03-23 18:33:52,750 - INFO - Truck created!
+2025-03-23 18:33:52,804 - INFO - Truck created!
+2025-03-23 18:33:52,855 - INFO - Truck created!
+2025-03-23 18:33:52,908 - INFO - Truck created!
+2025-03-23 18:33:53,077 - INFO - Truck created!
+2025-03-23 18:33:53,130 - INFO - Truck created!
+2025-03-23 18:33:53,181 - INFO - Truck created!
+2025-03-23 18:33:53,234 - INFO - Truck created!
+2025-03-23 18:33:53,285 - INFO - Truck created!
+2025-03-23 18:33:53,338 - INFO - Truck created!
+2025-03-23 18:33:53,393 - INFO - Truck created!
+2025-03-23 18:33:53,447 - INFO - Truck created!
+2025-03-23 18:33:53,501 - INFO - Truck created!
+2025-03-23 18:33:53,668 - INFO - Truck created!
+2025-03-23 18:33:53,720 - INFO - Truck created!
+2025-03-23 18:33:53,772 - INFO - Truck created!
+2025-03-23 18:33:53,826 - INFO - Truck created!
+2025-03-23 18:33:53,993 - INFO - Truck created!
+2025-03-23 18:33:54,045 - INFO - Truck created!
+2025-03-23 18:33:54,096 - INFO - Truck created!
+2025-03-23 18:33:54,147 - INFO - Truck created!
+2025-03-23 18:33:54,200 - INFO - Truck created!
+2025-03-23 18:33:54,255 - INFO - Truck created!
+2025-03-23 18:33:54,310 - INFO - Truck created!
+2025-03-23 18:33:54,363 - INFO - Truck created!
+2025-03-23 18:33:54,417 - INFO - Truck created!
+2025-03-23 18:33:54,471 - INFO - Truck created!
+2025-03-23 18:33:54,525 - INFO - Truck created!
+2025-03-23 18:33:54,584 - INFO - Truck created!
+2025-03-23 18:33:54,749 - INFO - Truck created!
+2025-03-23 18:33:54,807 - INFO - Truck created!
+2025-03-23 18:33:54,860 - INFO - Truck created!
+2025-03-23 18:33:54,922 - INFO - Truck created!
+2025-03-23 18:33:54,979 - INFO - Truck created!
+2025-03-23 18:33:55,133 - INFO - Truck created!
+2025-03-23 18:33:55,191 - INFO - Truck created!
+2025-03-23 18:33:55,365 - INFO - Truck created!
+2025-03-23 18:33:55,422 - INFO - Truck created!
+2025-03-23 18:33:55,477 - INFO - Truck created!
+2025-03-23 18:33:55,531 - INFO - Truck created!
+2025-03-23 18:33:55,592 - INFO - Truck created!
+2025-03-23 18:33:55,646 - INFO - Truck created!
+2025-03-23 18:33:55,699 - INFO - Truck created!
+2025-03-23 18:33:55,753 - INFO - Truck created!
+2025-03-23 18:33:55,906 - INFO - Truck created!
+2025-03-23 18:33:56,063 - INFO - Truck created!
+2025-03-23 18:33:56,117 - INFO - Truck created!
+2025-03-23 18:33:56,170 - INFO - Truck created!
+2025-03-23 18:33:56,225 - INFO - Truck created!
+2025-03-23 18:33:56,276 - INFO - Truck created!
+2025-03-23 18:33:56,329 - INFO - Truck created!
+2025-03-23 18:33:56,497 - INFO - Truck created!
+2025-03-23 18:33:58,347 - INFO - Truck created!
+2025-03-23 18:33:58,398 - INFO - Truck created!
+2025-03-23 18:33:58,451 - INFO - Truck created!
+2025-03-23 18:33:58,503 - INFO - Truck created!
+2025-03-23 18:33:58,556 - INFO - Truck created!
+2025-03-23 18:33:58,607 - INFO - Truck created!
+2025-03-23 18:33:58,660 - INFO - Truck created!
+2025-03-23 18:33:58,711 - INFO - Truck created!
+2025-03-23 18:33:58,764 - INFO - Truck created!
+2025-03-23 18:33:58,817 - INFO - Truck created!
+2025-03-23 18:33:58,871 - INFO - Truck created!
+2025-03-23 18:33:59,041 - INFO - Truck created!
+2025-03-23 18:33:59,096 - INFO - Truck created!
+2025-03-23 18:33:59,264 - INFO - Truck created!
+2025-03-23 18:33:59,418 - INFO - Truck created!
+2025-03-23 18:33:59,474 - INFO - Truck created!
+2025-03-23 18:33:59,530 - INFO - Truck created!
+2025-03-23 18:33:59,585 - INFO - Truck created!
+2025-03-23 18:33:59,639 - INFO - Truck created!
+2025-03-23 18:33:59,691 - INFO - Truck created!
+2025-03-23 18:33:59,742 - INFO - Truck created!
+2025-03-23 18:33:59,795 - INFO - Truck created!
+2025-03-23 18:33:59,848 - INFO - Truck created!
+2025-03-23 18:33:59,904 - INFO - Truck created!
+2025-03-23 18:33:59,955 - INFO - Truck created!
+2025-03-23 18:34:00,008 - INFO - Truck created!
+2025-03-23 18:34:00,068 - INFO - Truck created!
+2025-03-23 18:34:00,123 - INFO - Truck created!
+2025-03-23 18:34:00,176 - INFO - Truck created!
+2025-03-23 18:34:00,230 - INFO - Truck created!
+2025-03-23 18:34:00,397 - INFO - Truck created!
+2025-03-23 18:34:00,450 - INFO - Truck created!
+2025-03-23 18:34:00,502 - INFO - Truck created!
+2025-03-23 18:34:00,556 - INFO - Truck created!
+2025-03-23 18:34:00,609 - INFO - Truck created!
+2025-03-23 18:34:00,662 - INFO - Truck created!
+2025-03-23 18:34:00,717 - INFO - Truck created!
+2025-03-23 18:34:00,767 - INFO - Truck created!
+2025-03-23 18:34:00,818 - INFO - Truck created!
+2025-03-23 18:34:00,974 - INFO - Truck created!
+2025-03-23 18:34:01,027 - INFO - Truck created!
+2025-03-23 18:34:01,078 - INFO - Truck created!
+2025-03-23 18:34:01,132 - INFO - Truck created!
+2025-03-23 18:34:01,184 - INFO - Truck created!
+2025-03-23 18:34:01,237 - INFO - Truck created!
+2025-03-23 18:34:01,291 - INFO - Truck created!
+2025-03-23 18:34:01,342 - INFO - Truck created!
+2025-03-23 18:34:01,394 - INFO - Truck created!
+2025-03-23 18:34:01,449 - INFO - Truck created!
+2025-03-23 18:34:01,502 - INFO - Truck created!
+2025-03-23 18:34:01,552 - INFO - Truck created!
+2025-03-23 18:34:01,710 - INFO - Truck created!
+2025-03-23 18:34:01,762 - INFO - Truck created!
+2025-03-23 18:34:01,813 - INFO - Truck created!
+2025-03-23 18:34:01,863 - INFO - Truck created!
+2025-03-23 18:34:01,914 - INFO - Truck created!
+2025-03-23 18:34:01,967 - INFO - Truck created!
+2025-03-23 18:34:04,128 - INFO - Truck created!
+2025-03-23 18:34:04,180 - INFO - Truck created!
+2025-03-23 18:34:04,232 - INFO - Truck created!
+2025-03-23 18:34:04,285 - INFO - Truck created!
+2025-03-23 18:34:04,336 - INFO - Truck created!
+2025-03-23 18:34:04,389 - INFO - Truck created!
+2025-03-23 18:34:04,441 - INFO - Truck created!
+2025-03-23 18:34:04,495 - INFO - Truck created!
+2025-03-23 18:34:04,546 - INFO - Truck created!
+2025-03-23 18:34:04,702 - INFO - Truck created!
+2025-03-23 18:34:04,757 - INFO - Truck created!
+2025-03-23 18:34:04,920 - INFO - Truck created!
+2025-03-23 18:34:04,976 - INFO - Truck created!
+2025-03-23 18:34:05,030 - INFO - Truck created!
+2025-03-23 18:34:05,086 - INFO - Truck created!
+2025-03-23 18:34:05,141 - INFO - Truck created!
+2025-03-23 18:34:05,197 - INFO - Truck created!
+2025-03-23 18:34:05,252 - INFO - Truck created!
+2025-03-23 18:34:05,303 - INFO - Truck created!
+2025-03-23 18:34:05,356 - INFO - Truck created!
+2025-03-23 18:34:05,407 - INFO - Truck created!
+2025-03-23 18:34:05,460 - INFO - Truck created!
+2025-03-23 18:34:05,512 - INFO - Truck created!
+2025-03-23 18:34:05,564 - INFO - Truck created!
+2025-03-23 18:34:05,615 - INFO - Truck created!
+2025-03-23 18:34:05,670 - INFO - Truck created!
+2025-03-23 18:34:05,723 - INFO - Truck created!
+2025-03-23 18:34:05,887 - INFO - Truck created!
+2025-03-23 18:34:05,941 - INFO - Truck created!
+2025-03-23 18:34:05,993 - INFO - Truck created!
+2025-03-23 18:34:06,046 - INFO - Truck created!
+2025-03-23 18:34:06,099 - INFO - Truck created!
+2025-03-23 18:34:06,152 - INFO - Truck created!
+2025-03-23 18:34:06,206 - INFO - Truck created!
+2025-03-23 18:34:06,258 - INFO - Truck created!
+2025-03-23 18:34:06,418 - INFO - Truck created!
+2025-03-23 18:34:06,472 - INFO - Truck created!
+2025-03-23 18:34:06,524 - INFO - Truck created!
+2025-03-23 18:34:06,577 - INFO - Truck created!
+2025-03-23 18:34:06,629 - INFO - Truck created!
+2025-03-23 18:34:06,792 - INFO - Truck created!
+2025-03-23 18:34:06,846 - INFO - Truck created!
+2025-03-23 18:34:06,896 - INFO - Truck created!
+2025-03-23 18:34:06,950 - INFO - Truck created!
+2025-03-23 18:34:07,002 - INFO - Truck created!
+2025-03-23 18:34:07,054 - INFO - Truck created!
+2025-03-23 18:34:07,108 - INFO - Truck created!
+2025-03-23 18:34:07,161 - INFO - Truck created!
+2025-03-23 18:34:07,321 - INFO - Truck created!
+2025-03-23 18:34:07,373 - INFO - Truck created!
+2025-03-23 18:34:07,427 - INFO - Truck created!
+2025-03-23 18:34:07,480 - INFO - Truck created!
+2025-03-23 18:34:07,532 - INFO - Truck created!
+2025-03-23 18:34:07,585 - INFO - Truck created!
+2025-03-23 18:34:07,637 - INFO - Truck created!
+2025-03-23 18:34:07,690 - INFO - Truck created!
+2025-03-23 18:34:07,747 - INFO - Truck created!
+2025-03-23 18:34:10,003 - INFO - Truck created!
+2025-03-23 18:34:10,056 - INFO - Truck created!
+2025-03-23 18:34:10,217 - INFO - Truck created!
+2025-03-23 18:34:10,373 - INFO - Truck created!
+2025-03-23 18:34:10,427 - INFO - Truck created!
+2025-03-23 18:34:10,481 - INFO - Truck created!
+2025-03-23 18:34:10,636 - INFO - Truck created!
+2025-03-23 18:34:10,691 - INFO - Truck created!
+2025-03-23 18:34:10,745 - INFO - Truck created!
+2025-03-23 18:34:10,799 - INFO - Truck created!
+2025-03-23 18:34:10,852 - INFO - Truck created!
+2025-03-23 18:34:10,906 - INFO - Truck created!
+2025-03-23 18:34:10,959 - INFO - Truck created!
+2025-03-23 18:34:11,013 - INFO - Truck created!
+2025-03-23 18:34:11,065 - INFO - Truck created!
+2025-03-23 18:34:11,116 - INFO - Truck created!
+2025-03-23 18:34:11,274 - INFO - Truck created!
+2025-03-23 18:34:11,328 - INFO - Truck created!
+2025-03-23 18:34:11,385 - INFO - Truck created!
+2025-03-23 18:34:11,548 - INFO - No user found with id: 7224032755
+2025-03-23 18:34:11,552 - INFO - Truck created!
+2025-03-23 18:34:11,604 - INFO - Truck created!
+2025-03-23 18:34:11,656 - INFO - Truck created!
+2025-03-23 18:34:11,709 - INFO - Truck created!
+2025-03-23 18:34:11,713 - INFO - Update id=760402501 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 18:34:11,765 - INFO - Truck created!
+2025-03-23 18:34:11,821 - INFO - Truck created!
+2025-03-23 18:34:11,875 - INFO - Truck created!
+2025-03-23 18:34:11,929 - INFO - Truck created!
+2025-03-23 18:34:11,982 - INFO - Truck created!
+2025-03-23 18:34:12,035 - INFO - Truck created!
+2025-03-23 18:34:12,190 - INFO - Truck created!
+2025-03-23 18:34:12,243 - INFO - Truck created!
+2025-03-23 18:34:12,295 - INFO - Truck created!
+2025-03-23 18:34:12,347 - INFO - Truck created!
+2025-03-23 18:34:12,400 - INFO - Truck created!
+2025-03-23 18:34:12,451 - INFO - Truck created!
+2025-03-23 18:34:12,609 - INFO - Truck created!
+2025-03-23 18:34:12,664 - INFO - Truck created!
+2025-03-23 18:34:12,720 - INFO - Truck created!
+2025-03-23 18:34:12,774 - INFO - Truck created!
+2025-03-23 18:34:12,826 - INFO - Truck created!
+2025-03-23 18:34:12,880 - INFO - Truck created!
+2025-03-23 18:34:12,933 - INFO - Truck created!
+2025-03-23 18:34:12,986 - INFO - Truck created!
+2025-03-23 18:34:13,039 - INFO - Truck created!
+2025-03-23 18:34:13,095 - INFO - Truck created!
+2025-03-23 18:34:13,149 - INFO - Truck created!
+2025-03-23 18:34:13,203 - INFO - Truck created!
+2025-03-23 18:34:13,258 - INFO - Truck created!
+2025-03-23 18:34:13,316 - INFO - Truck created!
+2025-03-23 18:34:13,371 - INFO - Truck created!
+2025-03-23 18:34:13,424 - INFO - Truck created!
+2025-03-23 18:34:13,479 - INFO - Truck created!
+2025-03-23 18:34:13,536 - INFO - Truck created!
+2025-03-23 18:34:13,592 - INFO - Truck created!
+2025-03-23 18:34:13,652 - INFO - Truck created!
+2025-03-23 18:34:13,706 - INFO - Truck created!
+2025-03-23 18:34:13,872 - INFO - Truck created!
+2025-03-23 18:34:16,249 - INFO - Truck created!
+2025-03-23 18:34:16,301 - INFO - Truck created!
+2025-03-23 18:34:16,352 - INFO - Truck created!
+2025-03-23 18:34:16,404 - INFO - Truck created!
+2025-03-23 18:34:16,457 - INFO - Truck created!
+2025-03-23 18:34:16,510 - INFO - Truck created!
+2025-03-23 18:34:16,666 - INFO - Truck created!
+2025-03-23 18:34:16,722 - INFO - Truck created!
+2025-03-23 18:34:16,776 - INFO - Truck created!
+2025-03-23 18:34:16,829 - INFO - Truck created!
+2025-03-23 18:34:16,883 - INFO - Truck created!
+2025-03-23 18:34:17,037 - INFO - Truck created!
+2025-03-23 18:34:17,090 - INFO - Truck created!
+2025-03-23 18:34:17,243 - INFO - Truck created!
+2025-03-23 18:34:17,295 - INFO - Truck created!
+2025-03-23 18:34:17,348 - INFO - Truck created!
+2025-03-23 18:34:17,401 - INFO - Truck created!
+2025-03-23 18:34:17,455 - INFO - Truck created!
+2025-03-23 18:34:17,507 - INFO - Truck created!
+2025-03-23 18:34:17,560 - INFO - Truck created!
+2025-03-23 18:34:17,726 - INFO - Truck created!
+2025-03-23 18:34:17,779 - INFO - Truck created!
+2025-03-23 18:34:17,831 - INFO - Truck created!
+2025-03-23 18:34:17,995 - INFO - Truck created!
+2025-03-23 18:34:18,047 - INFO - Truck created!
+2025-03-23 18:34:18,209 - INFO - Truck created!
+2025-03-23 18:34:18,261 - INFO - Truck created!
+2025-03-23 18:34:18,312 - INFO - Truck created!
+2025-03-23 18:34:18,364 - INFO - Truck created!
+2025-03-23 18:34:18,417 - INFO - Truck created!
+2025-03-23 18:34:18,470 - INFO - Truck created!
+2025-03-23 18:34:18,628 - INFO - Truck created!
+2025-03-23 18:34:18,681 - INFO - Truck created!
+2025-03-23 18:34:18,847 - INFO - Truck created!
+2025-03-23 18:34:18,900 - INFO - Truck created!
+2025-03-23 18:34:19,064 - INFO - Truck created!
+2025-03-23 18:34:19,116 - INFO - Truck created!
+2025-03-23 18:34:19,169 - INFO - Truck created!
+2025-03-23 18:34:19,326 - INFO - Truck created!
+2025-03-23 18:34:19,377 - INFO - Truck created!
+2025-03-23 18:34:19,429 - INFO - Truck created!
+2025-03-23 18:34:19,482 - INFO - Truck created!
+2025-03-23 18:34:19,537 - INFO - Truck created!
+2025-03-23 18:34:19,599 - INFO - Truck created!
+2025-03-23 18:34:19,654 - INFO - Truck created!
+2025-03-23 18:34:19,810 - INFO - Truck created!
+2025-03-23 18:34:19,863 - INFO - Truck created!
+2025-03-23 18:34:20,027 - INFO - Truck created!
+2025-03-23 18:34:20,086 - INFO - Truck created!
+2025-03-23 18:34:20,144 - INFO - Truck created!
+2025-03-23 18:34:20,205 - INFO - Truck created!
+2025-03-23 18:34:20,262 - INFO - Truck created!
+2025-03-23 18:34:20,314 - INFO - Truck created!
+2025-03-23 18:34:20,480 - INFO - Truck created!
+2025-03-23 18:34:20,533 - INFO - Truck created!
+2025-03-23 18:34:20,585 - INFO - Truck created!
+2025-03-23 18:34:20,746 - INFO - Truck created!
+2025-03-23 18:34:23,177 - INFO - Truck created!
+2025-03-23 18:34:23,229 - INFO - Truck created!
+2025-03-23 18:34:23,281 - INFO - Truck created!
+2025-03-23 18:34:23,447 - INFO - Truck created!
+2025-03-23 18:34:23,499 - INFO - Truck created!
+2025-03-23 18:34:23,665 - INFO - Truck created!
+2025-03-23 18:34:23,718 - INFO - Truck created!
+2025-03-23 18:34:23,770 - INFO - Truck created!
+2025-03-23 18:34:23,933 - INFO - Truck created!
+2025-03-23 18:34:24,102 - INFO - Truck created!
+2025-03-23 18:34:24,155 - INFO - Truck created!
+2025-03-23 18:34:24,208 - INFO - Truck created!
+2025-03-23 18:34:24,260 - INFO - Truck created!
+2025-03-23 18:34:24,311 - INFO - Truck created!
+2025-03-23 18:34:24,363 - INFO - Truck created!
+2025-03-23 18:34:24,519 - INFO - Truck created!
+2025-03-23 18:34:24,576 - INFO - Truck created!
+2025-03-23 18:34:24,737 - INFO - Truck created!
+2025-03-23 18:34:24,790 - INFO - Truck created!
+2025-03-23 18:34:24,842 - INFO - Truck created!
+2025-03-23 18:34:24,893 - INFO - Truck created!
+2025-03-23 18:34:24,945 - INFO - Truck created!
+2025-03-23 18:34:24,997 - INFO - Truck created!
+2025-03-23 18:34:25,050 - INFO - Truck created!
+2025-03-23 18:34:25,102 - INFO - Truck created!
+2025-03-23 18:34:25,154 - INFO - Truck created!
+2025-03-23 18:34:25,206 - INFO - Truck created!
+2025-03-23 18:34:25,258 - INFO - Truck created!
+2025-03-23 18:34:25,419 - INFO - Truck created!
+2025-03-23 18:34:25,474 - INFO - Truck created!
+2025-03-23 18:34:25,637 - INFO - Truck created!
+2025-03-23 18:34:25,693 - INFO - Truck created!
+2025-03-23 18:34:25,745 - INFO - Truck created!
+2025-03-23 18:34:25,796 - INFO - Truck created!
+2025-03-23 18:34:25,848 - INFO - Truck created!
+2025-03-23 18:34:25,900 - INFO - Truck created!
+2025-03-23 18:34:25,953 - INFO - Truck created!
+2025-03-23 18:34:26,004 - INFO - Truck created!
+2025-03-23 18:34:26,061 - INFO - Truck created!
+2025-03-23 18:34:26,119 - INFO - Truck created!
+2025-03-23 18:34:26,175 - INFO - Truck created!
+2025-03-23 18:34:26,225 - INFO - Truck created!
+2025-03-23 18:34:26,277 - INFO - Truck created!
+2025-03-23 18:34:26,330 - INFO - Truck created!
+2025-03-23 18:34:26,383 - INFO - Truck created!
+2025-03-23 18:34:26,434 - INFO - Truck created!
+2025-03-23 18:34:26,488 - INFO - Truck created!
+2025-03-23 18:34:26,539 - INFO - Truck created!
+2025-03-23 18:34:26,592 - INFO - Truck created!
+2025-03-23 18:34:26,644 - INFO - Truck created!
+2025-03-23 18:34:26,694 - INFO - Truck created!
+2025-03-23 18:34:26,747 - INFO - Truck created!
+2025-03-23 18:34:26,799 - INFO - Truck created!
+2025-03-23 18:34:26,851 - INFO - Truck created!
+2025-03-23 18:34:26,903 - INFO - Truck created!
+2025-03-23 18:34:27,071 - INFO - Truck created!
+2025-03-23 18:34:27,124 - INFO - Truck created!
+2025-03-23 18:34:29,790 - INFO - Truck created!
+2025-03-23 18:34:29,842 - INFO - Truck created!
+2025-03-23 18:34:29,895 - INFO - Truck created!
+2025-03-23 18:34:29,946 - INFO - Truck created!
+2025-03-23 18:34:29,999 - INFO - Truck created!
+2025-03-23 18:34:30,051 - INFO - Truck created!
+2025-03-23 18:34:30,104 - INFO - Truck created!
+2025-03-23 18:34:30,157 - INFO - Truck created!
+2025-03-23 18:34:30,210 - INFO - Truck created!
+2025-03-23 18:34:30,263 - INFO - Truck created!
+2025-03-23 18:34:30,317 - INFO - Truck created!
+2025-03-23 18:34:30,372 - INFO - Truck created!
+2025-03-23 18:34:30,539 - INFO - Truck created!
+2025-03-23 18:34:30,592 - INFO - Truck created!
+2025-03-23 18:34:30,644 - INFO - Truck created!
+2025-03-23 18:34:30,706 - INFO - Truck created!
+2025-03-23 18:34:30,768 - INFO - Truck created!
+2025-03-23 18:34:30,822 - INFO - Truck created!
+2025-03-23 18:34:30,875 - INFO - Truck created!
+2025-03-23 18:34:30,927 - INFO - Truck created!
+2025-03-23 18:34:31,095 - INFO - Truck created!
+2025-03-23 18:34:31,148 - INFO - Truck created!
+2025-03-23 18:34:31,309 - INFO - Truck created!
+2025-03-23 18:34:31,463 - INFO - Truck created!
+2025-03-23 18:34:31,516 - INFO - Truck created!
+2025-03-23 18:34:31,567 - INFO - Truck created!
+2025-03-23 18:34:31,619 - INFO - Truck created!
+2025-03-23 18:34:31,671 - INFO - Truck created!
+2025-03-23 18:34:31,721 - INFO - Truck created!
+2025-03-23 18:34:31,773 - INFO - Truck created!
+2025-03-23 18:34:31,825 - INFO - Truck created!
+2025-03-23 18:34:31,879 - INFO - Truck created!
+2025-03-23 18:34:31,931 - INFO - Truck created!
+2025-03-23 18:34:31,984 - INFO - Truck created!
+2025-03-23 18:34:32,035 - INFO - Truck created!
+2025-03-23 18:34:32,087 - INFO - Truck created!
+2025-03-23 18:34:32,253 - INFO - Truck created!
+2025-03-23 18:34:32,305 - INFO - Truck created!
+2025-03-23 18:34:32,357 - INFO - Truck created!
+2025-03-23 18:34:32,410 - INFO - Truck created!
+2025-03-23 18:34:32,463 - INFO - Truck created!
+2025-03-23 18:34:32,517 - INFO - Truck created!
+2025-03-23 18:34:32,569 - INFO - Truck created!
+2025-03-23 18:34:32,620 - INFO - Truck created!
+2025-03-23 18:34:32,673 - INFO - Truck created!
+2025-03-23 18:34:32,726 - INFO - Truck created!
+2025-03-23 18:34:32,890 - INFO - Truck created!
+2025-03-23 18:34:32,940 - INFO - Truck created!
+2025-03-23 18:34:32,993 - INFO - Truck created!
+2025-03-23 18:34:33,044 - INFO - Truck created!
+2025-03-23 18:34:33,097 - INFO - Truck created!
+2025-03-23 18:34:33,149 - INFO - Truck created!
+2025-03-23 18:34:33,203 - INFO - Truck created!
+2025-03-23 18:34:33,255 - INFO - Truck created!
+2025-03-23 18:34:33,306 - INFO - Truck created!
+2025-03-23 18:34:33,358 - INFO - Truck created!
+2025-03-23 18:34:33,410 - INFO - Truck created!
+2025-03-23 18:34:36,019 - INFO - Truck created!
+2025-03-23 18:34:36,071 - INFO - Truck created!
+2025-03-23 18:34:36,227 - INFO - Truck created!
+2025-03-23 18:34:36,280 - INFO - Truck created!
+2025-03-23 18:34:36,332 - INFO - Truck created!
+2025-03-23 18:34:36,385 - INFO - Truck created!
+2025-03-23 18:34:36,436 - INFO - Truck created!
+2025-03-23 18:34:36,489 - INFO - Truck created!
+2025-03-23 18:34:36,542 - INFO - Truck created!
+2025-03-23 18:34:36,593 - INFO - Truck created!
+2025-03-23 18:34:36,645 - INFO - Truck created!
+2025-03-23 18:34:36,698 - INFO - Truck created!
+2025-03-23 18:34:36,749 - INFO - Truck created!
+2025-03-23 18:34:36,802 - INFO - Truck created!
+2025-03-23 18:34:36,960 - INFO - Truck created!
+2025-03-23 18:34:37,017 - INFO - Truck created!
+2025-03-23 18:34:37,175 - INFO - Truck created!
+2025-03-23 18:34:37,228 - INFO - Truck created!
+2025-03-23 18:34:37,279 - INFO - Truck created!
+2025-03-23 18:34:37,445 - INFO - Truck created!
+2025-03-23 18:34:37,502 - INFO - Truck created!
+2025-03-23 18:34:37,559 - INFO - Truck created!
+2025-03-23 18:34:37,716 - INFO - Truck created!
+2025-03-23 18:34:37,767 - INFO - Truck created!
+2025-03-23 18:34:37,820 - INFO - Truck created!
+2025-03-23 18:34:37,874 - INFO - Truck created!
+2025-03-23 18:34:38,029 - INFO - Truck created!
+2025-03-23 18:34:38,081 - INFO - Truck created!
+2025-03-23 18:34:38,136 - INFO - Truck created!
+2025-03-23 18:34:38,188 - INFO - Truck created!
+2025-03-23 18:34:38,239 - INFO - Truck created!
+2025-03-23 18:34:38,291 - INFO - Truck created!
+2025-03-23 18:34:38,342 - INFO - Truck created!
+2025-03-23 18:34:38,508 - INFO - Truck created!
+2025-03-23 18:34:38,664 - INFO - Truck created!
+2025-03-23 18:34:38,719 - INFO - Truck created!
+2025-03-23 18:34:38,773 - INFO - Truck created!
+2025-03-23 18:34:38,828 - INFO - Truck created!
+2025-03-23 18:34:38,995 - INFO - Truck created!
+2025-03-23 18:34:39,153 - INFO - Truck created!
+2025-03-23 18:34:39,322 - INFO - Truck created!
+2025-03-23 18:34:39,480 - INFO - Truck created!
+2025-03-23 18:34:39,534 - INFO - Truck created!
+2025-03-23 18:34:39,697 - INFO - Truck created!
+2025-03-23 18:34:39,751 - INFO - Truck created!
+2025-03-23 18:34:39,802 - INFO - Truck created!
+2025-03-23 18:34:39,856 - INFO - Truck created!
+2025-03-23 18:34:39,908 - INFO - Truck created!
+2025-03-23 18:34:39,960 - INFO - Truck created!
+2025-03-23 18:34:40,014 - INFO - Truck created!
+2025-03-23 18:34:40,067 - INFO - Truck created!
+2025-03-23 18:34:40,122 - INFO - Truck created!
+2025-03-23 18:34:40,176 - INFO - Truck created!
+2025-03-23 18:34:40,333 - INFO - Truck created!
+2025-03-23 18:34:40,493 - INFO - Truck created!
+2025-03-23 18:34:40,545 - INFO - Truck created!
+2025-03-23 18:34:40,598 - INFO - Truck created!
+2025-03-23 18:34:43,641 - INFO - Truck created!
+2025-03-23 18:34:43,694 - INFO - Truck created!
+2025-03-23 18:34:43,747 - INFO - Truck created!
+2025-03-23 18:34:43,801 - INFO - Truck created!
+2025-03-23 18:34:43,855 - INFO - Truck created!
+2025-03-23 18:34:43,907 - INFO - Truck created!
+2025-03-23 18:34:44,069 - INFO - Truck created!
+2025-03-23 18:34:44,124 - INFO - Truck created!
+2025-03-23 18:34:44,176 - INFO - Truck created!
+2025-03-23 18:34:44,227 - INFO - Truck created!
+2025-03-23 18:34:44,280 - INFO - Truck created!
+2025-03-23 18:34:44,332 - INFO - Truck created!
+2025-03-23 18:34:44,493 - INFO - Truck created!
+2025-03-23 18:34:44,548 - INFO - Truck created!
+2025-03-23 18:34:44,601 - INFO - Truck created!
+2025-03-23 18:34:44,654 - INFO - Truck created!
+2025-03-23 18:34:44,705 - INFO - Truck created!
+2025-03-23 18:34:44,864 - INFO - Truck created!
+2025-03-23 18:34:45,024 - INFO - Truck created!
+2025-03-23 18:34:45,076 - INFO - Truck created!
+2025-03-23 18:34:45,128 - INFO - Truck created!
+2025-03-23 18:34:45,180 - INFO - Truck created!
+2025-03-23 18:34:45,232 - INFO - Truck created!
+2025-03-23 18:34:45,285 - INFO - Truck created!
+2025-03-23 18:34:45,336 - INFO - Truck created!
+2025-03-23 18:34:45,388 - INFO - Truck created!
+2025-03-23 18:34:45,439 - INFO - Truck created!
+2025-03-23 18:34:45,596 - INFO - Truck created!
+2025-03-23 18:34:45,650 - INFO - Truck created!
+2025-03-23 18:34:45,701 - INFO - Truck created!
+2025-03-23 18:34:45,752 - INFO - Truck created!
+2025-03-23 18:34:45,806 - INFO - Truck created!
+2025-03-23 18:34:45,858 - INFO - Truck created!
+2025-03-23 18:34:45,911 - INFO - Truck created!
+2025-03-23 18:34:45,967 - INFO - Truck created!
+2025-03-23 18:34:46,021 - INFO - Truck created!
+2025-03-23 18:34:46,075 - INFO - Truck created!
+2025-03-23 18:34:46,127 - INFO - Truck created!
+2025-03-23 18:34:46,179 - INFO - Truck created!
+2025-03-23 18:34:46,231 - INFO - Truck created!
+2025-03-23 18:34:46,284 - INFO - Truck created!
+2025-03-23 18:34:46,440 - INFO - Truck created!
+2025-03-23 18:34:46,494 - INFO - Truck created!
+2025-03-23 18:34:46,547 - INFO - Truck created!
+2025-03-23 18:34:46,602 - INFO - Truck created!
+2025-03-23 18:34:46,656 - INFO - Truck created!
+2025-03-23 18:34:46,707 - INFO - Truck created!
+2025-03-23 18:34:46,760 - INFO - Truck created!
+2025-03-23 18:34:46,924 - INFO - Truck created!
+2025-03-23 18:34:46,976 - INFO - Truck created!
+2025-03-23 18:34:47,029 - INFO - Truck created!
+2025-03-23 18:34:47,082 - INFO - Truck created!
+2025-03-23 18:34:47,139 - INFO - Truck created!
+2025-03-23 18:34:47,193 - INFO - Truck created!
+2025-03-23 18:34:47,256 - INFO - Truck created!
+2025-03-23 18:34:47,316 - INFO - Truck created!
+2025-03-23 18:34:47,376 - INFO - Truck created!
+2025-03-23 18:34:50,080 - INFO - Truck created!
+2025-03-23 18:34:50,140 - INFO - Truck created!
+2025-03-23 18:34:50,195 - INFO - Truck created!
+2025-03-23 18:34:50,247 - INFO - Truck created!
+2025-03-23 18:34:50,302 - INFO - Truck created!
+2025-03-23 18:34:50,354 - INFO - Truck created!
+2025-03-23 18:34:50,407 - INFO - Truck created!
+2025-03-23 18:34:50,457 - INFO - Truck created!
+2025-03-23 18:34:50,509 - INFO - Truck created!
+2025-03-23 18:34:50,560 - INFO - Truck created!
+2025-03-23 18:34:50,612 - INFO - Truck created!
+2025-03-23 18:34:50,665 - INFO - Truck created!
+2025-03-23 18:34:50,716 - INFO - Truck created!
+2025-03-23 18:34:50,769 - INFO - Truck created!
+2025-03-23 18:34:50,936 - INFO - Truck created!
+2025-03-23 18:34:51,095 - INFO - Truck created!
+2025-03-23 18:34:51,253 - INFO - Truck created!
+2025-03-23 18:34:51,305 - INFO - Truck created!
+2025-03-23 18:34:51,357 - INFO - Truck created!
+2025-03-23 18:34:51,409 - INFO - Truck created!
+2025-03-23 18:34:51,461 - INFO - Truck created!
+2025-03-23 18:34:51,512 - INFO - Truck created!
+2025-03-23 18:34:51,566 - INFO - Truck created!
+2025-03-23 18:34:51,620 - INFO - Truck created!
+2025-03-23 18:34:51,673 - INFO - Truck created!
+2025-03-23 18:34:51,840 - INFO - Truck created!
+2025-03-23 18:34:51,900 - INFO - Truck created!
+2025-03-23 18:34:51,959 - INFO - Truck created!
+2025-03-23 18:34:52,019 - INFO - Truck created!
+2025-03-23 18:34:52,187 - INFO - Truck created!
+2025-03-23 18:34:52,242 - INFO - Truck created!
+2025-03-23 18:34:52,402 - INFO - Truck created!
+2025-03-23 18:34:52,456 - INFO - Truck created!
+2025-03-23 18:34:52,507 - INFO - Truck created!
+2025-03-23 18:34:52,562 - INFO - Truck created!
+2025-03-23 18:34:52,617 - INFO - Truck created!
+2025-03-23 18:34:52,674 - INFO - Truck created!
+2025-03-23 18:34:52,839 - INFO - Truck created!
+2025-03-23 18:34:52,892 - INFO - Truck created!
+2025-03-23 18:34:52,947 - INFO - Truck created!
+2025-03-23 18:34:53,003 - INFO - Truck created!
+2025-03-23 18:34:53,057 - INFO - Truck created!
+2025-03-23 18:34:53,112 - INFO - Truck created!
+2025-03-23 18:34:53,164 - INFO - Truck created!
+2025-03-23 18:34:53,330 - INFO - Truck created!
+2025-03-23 18:34:53,384 - INFO - Truck created!
+2025-03-23 18:34:53,436 - INFO - Truck created!
+2025-03-23 18:34:53,488 - INFO - Truck created!
+2025-03-23 18:34:53,541 - INFO - Truck created!
+2025-03-23 18:34:53,593 - INFO - Truck created!
+2025-03-23 18:34:53,646 - INFO - Truck created!
+2025-03-23 18:34:53,698 - INFO - Truck created!
+2025-03-23 18:34:53,752 - INFO - Truck created!
+2025-03-23 18:34:53,807 - INFO - Truck created!
+2025-03-23 18:34:53,864 - INFO - Truck created!
+2025-03-23 18:34:53,920 - INFO - Truck created!
+2025-03-23 18:34:53,976 - INFO - Truck created!
+2025-03-23 18:34:57,176 - INFO - Truck created!
+2025-03-23 18:34:57,229 - INFO - Truck created!
+2025-03-23 18:34:57,282 - INFO - Truck created!
+2025-03-23 18:34:57,334 - INFO - Truck created!
+2025-03-23 18:34:57,391 - INFO - Truck created!
+2025-03-23 18:34:57,449 - INFO - Truck created!
+2025-03-23 18:34:57,503 - INFO - Truck created!
+2025-03-23 18:34:57,555 - INFO - Truck created!
+2025-03-23 18:34:57,607 - INFO - Truck created!
+2025-03-23 18:34:57,659 - INFO - Truck created!
+2025-03-23 18:34:57,712 - INFO - Truck created!
+2025-03-23 18:34:57,763 - INFO - Truck created!
+2025-03-23 18:34:57,817 - INFO - Truck created!
+2025-03-23 18:34:57,870 - INFO - Truck created!
+2025-03-23 18:34:57,924 - INFO - Truck created!
+2025-03-23 18:34:57,975 - INFO - Truck created!
+2025-03-23 18:34:58,029 - INFO - Truck created!
+2025-03-23 18:34:58,082 - INFO - Truck created!
+2025-03-23 18:34:58,134 - INFO - Truck created!
+2025-03-23 18:34:58,187 - INFO - Truck created!
+2025-03-23 18:34:58,239 - INFO - Truck created!
+2025-03-23 18:34:58,293 - INFO - Truck created!
+2025-03-23 18:34:58,348 - INFO - Truck created!
+2025-03-23 18:34:58,404 - INFO - Truck created!
+2025-03-23 18:34:58,461 - INFO - Truck created!
+2025-03-23 18:34:58,517 - INFO - Truck created!
+2025-03-23 18:34:58,569 - INFO - Truck created!
+2025-03-23 18:34:58,623 - INFO - Truck created!
+2025-03-23 18:34:58,676 - INFO - Truck created!
+2025-03-23 18:34:58,730 - INFO - Truck created!
+2025-03-23 18:34:58,892 - INFO - Truck created!
+2025-03-23 18:34:58,945 - INFO - Truck created!
+2025-03-23 18:34:58,998 - INFO - Truck created!
+2025-03-23 18:34:59,052 - INFO - Truck created!
+2025-03-23 18:34:59,103 - INFO - Truck created!
+2025-03-23 18:34:59,154 - INFO - Truck created!
+2025-03-23 18:34:59,206 - INFO - Truck created!
+2025-03-23 18:34:59,264 - INFO - Truck created!
+2025-03-23 18:34:59,319 - INFO - Truck created!
+2025-03-23 18:34:59,376 - INFO - Truck created!
+2025-03-23 18:34:59,428 - INFO - Truck created!
+2025-03-23 18:34:59,482 - INFO - Truck created!
+2025-03-23 18:34:59,534 - INFO - Truck created!
+2025-03-23 18:34:59,584 - INFO - Update id=760402502 is handled. Duration 141 ms by bot id=6318766162
+2025-03-23 18:34:59,588 - INFO - Truck created!
+2025-03-23 18:34:59,644 - INFO - Truck created!
+2025-03-23 18:34:59,699 - INFO - Truck created!
+2025-03-23 18:34:59,751 - INFO - Truck created!
+2025-03-23 18:34:59,803 - INFO - Truck created!
+2025-03-23 18:34:59,855 - INFO - Truck created!
+2025-03-23 18:34:59,907 - INFO - Truck created!
+2025-03-23 18:34:59,958 - INFO - Truck created!
+2025-03-23 18:35:00,011 - INFO - Truck created!
+2025-03-23 18:35:00,066 - INFO - Truck created!
+2025-03-23 18:35:00,116 - INFO - Truck created!
+2025-03-23 18:35:00,167 - INFO - Truck created!
+2025-03-23 18:35:00,218 - INFO - Truck created!
+2025-03-23 18:35:00,270 - INFO - Truck created!
+2025-03-23 18:35:03,243 - INFO - Truck created!
+2025-03-23 18:35:03,325 - INFO - Truck created!
+2025-03-23 18:35:03,485 - INFO - Update id=760402503 is handled. Duration 233 ms by bot id=6318766162
+2025-03-23 18:35:03,489 - INFO - Truck created!
+2025-03-23 18:35:03,542 - INFO - Truck created!
+2025-03-23 18:35:03,597 - INFO - Truck created!
+2025-03-23 18:35:03,652 - INFO - Truck created!
+2025-03-23 18:35:03,704 - INFO - Truck created!
+2025-03-23 18:35:03,756 - INFO - Truck created!
+2025-03-23 18:35:03,807 - INFO - Truck created!
+2025-03-23 18:35:03,860 - INFO - Truck created!
+2025-03-23 18:35:03,911 - INFO - Truck created!
+2025-03-23 18:35:03,963 - INFO - Truck created!
+2025-03-23 18:35:04,015 - INFO - Truck created!
+2025-03-23 18:35:04,174 - INFO - Truck created!
+2025-03-23 18:35:04,229 - INFO - Truck created!
+2025-03-23 18:35:04,285 - INFO - Truck created!
+2025-03-23 18:35:04,343 - INFO - Truck created!
+2025-03-23 18:35:04,400 - INFO - Truck created!
+2025-03-23 18:35:04,459 - INFO - Truck created!
+2025-03-23 18:35:04,513 - INFO - Truck created!
+2025-03-23 18:35:04,569 - INFO - Truck created!
+2025-03-23 18:35:04,739 - INFO - Truck created!
+2025-03-23 18:35:04,794 - INFO - Truck created!
+2025-03-23 18:35:04,948 - INFO - Truck created!
+2025-03-23 18:35:05,004 - INFO - Truck created!
+2025-03-23 18:35:05,059 - INFO - Truck created!
+2025-03-23 18:35:05,246 - INFO - Truck created!
+2025-03-23 18:35:05,303 - INFO - Truck created!
+2025-03-23 18:35:05,360 - INFO - Truck created!
+2025-03-23 18:35:05,501 - INFO - Update id=760402504 is handled. Duration 327 ms by bot id=6318766162
+2025-03-23 18:35:05,533 - INFO - Truck created!
+2025-03-23 18:35:05,698 - INFO - Truck created!
+2025-03-23 18:35:05,751 - INFO - Truck created!
+2025-03-23 18:35:05,917 - INFO - Truck created!
+2025-03-23 18:35:06,072 - INFO - Truck created!
+2025-03-23 18:35:06,126 - INFO - Truck created!
+2025-03-23 18:35:06,177 - INFO - Truck created!
+2025-03-23 18:35:06,231 - INFO - Truck created!
+2025-03-23 18:35:06,288 - INFO - Truck created!
+2025-03-23 18:35:06,343 - INFO - Truck created!
+2025-03-23 18:35:06,513 - INFO - Truck created!
+2025-03-23 18:35:06,589 - INFO - Truck created!
+2025-03-23 18:35:06,645 - INFO - Truck created!
+2025-03-23 18:35:06,699 - INFO - Truck created!
+2025-03-23 18:35:06,755 - INFO - Truck created!
+2025-03-23 18:35:06,811 - INFO - Truck created!
+2025-03-23 18:35:06,864 - INFO - Truck created!
+2025-03-23 18:35:06,920 - INFO - Truck created!
+2025-03-23 18:35:06,974 - INFO - Truck created!
+2025-03-23 18:35:07,030 - INFO - Truck created!
+2025-03-23 18:35:07,194 - INFO - Truck created!
+2025-03-23 18:35:07,353 - INFO - Update id=760402505 is handled. Duration 952 ms by bot id=6318766162
+2025-03-23 18:35:07,354 - INFO - Truck created!
+2025-03-23 18:35:07,410 - INFO - Truck created!
+2025-03-23 18:35:07,572 - INFO - Truck created!
+2025-03-23 18:35:07,744 - INFO - Truck created!
+2025-03-23 18:35:07,826 - INFO - Truck created!
+2025-03-23 18:35:07,883 - INFO - Truck created!
+2025-03-23 18:35:07,938 - INFO - Truck created!
+2025-03-23 18:35:08,297 - INFO - Update id=760402506 is handled. Duration 563 ms by bot id=6318766162
+2025-03-23 18:35:09,167 - INFO - Update id=760402507 is handled. Duration 422 ms by bot id=6318766162
+2025-03-23 18:35:09,865 - INFO - Truck created!
+2025-03-23 18:35:09,922 - INFO - Truck created!
+2025-03-23 18:35:09,979 - INFO - Truck created!
+2025-03-23 18:35:10,153 - INFO - Truck created!
+2025-03-23 18:35:10,209 - INFO - Truck created!
+2025-03-23 18:35:10,268 - INFO - Truck created!
+2025-03-23 18:35:10,323 - INFO - Update id=760402508 is handled. Duration 296 ms by bot id=6318766162
+2025-03-23 18:35:10,326 - INFO - Truck created!
+2025-03-23 18:35:10,383 - INFO - Truck created!
+2025-03-23 18:35:10,439 - INFO - Truck created!
+2025-03-23 18:35:10,496 - INFO - Truck created!
+2025-03-23 18:35:10,552 - INFO - Truck created!
+2025-03-23 18:35:10,607 - INFO - Truck created!
+2025-03-23 18:35:10,665 - INFO - Truck created!
+2025-03-23 18:35:10,724 - INFO - Truck created!
+2025-03-23 18:35:10,883 - INFO - Truck created!
+2025-03-23 18:35:10,939 - INFO - Truck created!
+2025-03-23 18:35:11,023 - INFO - Truck created!
+2025-03-23 18:35:11,078 - INFO - Truck created!
+2025-03-23 18:35:11,136 - INFO - Truck created!
+2025-03-23 18:35:11,194 - INFO - Truck created!
+2025-03-23 18:35:11,247 - INFO - Truck created!
+2025-03-23 18:35:11,303 - INFO - Truck created!
+2025-03-23 18:35:11,358 - INFO - Truck created!
+2025-03-23 18:35:11,408 - INFO - Update id=760402509 is handled. Duration 469 ms by bot id=6318766162
+2025-03-23 18:35:11,412 - INFO - Truck created!
+2025-03-23 18:35:11,465 - INFO - Truck created!
+2025-03-23 18:35:11,518 - INFO - Truck created!
+2025-03-23 18:35:11,573 - INFO - Truck created!
+2025-03-23 18:35:11,628 - INFO - Truck created!
+2025-03-23 18:35:11,685 - INFO - Truck created!
+2025-03-23 18:35:11,739 - INFO - Truck created!
+2025-03-23 18:35:11,791 - INFO - Truck created!
+2025-03-23 18:35:11,845 - INFO - Truck created!
+2025-03-23 18:35:11,900 - INFO - Truck created!
+2025-03-23 18:35:11,957 - INFO - Truck created!
+2025-03-23 18:35:12,015 - INFO - Truck created!
+2025-03-23 18:35:12,071 - INFO - Truck created!
+2025-03-23 18:35:12,127 - INFO - Truck created!
+2025-03-23 18:35:12,182 - INFO - Truck created!
+2025-03-23 18:35:12,196 - INFO - Update id=760402510 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:35:12,237 - INFO - Truck created!
+2025-03-23 18:35:12,300 - INFO - Truck created!
+2025-03-23 18:35:12,356 - INFO - Truck created!
+2025-03-23 18:35:12,415 - INFO - Truck created!
+2025-03-23 18:35:12,467 - INFO - Truck created!
+2025-03-23 18:35:12,520 - INFO - Truck created!
+2025-03-23 18:35:12,572 - INFO - Truck created!
+2025-03-23 18:35:12,623 - INFO - Truck created!
+2025-03-23 18:35:12,676 - INFO - Truck created!
+2025-03-23 18:35:12,730 - INFO - Truck created!
+2025-03-23 18:35:12,784 - INFO - Truck created!
+2025-03-23 18:35:12,952 - INFO - Truck created!
+2025-03-23 18:35:13,007 - INFO - Truck created!
+2025-03-23 18:35:13,059 - INFO - Truck created!
+2025-03-23 18:35:13,114 - INFO - Truck created!
+2025-03-23 18:35:13,166 - INFO - Truck created!
+2025-03-23 18:35:13,219 - INFO - Truck created!
+2025-03-23 18:35:13,271 - INFO - Truck created!
+2025-03-23 18:35:13,324 - INFO - Truck created!
+2025-03-23 18:35:14,222 - INFO - Update id=760402511 is handled. Duration 343 ms by bot id=6318766162
+2025-03-23 18:35:44,164 - INFO - Update id=760402512 is handled. Duration 108 ms by bot id=6318766162
+2025-03-23 18:35:46,802 - INFO - Update id=760402513 is handled. Duration 360 ms by bot id=6318766162
+2025-03-23 18:35:49,167 - INFO - Update id=760402514 is handled. Duration 313 ms by bot id=6318766162
+2025-03-23 18:35:51,473 - INFO - Update id=760402515 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 18:35:52,472 - INFO - Update id=760402516 is handled. Duration 531 ms by bot id=6318766162
+2025-03-23 18:35:53,631 - INFO - Update id=760402517 is handled. Duration 672 ms by bot id=6318766162
+2025-03-23 18:35:54,044 - ERROR - Eror with creating user: invalid input for query argument $3: 1 (a sized iterable container expected (got type 'int'))
+2025-03-23 18:35:54,108 - ERROR - Eror with creating user: invalid input for query argument $3: 19 (a sized iterable container expected (got type 'int'))
+2025-03-23 18:35:54,172 - ERROR - Eror with creating user: invalid input for query argument $3: 17 (a sized iterable container expected (got type 'int'))
+2025-03-23 18:35:54,531 - INFO - Update id=760402518 is handled. Duration 608 ms by bot id=6318766162
+2025-03-23 18:36:26,393 - INFO - Update id=760402519 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:36:33,188 - INFO - Update id=760402520 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:36:35,260 - INFO - Update id=760402521 is handled. Duration 202 ms by bot id=6318766162
+2025-03-23 18:36:39,285 - INFO - Update id=760402522 is handled. Duration 655 ms by bot id=6318766162
+2025-03-23 18:36:40,006 - INFO - Update id=760402523 is handled. Duration 516 ms by bot id=6318766162
+2025-03-23 18:36:52,307 - INFO - Update id=760402524 is handled. Duration 1141 ms by bot id=6318766162
+2025-03-23 18:37:13,341 - INFO - Running truck synchronization...
+2025-03-23 18:39:39,947 - INFO - Running truck synchronization...
+2025-03-23 18:42:09,692 - INFO - Running truck synchronization...
+2025-03-23 18:43:01,675 - INFO - Polling stopped
+2025-03-23 18:43:01,675 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 18:43:04,738 - INFO - Starting...
+2025-03-23 18:43:04,738 - INFO - Start polling
+2025-03-23 18:43:04,739 - INFO - Running truck synchronization...
+2025-03-23 18:43:05,059 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 18:43:18,488 - INFO - Update id=760402525 is handled. Duration 327 ms by bot id=6318766162
+2025-03-23 18:43:19,554 - INFO - Update id=760402526 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 18:43:24,015 - INFO - Update id=760402527 is handled. Duration 140 ms by bot id=6318766162
+2025-03-23 18:43:25,975 - INFO - Update id=760402528 is handled. Duration 171 ms by bot id=6318766162
+2025-03-23 18:43:27,562 - INFO - Update id=760402529 is handled. Duration 311 ms by bot id=6318766162
+2025-03-23 18:43:28,425 - INFO - Update id=760402530 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 18:43:30,161 - INFO - Update id=760402531 is handled. Duration 405 ms by bot id=6318766162
+2025-03-23 18:43:31,384 - INFO - Update id=760402532 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 18:43:32,580 - INFO - Update id=760402533 is handled. Duration 625 ms by bot id=6318766162

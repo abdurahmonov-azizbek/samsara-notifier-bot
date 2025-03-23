@@ -1,13 +1,14 @@
-from aiogram import F, Router
+from aiogram import F, Router, types
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import *
 from logger import logger
-
-from src import keyboards
-from src.functions import *
 from src.models import Company, User
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from src import constants, keyboards
+from src.functions import *
 from src.services import company_service, user_service
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 router = Router()
 
@@ -243,55 +244,132 @@ async def ask_full_name(message: Message, state: FSMContext):
         await message.answer(constants.ERROR_MESSAGE)
 
 
+ITEMS_PER_PAGE = 10
+
+
+async def generate_company_keyboard(companies, selected_ids=None, page=0):
+    if selected_ids is None:
+        selected_ids = set()
+
+    builder = InlineKeyboardBuilder()
+    total_pages = (len(companies) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
+
+    start_idx = page * ITEMS_PER_PAGE
+    end_idx = min((page + 1) * ITEMS_PER_PAGE, len(companies))
+    for company in companies[start_idx:end_idx]:
+        prefix = "✅ " if company.id in selected_ids else ""
+        button_text = f"{prefix}{company.name}"
+        builder.button(
+            text=button_text,
+            callback_data=f"company_{company.id}"
+        )
+
+    builder.adjust(2)
+
+    nav_buttons = []
+    if page > 0:
+        nav_buttons.append(InlineKeyboardButton(text="⬅️ Previous", callback_data=f"page_{page - 1}"))
+    if page < total_pages - 1:
+        nav_buttons.append(InlineKeyboardButton(text="Next ➡️", callback_data=f"page_{page + 1}"))
+
+    if nav_buttons:
+        builder.row(*nav_buttons)
+
+    builder.row(
+        InlineKeyboardButton(text="✅ Done", callback_data="done"),
+        InlineKeyboardButton(text="❌ Cancel", callback_data="cancel")
+    )
+
+    return builder.as_markup()
+
+
 @router.message(AddUserStates.full_name)
-async def ask_company_id(message: Message, state: FSMContext):
+async def ask_company_id(message: types.Message, state: FSMContext):
     try:
         full_name = message.text.strip()
-
         companies = await company_service.get_all()
+
         if not companies:
             await message.answer("No companies available.")
             return
 
-        buttons = []
-        for company in companies:
-            buttons.append([KeyboardButton(text=company.name)])
-
-        buttons.append([KeyboardButton(text="⬅️ Cancel")])
-        markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
-
-        await state.update_data(full_name=full_name)
+        await state.update_data(full_name=full_name, selected_companies=set(), page=0)
         await state.set_state(AddUserStates.company_id)
-        await message.answer("Select the company: ", reply_markup=markup)
+
+        keyboard = await generate_company_keyboard(companies)
+        await message.answer("Select companies (you can choose multiple):", reply_markup=keyboard)
+
     except Exception as e:
         logger.error(f"Error in ask_company_id: {e}")
         await message.answer(constants.ERROR_MESSAGE)
 
 
-@router.message(AddUserStates.company_id)
-async def save_user(message: Message, state: FSMContext):
+@router.callback_query(AddUserStates.company_id)
+async def process_company_selection(callback: types.CallbackQuery, state: FSMContext):
     try:
-        company_name = message.text.strip()
-        company = await company_service.get_by_name(company_name)
-
-        if not company:
-            await message.answer("Please use buttons!")
-            return
-
         data = await state.get_data()
+        companies = await company_service.get_all()
+        selected_companies = set(data.get('selected_companies', set()))
+        current_page = data.get('page', 0)
+
+        if callback.data.startswith("company_"):
+            company_id = int(callback.data.split("_")[1])
+            if company_id in selected_companies:
+                selected_companies.remove(company_id)
+            else:
+                selected_companies.add(company_id)
+            await state.update_data(selected_companies=selected_companies)
+
+            keyboard = await generate_company_keyboard(companies, selected_companies, current_page)
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data.startswith("page_"):
+            new_page = int(callback.data.split("_")[1])
+            await state.update_data(page=new_page)
+            keyboard = await generate_company_keyboard(companies, selected_companies, new_page)
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "done":
+            if not selected_companies:
+                await callback.answer("Please select at least one company!", show_alert=True)
+                return
+
+            await state.update_data(selected_companies=selected_companies)
+            await save_users(callback.message, state)
+            await callback.message.delete()
+
+        elif callback.data == "cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Cancelled.", reply_markup=keyboards.admin_menu)
+
+        await callback.answer()
+
+    except Exception as e:
+        logger.error(f"Error in process_company_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+
+async def save_users(message: types.Message, state: FSMContext):
+    try:
+        data = await state.get_data()
+        selected_companies = data.get('selected_companies', set())
+
         await state.clear()
 
         user = User(
             id=None,
             telegram_id=data['telegram_id'],
             full_name=data['full_name'],
-            company_id=company.id,
+            company_id=selected_companies,
             balance=0
         )
         await user_service.create(user)
-        await message.answer("✅ User added successfully", reply_markup=keyboards.admin_menu)
+
+        await message.answer("✅ Users added successfully", reply_markup=keyboards.admin_menu)
+
     except Exception as e:
-        logger.error(f"Error while saving user: {e}")
+        logger.error(f"Error while saving users: {e}")
         await message.answer(constants.ERROR_MESSAGE)
 
 
