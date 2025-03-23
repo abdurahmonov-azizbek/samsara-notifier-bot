@@ -385,12 +385,16 @@ async def show_all_users(message: Message):
         text = "👥 All users:\n\n"
 
         for user in users:
-            company = await company_service.get_by_id(user.company_id)
+            companies = await company_service.get_by_ids(user.company_id)
             text += f"<b>🆔 {user.id}</b>\n"
             text += f"<b>👤 {user.full_name}</b>\n"
             text += f"<b>📱 Telegram ID: {user.telegram_id}</b>\n"
             # text += f"<b>🏢 Company ID: {user.company_id}</b>\n"
-            text += f"<b>🏢 Company Name: {company.name}</b>\n\n"
+            text += f"<b>🏢 Companies: </b>\n"
+            counter = 1
+            for company in companies:
+                text += f"<b>\t{counter}. {company.name}\n</b>"
+                counter += 1
 
         await message.answer(text, parse_mode="html")
     except Exception as e:
