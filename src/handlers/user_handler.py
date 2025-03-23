@@ -235,7 +235,7 @@ async def fetch_truck_details(bot: Bot, chat_id: int, truck_id: int, api_key: st
 
         response = (
             f"🚛 *Truck Details* 🚛\n"
-            f"🆔 *ID*: **{details['truck_id']}**\n"
+            # f"🆔 *ID*: **{details['truck_id']}**\n"
             f"🏷️ *Unit*: **{details['unit_name']}**\n"
             f"👤 *Driver*: **{details['driver_name']}**\n"
             f"⛽️ Fuel: {details['fuel_percent']}\n"
