@@ -242,10 +242,10 @@ class SamsaraClient:
             print("No trucks found to get details.")
 
 
-# async def main():
-#     api_token = "samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6"
-#     client = SamsaraClient(api_token)
-#     await client.run()
+async def main():
+    api_token = "dafsdf "
+    client = SamsaraClient(api_token)
+    await client.run()
 
 
 if __name__ == "__main__":
