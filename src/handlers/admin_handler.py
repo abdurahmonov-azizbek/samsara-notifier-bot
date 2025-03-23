@@ -93,8 +93,16 @@ async def edit_company(message: Message, state: FSMContext):
         if not await is_admin(user_id):
             return
         
+        companies = await company_service.get_all()
+        buttons = []
+        for company in companies:
+            buttons.append([KeyboardButton(text=company.name)])
+        
+        buttons.append([KeyboardButton(text="⬅️ Cancel")])
+        markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
+
         await state.set_state(EditCompanyStates.id)
-        await message.answer("Enter id of the company: ", reply_markup=keyboards.cancel_button)
+        await message.answer("Select company: ", reply_markup=markup)
 
     except Exception as e:
         logger.error(f"Error while editing company: {e}")
@@ -103,7 +111,13 @@ async def edit_company(message: Message, state: FSMContext):
 @router.message(EditCompanyStates.id)
 async def ask_new_name(message: Message, state: FSMContext):
     try:
-        await state.update_data(id=int(message.text.strip()))
+        company_name = message.text.strip()
+        company = await company_service.get_by_name(company_name)
+        if not company:
+            await message.answer("Please use buttons!")
+            return
+        
+        await state.update_data(id=company.id)
         await state.set_state(EditCompanyStates.name)
         await message.answer("Enter company's (new) name: ", reply_markup=keyboards.cancel_button)
 
@@ -152,8 +166,16 @@ async def delete_company(message: Message, state: FSMContext):
         if not await is_admin(user_id):
             return
         
+        companies = await company_service.get_all()
+        buttons = []
+        for company in companies:
+            buttons.append([KeyboardButton(text=company.name)])
+
+        buttons.append([KeyboardButton(text="⬅️ Cancel")])
+        markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
+
         await state.set_state(DeleteCompanyStates.id)
-        await message.answer("Enter the company's id: ", reply_markup=keyboards.cancel_button)
+        await message.answer("Select company: ", reply_markup=markup)
     except Exception as e:
         logger.error(f"Error in delete_company: {e}")
         await message.answer(constants.ERROR_MESSAGE)
@@ -161,8 +183,13 @@ async def delete_company(message: Message, state: FSMContext):
 @router.message(DeleteCompanyStates.id)
 async def delete_company_by_id(message: Message, state: FSMContext):
     try:
-        company_id = int(message.text.strip())
-        await company_service.delete_by_id(company_id)
+        company_name = message.text.strip()
+        company = await company_service.get_by_name(company_name)
+        if not company:
+            await message.answer("Please use buttons!")
+            return
+        
+        await company_service.delete_by_id(company.id)
         await state.clear()
         await message.answer("✅ Company deleted successfully", reply_markup=keyboards.admin_menu)
     except Exception as e:
@@ -204,9 +231,22 @@ async def ask_full_name(message: Message, state: FSMContext):
 async def ask_company_id(message: Message, state: FSMContext):
     try:
         full_name = message.text.strip()
+
+        companies = await company_service.get_all() 
+        if not companies:
+            await message.answer("No companies available.")
+            return
+
+        buttons = []
+        for company in companies:
+            buttons.append([KeyboardButton(text=company.name)])
+
+        buttons.append([KeyboardButton(text="⬅️ Cancel")])
+        markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
+
         await state.update_data(full_name=full_name)
         await state.set_state(AddUserStates.company_id)
-        await message.answer("Enter user's company ID: ", reply_markup=keyboards.cancel_button)
+        await message.answer("Select the company: ", reply_markup=markup)
     except Exception as e:
         logger.error(f"Error in ask_company_id: {e}")
         await message.answer(constants.ERROR_MESSAGE)
@@ -214,7 +254,13 @@ async def ask_company_id(message: Message, state: FSMContext):
 @router.message(AddUserStates.company_id)
 async def save_user(message: Message, state: FSMContext):
     try:
-        company_id = int(message.text.strip())
+        company_name = message.text.strip()
+        company = await company_service.get_by_name(company_name)
+
+        if not company:
+            await message.answer("Please use buttons!")
+            return
+
         data = await state.get_data()
         await state.clear()
 
@@ -222,7 +268,7 @@ async def save_user(message: Message, state: FSMContext):
             id=None,
             telegram_id=data['telegram_id'],
             full_name=data['full_name'],
-            company_id=company_id,
+            company_id=company.id,
             balance=0
         )
         await user_service.create(user)
@@ -243,10 +289,12 @@ async def show_all_users(message: Message):
         text = "👥 All users:\n\n"
 
         for user in users:
+            company = await company_service.get_by_id(user.company_id)
             text += f"<b>🆔 {user.id}</b>\n"
             text += f"<b>👤 {user.full_name}</b>\n"
             text += f"<b>📱 Telegram ID: {user.telegram_id}</b>\n"
-            text += f"<b>🏢 Company ID: {user.company_id}</b>\n\n"
+            # text += f"<b>🏢 Company ID: {user.company_id}</b>\n"
+            text += f"<b>🏢 Company Name: {company.name}</b>\n\n"
 
         await message.answer(text, parse_mode="html")
     except Exception as e:
@@ -266,8 +314,16 @@ async def edit_user(message: Message, state: FSMContext):
         if not await is_admin(user_id):
             return
 
+        users = await user_service.get_all()
+        buttons = []
+        for user in users:
+            buttons.append([KeyboardButton(text=str(user.full_name))])
+
+        buttons.append([KeyboardButton(text="⬅️ Cancel")])
+        markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
+
         await state.set_state(EditUserStates.id)
-        await message.answer("Enter the user's ID: ", reply_markup=keyboards.cancel_button)
+        await message.answer("Select the user: ", reply_markup=markup)
     except Exception as e:
         logger.error(f"Error while editing user: {e}")
         await message.answer(constants.ERROR_MESSAGE)
@@ -275,7 +331,12 @@ async def edit_user(message: Message, state: FSMContext):
 @router.message(EditUserStates.id)
 async def ask_new_telegram_id(message: Message, state: FSMContext):
     try:
-        await state.update_data(id=int(message.text.strip()))
+        user = await user_service.get_by_full_name(message.text.strip())
+        if not user:
+            await message.answer("Please use buttons!")
+            return
+        
+        await state.update_data(id=user.id)
         await state.set_state(EditUserStates.telegram_id)
         await message.answer("Enter user's (new) Telegram ID: ", reply_markup=keyboards.cancel_button)
     except Exception as e:
@@ -297,7 +358,16 @@ async def ask_new_company_id(message: Message, state: FSMContext):
     try:
         await state.update_data(full_name=message.text.strip())
         await state.set_state(EditUserStates.company_id)
-        await message.answer("Enter user's (new) company ID: ", reply_markup=keyboards.cancel_button)
+
+        companies = await company_service.get_all()
+        buttons = []
+        for company in companies:
+            buttons.append([KeyboardButton(text=company.name)])
+
+        buttons.append([KeyboardButton(text="⬅️ Cancel")])
+        markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
+
+        await message.answer("Select (new) company: ", reply_markup=markup)
     except Exception as e:
         logger.error(f"Error in ask_new_company_id: {e}")
         await message.answer(constants.ERROR_MESSAGE)
@@ -305,7 +375,13 @@ async def ask_new_company_id(message: Message, state: FSMContext):
 @router.message(EditUserStates.company_id)
 async def save_updated_user(message: Message, state: FSMContext):
     try:
-        company_id = int(message.text.strip())
+        company_name = message.text.strip()
+        company = await company_service.get_by_name(company_name)
+
+        if not company:
+            await message.answer("Please use buttons!")
+            return
+        
         data = await state.get_data()
         await state.clear()
 
@@ -313,7 +389,7 @@ async def save_updated_user(message: Message, state: FSMContext):
             id=data['id'],
             telegram_id=data['telegram_id'],
             full_name=data['full_name'],
-            company_id=company_id,
+            company_id=company.id,
             balance=0
         )
         await user_service.update(user)
@@ -332,8 +408,16 @@ async def delete_user(message: Message, state: FSMContext):
         if not await is_admin(user_id):
             return
 
+        users = await user_service.get_all()
+        buttons = []
+        for user in users:
+            buttons.append([KeyboardButton(text=str(user.full_name))])
+
+        buttons.append([KeyboardButton(text="⬅️ Cancel")])
+        markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
+
         await state.set_state(DeleteUserStates.id)
-        await message.answer("Enter the user's ID: ", reply_markup=keyboards.cancel_button)
+        await message.answer("Select user: ", reply_markup=markup)
     except Exception as e:
         logger.error(f"Error in delete_user: {e}")
         await message.answer(constants.ERROR_MESSAGE)
@@ -341,8 +425,13 @@ async def delete_user(message: Message, state: FSMContext):
 @router.message(DeleteUserStates.id)
 async def delete_user_by_id(message: Message, state: FSMContext):
     try:
-        user_id = int(message.text.strip())
-        await user_service.delete_by_id(user_id)
+        user_name = message.text.strip()
+        user = await user_service.get_by_full_name(user_name)
+        if not user:
+            await message.answer("Please use buttons!")
+            return
+        
+        await user_service.delete_by_id(user.id)
         await state.clear()
         await message.answer("✅ User deleted successfully", reply_markup=keyboards.admin_menu)
     except Exception as e:

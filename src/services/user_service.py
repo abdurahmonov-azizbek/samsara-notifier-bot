@@ -50,6 +50,31 @@ async def get_by_id(id: int, id_column: str | None = "id"):
     finally:
         await conn.close()
 
+async def get_by_full_name(name: str):
+    conn = await db.get_db_connection()
+    query = f"SELECT * FROM {constants.USER_TABLE} WHERE full_name = $1"
+
+    try:
+        row = await conn.fetchrow(query, name)
+        if not row:
+            logger.info(f"No user found with name: {name}")
+            return None
+
+        user = User(
+            id=row['id'],
+            telegram_id=row['telegram_id'],
+            full_name=row['full_name'],
+            company_id=row['company_id'],
+            balance=row['balance']
+        )
+
+        return user
+    except Exception as ex:
+        logger.error(f"Error fetching user by id: {ex}")
+        return None
+    finally:
+        await conn.close()
+
 async def create(user: User):
     conn = await db.get_db_connection()
     query = f"INSERT INTO {constants.USER_TABLE}(telegram_id, full_name, company_id, balance) VALUES ($1, $2, $3, $4)"

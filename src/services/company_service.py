@@ -46,6 +46,29 @@ async def get_by_id(id: int, id_column: str | None = "id"):
     finally:
         await conn.close()
 
+async def get_by_name(name: str):
+    conn = await db.get_db_connection()
+    query = f"SELECT * FROM {constants.COMPANY_TABLE} WHERE name = $1"
+
+    try:
+        row = await conn.fetchrow(query, name)
+        if not row:
+            logger.info(f"No company found with name: {name}")
+            return None
+
+        company = Company(
+            id=row['id'],
+            name=row['name'],
+            api_key=row['api_key']
+        )
+
+        return company
+    except Exception as ex:
+        logger.error(f"Error fetching company by id: {ex}")
+        return None
+    finally:
+        await conn.close()
+
 async def create(company: Company):
     conn = await db.get_db_connection()
     query = f"INSERT INTO {constants.COMPANY_TABLE}(name, api_key) VALUES ($1, $2)"
