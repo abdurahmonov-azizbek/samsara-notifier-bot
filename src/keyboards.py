@@ -28,3 +28,6 @@ cancel_button = ReplyKeyboardMarkup(
         [KeyboardButton(text="⬅️ Cancel")]
     ]
 )
+cancel_inline = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="⬅️ Cancel", callback_data="cancel")]
+])

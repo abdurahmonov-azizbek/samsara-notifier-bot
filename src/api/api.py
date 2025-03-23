@@ -1,8 +1,6 @@
-import asyncio
-import json
 import math
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import aiohttp
 
@@ -130,6 +128,7 @@ class SamsaraClient:
         return None
 
     async def get_truck_details(self, truck_id):
+        print(f"Fetching details for truck ID: {truck_id}")
         start_time_ms = int((time.time() - 3600) * 1000)
         end_time_ms = int(time.time() * 1000)
         location_endpoint = f"v1/fleet/vehicles/{truck_id}/locations"
@@ -140,7 +139,7 @@ class SamsaraClient:
 
         trips_endpoint = "v1/fleet/trips"
         trips_params = {
-            "startMs": int((time.time() - 24 * 3600) * 1000),
+            "startMs": int((time.time() - 3600) * 1000),
             "endMs": end_time_ms,
             "vehicleId": str(truck_id)
         }
@@ -152,15 +151,17 @@ class SamsaraClient:
             truck_location = location_data[-1]
             current_lat = truck_location.get('latitude', 0.0)
             current_lon = truck_location.get('longitude', 0.0)
-            speed = truck_location.get('speedMilesPerHour', 0) * 1.60934
+            speed = truck_location.get('speedMilesPerHour', 0)
             time_str = truck_location.get('timeMs', '')
             if isinstance(time_str, str):
                 try:
                     time_obj = datetime.strptime(time_str, '%Y-%m-%dT%H:%M:%S.%fZ')
+                    time_obj = time_obj.replace(tzinfo=timezone.utc).astimezone(timezone(timedelta(hours=-5)))
                 except ValueError:
                     time_obj = None
             elif isinstance(time_str, int):
-                time_obj = datetime.fromtimestamp(time_str / 1000)
+                time_obj = datetime.fromtimestamp(time_str / 1000, tz=timezone.utc)
+                time_obj = time_obj.astimezone(timezone(timedelta(hours=-5)))
             else:
                 time_obj = None
 
@@ -170,7 +171,7 @@ class SamsaraClient:
                 "driver_name": vehicle_data['data'].get('staticAssignedDriver', {}).get('name', 'Unknown'),
                 "fuel_percent": fuel_percent.get('fuel_percent', 'Unknown'),
                 "coordinates": f"{current_lat}, {current_lon}",
-                "speed": speed,
+                "speed": int(speed),
                 "engine_state": engine_stats.get('engine_state', 'Unknown'),
                 "time": time_obj.isoformat() if time_obj else '',
                 "location": truck_location.get('location', 'Unknown')
@@ -188,7 +189,7 @@ class SamsaraClient:
                 end_lon = end_coords.get('longitude', None)
                 if end_lat and end_lon:
                     def haversine_distance(lat1, lon1, lat2, lon2):
-                        R = 6371
+                        R = 3958.8
                         lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
                         dlat = lat2 - lat1
                         dlon = lon2 - lon1
@@ -201,7 +202,8 @@ class SamsaraClient:
 
                     if details["speed"] > 0:
                         hours_to_destination = destination_distance / details["speed"]
-                        arrival_time = datetime.now() + timedelta(hours=hours_to_destination)
+                        arrival_time = datetime.now(timezone(timedelta(hours=-5))) + timedelta(
+                            hours=hours_to_destination)
                         details["eta"] = arrival_time.strftime("%Y-%m-%d %H:%M:%S")
                     else:
                         details["eta"] = "Truck is not moving"
@@ -215,43 +217,3 @@ class SamsaraClient:
 
             return details
         return None
-
-    async def run(self):
-        trucks = await self.get_all_trucks()
-        print("Number of Trucks:", len(trucks))
-        print("All Trucks:", json.dumps(trucks, indent=2))
-
-        companies = await self.get_all_companies()
-        print("All Companies (Groups):", json.dumps(companies, indent=2))
-
-        if companies and len(companies) > 0:
-            company_id = companies[0].get("id")
-            company_trucks = await self.get_company_trucks(company_id)
-            print(f"Trucks of Company {company_id}:", json.dumps(company_trucks, indent=2))
-
-        if trucks and len(trucks) > 0:
-            for truck in trucks:
-                truck_id = truck.get("id")
-                safety_score = await self.get_safety_score(truck_id)
-                print(f"Truck {truck_id} Safety Score:", json.dumps(safety_score, indent=2))
-                crush = await self.get_hursh_events(truck_id)
-                print(f"Truck {truck_id} Hursh:", json.dumps(crush, indent=2))
-                truck_details = await self.get_truck_details(truck_id)
-                if truck_details and truck_details.get("engine_state") == 'Running':
-                    print(f"Truck {truck_id} Details:", json.dumps(truck_details, indent=2))
-        else:
-            print("No trucks found to get details.")
-
-
-async def main():
-    api_token = "dafsdf "
-
-    client = SamsaraClient(api_token)
-    await client.run()
-
-
-if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except RuntimeError as e:
-        print(f"Runtime error: {e}")

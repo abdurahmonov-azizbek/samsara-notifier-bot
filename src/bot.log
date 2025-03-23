@@ -2322,3 +2322,454 @@ asyncpg.exceptions.InvalidPasswordError: password authentication failed for user
 2025-03-23 10:35:30,376 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
 2025-03-23 10:35:30,377 - INFO - Polling stopped
 >>>>>>> 50031981e7993e871434d0da9e3ae6bcb2c461ae
+2025-03-23 20:03:52,910 - INFO - Starting...
+2025-03-23 20:03:52,910 - INFO - Start polling
+2025-03-23 20:03:52,911 - INFO - Running truck synchronization...
+2025-03-23 20:03:53,254 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:04:01,521 - INFO - Update id=760402538 is handled. Duration 1656 ms by bot id=6318766162
+2025-03-23 20:04:06,257 - INFO - Update id=760402539 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 20:04:18,678 - ERROR - Error in process_edit_option: module 'src.keyboards' has no attribute 'cancel_inline'
+2025-03-23 20:04:18,919 - INFO - Update id=760402540 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 20:04:31,790 - INFO - Update id=760402541 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-23 20:04:34,436 - INFO - Update id=760402542 is handled. Duration 311 ms by bot id=6318766162
+2025-03-23 20:04:38,998 - INFO - Update id=760402543 is handled. Duration 577 ms by bot id=6318766162
+2025-03-23 20:04:41,145 - INFO - Update id=760402544 is handled. Duration 640 ms by bot id=6318766162
+2025-03-23 20:04:43,218 - ERROR - Error in process_edit_option: module 'src.keyboards' has no attribute 'cancel_inline'
+2025-03-23 20:04:43,380 - INFO - Update id=760402545 is handled. Duration 172 ms by bot id=6318766162
+2025-03-23 20:04:47,011 - INFO - Update id=760402546 is handled. Duration 297 ms by bot id=6318766162
+2025-03-23 20:04:48,793 - INFO - Update id=760402547 is handled. Duration 437 ms by bot id=6318766162
+2025-03-23 20:04:50,223 - INFO - Update id=760402548 is handled. Duration 515 ms by bot id=6318766162
+2025-03-23 20:04:51,831 - INFO - Update id=760402549 is handled. Duration 655 ms by bot id=6318766162
+2025-03-23 20:04:54,353 - INFO - Update id=760402550 is handled. Duration 484 ms by bot id=6318766162
+2025-03-23 20:04:55,529 - INFO - Update id=760402551 is handled. Duration 531 ms by bot id=6318766162
+2025-03-23 20:05:07,217 - INFO - Update id=760402552 is handled. Duration 969 ms by bot id=6318766162
+2025-03-23 20:05:14,593 - INFO - Update id=760402553 is handled. Duration 266 ms by bot id=6318766162
+2025-03-23 20:05:15,832 - INFO - Update id=760402554 is handled. Duration 280 ms by bot id=6318766162
+2025-03-23 20:05:17,547 - ERROR - Error in process_edit_option: module 'src.keyboards' has no attribute 'cancel_inline'
+2025-03-23 20:05:17,738 - INFO - Update id=760402555 is handled. Duration 202 ms by bot id=6318766162
+2025-03-23 20:05:24,680 - INFO - Update id=760402556 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 20:05:27,278 - INFO - Update id=760402557 is handled. Duration 265 ms by bot id=6318766162
+2025-03-23 20:05:35,969 - INFO - Update id=760402558 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-23 20:06:24,073 - INFO - Running truck synchronization...
+2025-03-23 20:08:54,247 - INFO - Running truck synchronization...
+2025-03-23 20:08:58,978 - INFO - Polling stopped
+2025-03-23 20:08:58,980 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:09:04,355 - INFO - Starting...
+2025-03-23 20:09:04,355 - INFO - Start polling
+2025-03-23 20:09:04,356 - INFO - Running truck synchronization...
+2025-03-23 20:09:04,712 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:09:11,335 - INFO - Update id=760402559 is not handled. Duration 14 ms by bot id=6318766162
+2025-03-23 20:09:17,552 - INFO - Update id=760402560 is handled. Duration 375 ms by bot id=6318766162
+2025-03-23 20:09:21,285 - INFO - Update id=760402561 is handled. Duration 641 ms by bot id=6318766162
+2025-03-23 20:09:23,359 - INFO - Update id=760402562 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 20:09:25,362 - ERROR - Error in process_edit_option: module 'src.keyboards' has no attribute 'cancel_inline'
+2025-03-23 20:09:25,549 - INFO - Update id=760402563 is handled. Duration 187 ms by bot id=6318766162
+2025-03-23 20:09:28,178 - INFO - Update id=760402564 is handled. Duration 140 ms by bot id=6318766162
+2025-03-23 20:09:58,203 - INFO - Update id=760402565 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 20:10:00,332 - INFO - Update id=760402566 is handled. Duration 563 ms by bot id=6318766162
+2025-03-23 20:10:02,517 - ERROR - Error in process_edit_option: module 'src.keyboards' has no attribute 'cancel_inline'
+2025-03-23 20:10:02,724 - INFO - Update id=760402567 is handled. Duration 202 ms by bot id=6318766162
+2025-03-23 20:10:46,525 - INFO - Polling stopped
+2025-03-23 20:10:46,525 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:10:51,874 - INFO - Starting...
+2025-03-23 20:10:51,875 - INFO - Start polling
+2025-03-23 20:10:51,875 - INFO - Running truck synchronization...
+2025-03-23 20:10:52,552 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:11:22,739 - INFO - Update id=760402568 is not handled. Duration 16 ms by bot id=6318766162
+2025-03-23 20:11:29,561 - INFO - Update id=760402569 is handled. Duration 343 ms by bot id=6318766162
+2025-03-23 20:11:31,660 - INFO - Update id=760402570 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 20:11:33,281 - INFO - Update id=760402571 is handled. Duration 375 ms by bot id=6318766162
+2025-03-23 20:11:35,676 - INFO - Update id=760402572 is handled. Duration 312 ms by bot id=6318766162
+2025-03-23 20:11:52,324 - INFO - Update id=760402573 is handled. Duration 327 ms by bot id=6318766162
+2025-03-23 20:11:54,734 - INFO - Update id=760402574 is handled. Duration 405 ms by bot id=6318766162
+2025-03-23 20:11:56,288 - INFO - Update id=760402575 is handled. Duration 547 ms by bot id=6318766162
+2025-03-23 20:11:58,819 - INFO - Update id=760402576 is handled. Duration 265 ms by bot id=6318766162
+2025-03-23 20:12:05,105 - INFO - Update id=760402577 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 20:12:07,540 - INFO - Update id=760402578 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 20:12:08,891 - INFO - Update id=760402579 is handled. Duration 125 ms by bot id=6318766162
+2025-03-23 20:12:20,856 - INFO - Update id=760402580 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 20:12:23,268 - INFO - Update id=760402581 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-23 20:13:22,754 - INFO - Running truck synchronization...
+2025-03-23 20:15:51,816 - INFO - Running truck synchronization...
+2025-03-23 20:18:22,151 - INFO - Running truck synchronization...
+2025-03-23 20:20:52,907 - INFO - Running truck synchronization...
+2025-03-23 20:22:56,986 - INFO - Polling stopped
+2025-03-23 20:22:56,987 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:25:03,603 - INFO - Starting...
+2025-03-23 20:25:03,603 - INFO - Start polling
+2025-03-23 20:25:03,603 - INFO - Running truck synchronization...
+2025-03-23 20:25:04,856 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:25:16,285 - INFO - Update id=760402582 is not handled. Duration 14 ms by bot id=6318766162
+2025-03-23 20:25:19,435 - INFO - Update id=760402583 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-23 20:25:23,899 - INFO - Update id=760402584 is not handled. Duration 16 ms by bot id=6318766162
+2025-03-23 20:25:24,857 - INFO - Update id=760402585 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-23 20:26:12,266 - INFO - Update id=760402586 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-23 20:26:13,425 - INFO - Update id=760402587 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-23 20:26:57,848 - INFO - Polling stopped
+2025-03-23 20:26:57,849 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:27:00,810 - INFO - Starting...
+2025-03-23 20:27:00,810 - INFO - Start polling
+2025-03-23 20:27:00,810 - INFO - Running truck synchronization...
+2025-03-23 20:27:02,287 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:29:32,054 - INFO - Running truck synchronization...
+2025-03-23 20:29:47,676 - INFO - Update id=760402588 is not handled. Duration 516 ms by bot id=6318766162
+2025-03-23 20:29:47,676 - ERROR - Cause exception while process update id=760402588 by bot id=6318766162
+AttributeError: module 'logger' has no attribute 'error'
+Traceback (most recent call last):
+  File "C:\Users\shohj\PycharmProjects\truck\src\handlers\user_handler.py", line 81, in provide_status
+    await message.answer_sticker(STICKER_COMPANY)  # Send company sticker
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\client\bot.py", line 453, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\client\session\aiohttp.py", line 185, in make_request
+    response = self.check_response(
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: wrong HTTP URL specified
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\router.py", line 174, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+  File "C:\Users\shohj\PycharmProjects\truck\venv\lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+  File "C:\Users\shohj\PycharmProjects\truck\src\handlers\user_handler.py", line 84, in provide_status
+    logger.error(f"Error in provide_status: {e}")
+AttributeError: module 'logger' has no attribute 'error'
+2025-03-23 20:32:04,092 - INFO - Running truck synchronization...
+2025-03-23 20:34:35,180 - INFO - Running truck synchronization...
+2025-03-23 20:37:53,692 - INFO - Starting...
+2025-03-23 20:37:53,692 - INFO - Start polling
+2025-03-23 20:37:53,693 - INFO - Running truck synchronization...
+2025-03-23 20:37:54,026 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:38:16,133 - INFO - Update id=760402589 is handled. Duration 608 ms by bot id=6318766162
+2025-03-23 20:38:19,465 - INFO - No user found with id: 1
+2025-03-23 20:38:19,468 - ERROR - Error in process_company_selection: 'NoneType' object has no attribute 'company_id'
+2025-03-23 20:38:19,695 - INFO - Update id=760402590 is handled. Duration 313 ms by bot id=6318766162
+2025-03-23 20:38:22,958 - INFO - No user found with id: 1
+2025-03-23 20:38:22,960 - ERROR - Error in process_company_selection: 'NoneType' object has no attribute 'company_id'
+2025-03-23 20:38:23,149 - INFO - Update id=760402591 is handled. Duration 266 ms by bot id=6318766162
+2025-03-23 20:38:24,618 - INFO - No user found with id: 1
+2025-03-23 20:38:24,619 - ERROR - Error in process_company_selection: 'NoneType' object has no attribute 'company_id'
+2025-03-23 20:38:24,847 - INFO - Update id=760402592 is handled. Duration 296 ms by bot id=6318766162
+2025-03-23 20:40:26,768 - INFO - Running truck synchronization...
+2025-03-23 20:42:41,618 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:42:41,618 - INFO - Polling stopped
+2025-03-23 20:42:45,054 - INFO - Starting...
+2025-03-23 20:42:45,054 - INFO - Start polling
+2025-03-23 20:42:45,054 - INFO - Running truck synchronization...
+2025-03-23 20:42:46,468 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:42:59,457 - INFO - Update id=760402593 is handled. Duration 828 ms by bot id=6318766162
+2025-03-23 20:43:01,440 - INFO - No user found with id: 1
+2025-03-23 20:43:01,443 - ERROR - Error in process_company_selection: 'NoneType' object has no attribute 'company_id'
+2025-03-23 20:43:01,566 - INFO - Update id=760402594 is handled. Duration 202 ms by bot id=6318766162
+2025-03-23 20:45:18,323 - INFO - Running truck synchronization...
+2025-03-23 20:47:09,515 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:47:09,515 - INFO - Polling stopped
+2025-03-23 20:48:02,588 - INFO - Starting...
+2025-03-23 20:48:02,588 - INFO - Start polling
+2025-03-23 20:48:02,588 - INFO - Running truck synchronization...
+2025-03-23 20:48:02,959 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:48:03,800 - INFO - Update id=760402595 is handled. Duration 734 ms by bot id=6318766162
+2025-03-23 20:48:08,023 - INFO - Update id=760402596 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 20:48:09,629 - INFO - Update id=760402597 is handled. Duration 405 ms by bot id=6318766162
+2025-03-23 20:48:15,244 - ERROR - Error fetching truck details: 'SamsaraClient' object has no attribute 'fetch_vehicle_data'
+2025-03-23 20:48:15,394 - ERROR - Error in process_truck_name_input: module 'src.keyboards' has no attribute 'main_menu'
+2025-03-23 20:48:15,532 - INFO - Update id=760402598 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 20:49:02,517 - INFO - Polling stopped
+2025-03-23 20:49:02,518 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:49:05,471 - INFO - Starting...
+2025-03-23 20:49:05,471 - INFO - Start polling
+2025-03-23 20:49:05,471 - INFO - Running truck synchronization...
+2025-03-23 20:49:05,830 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:50:14,486 - INFO - Polling stopped
+2025-03-23 20:50:14,486 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:50:17,800 - INFO - Starting...
+2025-03-23 20:50:17,800 - INFO - Start polling
+2025-03-23 20:50:17,801 - INFO - Running truck synchronization...
+2025-03-23 20:50:18,136 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:50:29,228 - INFO - Update id=760402599 is handled. Duration 547 ms by bot id=6318766162
+2025-03-23 20:50:31,008 - INFO - Update id=760402600 is handled. Duration 530 ms by bot id=6318766162
+2025-03-23 20:50:41,539 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 20:50:41,826 - INFO - Update id=760402601 is handled. Duration 7234 ms by bot id=6318766162
+2025-03-23 20:50:51,372 - INFO - Update id=760402602 is handled. Duration 202 ms by bot id=6318766162
+2025-03-23 20:50:52,636 - INFO - Update id=760402603 is handled. Duration 280 ms by bot id=6318766162
+2025-03-23 20:50:55,205 - INFO - Update id=760402604 is handled. Duration 515 ms by bot id=6318766162
+2025-03-23 20:51:02,698 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 20:51:03,066 - INFO - Update id=760402605 is handled. Duration 6969 ms by bot id=6318766162
+2025-03-23 20:51:44,934 - INFO - Polling stopped
+2025-03-23 20:51:44,934 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:51:47,844 - INFO - Starting...
+2025-03-23 20:51:47,844 - INFO - Start polling
+2025-03-23 20:51:47,845 - INFO - Running truck synchronization...
+2025-03-23 20:51:48,167 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:51:51,335 - INFO - Update id=760402606 is handled. Duration 468 ms by bot id=6318766162
+2025-03-23 20:51:53,654 - INFO - Update id=760402607 is handled. Duration 765 ms by bot id=6318766162
+2025-03-23 20:52:02,186 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 20:52:02,612 - INFO - Update id=760402608 is handled. Duration 8391 ms by bot id=6318766162
+2025-03-23 20:52:40,417 - INFO - Polling stopped
+2025-03-23 20:52:40,418 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:52:43,534 - INFO - Starting...
+2025-03-23 20:52:43,534 - INFO - Start polling
+2025-03-23 20:52:43,535 - INFO - Running truck synchronization...
+2025-03-23 20:52:43,862 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:52:53,732 - INFO - Update id=760402609 is handled. Duration 515 ms by bot id=6318766162
+2025-03-23 20:52:55,666 - INFO - Update id=760402610 is handled. Duration 625 ms by bot id=6318766162
+2025-03-23 20:52:58,073 - INFO - Update id=760402611 is handled. Duration 844 ms by bot id=6318766162
+2025-03-23 20:52:59,702 - INFO - Update id=760402612 is handled. Duration 750 ms by bot id=6318766162
+2025-03-23 20:53:08,692 - ERROR - Error fetching truck details: 'str' object has no attribute 'get'
+2025-03-23 20:53:09,036 - INFO - Update id=760402613 is handled. Duration 8765 ms by bot id=6318766162
+2025-03-23 20:54:37,436 - INFO - Polling stopped
+2025-03-23 20:54:37,436 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:54:40,789 - INFO - Starting...
+2025-03-23 20:54:40,789 - INFO - Start polling
+2025-03-23 20:54:40,789 - INFO - Running truck synchronization...
+2025-03-23 20:54:41,112 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:55:17,508 - INFO - Update id=760402614 is handled. Duration 483 ms by bot id=6318766162
+2025-03-23 20:55:19,648 - INFO - Update id=760402615 is handled. Duration 1062 ms by bot id=6318766162
+2025-03-23 20:55:20,172 - INFO - Fetching details for Truck ID: 281474979251980 with API key: samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6
+2025-03-23 20:55:29,525 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 20:55:29,861 - INFO - Update id=760402616 is handled. Duration 9687 ms by bot id=6318766162
+2025-03-23 20:55:34,219 - INFO - Update id=760402617 is handled. Duration 828 ms by bot id=6318766162
+2025-03-23 20:55:36,158 - INFO - Update id=760402618 is handled. Duration 422 ms by bot id=6318766162
+2025-03-23 20:55:57,627 - INFO - Update id=760402619 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 20:56:00,958 - INFO - Fetching details for Truck ID: 281474987643793 with API key: samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6
+2025-03-23 20:56:08,453 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 20:56:08,921 - INFO - Update id=760402620 is handled. Duration 7968 ms by bot id=6318766162
+2025-03-23 20:56:48,888 - INFO - Polling stopped
+2025-03-23 20:56:48,889 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:56:51,977 - INFO - Starting...
+2025-03-23 20:56:51,977 - INFO - Start polling
+2025-03-23 20:56:51,978 - INFO - Running truck synchronization...
+2025-03-23 20:56:53,047 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:56:59,565 - INFO - Update id=760402621 is handled. Duration 1125 ms by bot id=6318766162
+2025-03-23 20:57:01,686 - INFO - Update id=760402622 is handled. Duration 625 ms by bot id=6318766162
+2025-03-23 20:57:03,726 - INFO - Update id=760402623 is handled. Duration 437 ms by bot id=6318766162
+2025-03-23 20:57:06,081 - INFO - Fetching details for Truck ID: 281474987643793 with API key: samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6
+2025-03-23 20:57:12,755 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 20:57:13,054 - INFO - Update id=760402624 is handled. Duration 6968 ms by bot id=6318766162
+2025-03-23 20:58:31,457 - INFO - Polling stopped
+2025-03-23 20:58:31,458 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:58:34,698 - INFO - Starting...
+2025-03-23 20:58:34,698 - INFO - Start polling
+2025-03-23 20:58:34,698 - INFO - Running truck synchronization...
+2025-03-23 20:58:35,029 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:58:47,127 - INFO - Update id=760402625 is handled. Duration 422 ms by bot id=6318766162
+2025-03-23 20:58:48,354 - INFO - Update id=760402626 is handled. Duration 390 ms by bot id=6318766162
+2025-03-23 20:58:51,182 - INFO - Update id=760402627 is handled. Duration 1437 ms by bot id=6318766162
+2025-03-23 20:58:53,238 - INFO - Fetching details for Truck ID: 281474987643793 with API key: samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6
+2025-03-23 20:58:59,348 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 20:58:59,589 - INFO - Update id=760402628 is handled. Duration 6344 ms by bot id=6318766162
+2025-03-23 20:59:14,819 - INFO - Polling stopped
+2025-03-23 20:59:14,819 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:59:17,985 - INFO - Starting...
+2025-03-23 20:59:17,985 - INFO - Start polling
+2025-03-23 20:59:17,986 - INFO - Running truck synchronization...
+2025-03-23 20:59:18,305 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 20:59:42,513 - INFO - Update id=760402629 is handled. Duration 1141 ms by bot id=6318766162
+2025-03-23 20:59:43,889 - INFO - Update id=760402630 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 20:59:45,410 - INFO - Update id=760402631 is handled. Duration 422 ms by bot id=6318766162
+2025-03-23 20:59:47,488 - INFO - Fetching details for Truck ID: 281474987643793 with API key: samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6
+2025-03-23 20:59:53,980 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 20:59:54,380 - INFO - Update id=760402632 is handled. Duration 6906 ms by bot id=6318766162
+2025-03-23 21:00:31,490 - INFO - Update id=760402633 is handled. Duration 219 ms by bot id=6318766162
+2025-03-23 21:00:32,807 - INFO - Update id=760402634 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 21:00:35,356 - INFO - Update id=760402635 is handled. Duration 968 ms by bot id=6318766162
+2025-03-23 21:00:37,400 - INFO - Fetching details for Truck ID: 281474993400238 with API key: samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6
+2025-03-23 21:00:48,236 - INFO - Update id=760402636 is handled. Duration 10844 ms by bot id=6318766162
+2025-03-23 21:01:01,620 - INFO - Update id=760402637 is handled. Duration 422 ms by bot id=6318766162
+2025-03-23 21:01:33,924 - INFO - Polling stopped
+2025-03-23 21:01:33,925 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:01:37,440 - INFO - Starting...
+2025-03-23 21:01:37,440 - INFO - Start polling
+2025-03-23 21:01:37,441 - INFO - Running truck synchronization...
+2025-03-23 21:01:37,773 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:02:19,548 - INFO - Update id=760402638 is handled. Duration 780 ms by bot id=6318766162
+2025-03-23 21:02:20,904 - INFO - Update id=760402639 is handled. Duration 421 ms by bot id=6318766162
+2025-03-23 21:02:33,287 - INFO - Update id=760402640 is handled. Duration 9327 ms by bot id=6318766162
+2025-03-23 21:03:43,263 - INFO - Polling stopped
+2025-03-23 21:03:43,263 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:03:46,297 - INFO - Starting...
+2025-03-23 21:03:46,297 - INFO - Start polling
+2025-03-23 21:03:46,297 - INFO - Running truck synchronization...
+2025-03-23 21:03:46,618 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:06:18,244 - INFO - Running truck synchronization...
+2025-03-23 21:08:47,934 - INFO - Running truck synchronization...
+2025-03-23 21:11:30,592 - INFO - Running truck synchronization...
+2025-03-23 21:12:29,799 - INFO - Polling stopped
+2025-03-23 21:12:29,800 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:12:33,020 - INFO - Starting...
+2025-03-23 21:12:33,021 - INFO - Start polling
+2025-03-23 21:12:33,021 - INFO - Running truck synchronization...
+2025-03-23 21:12:33,353 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:12:49,503 - INFO - Update id=760402641 is handled. Duration 687 ms by bot id=6318766162
+2025-03-23 21:12:51,685 - INFO - Update id=760402642 is handled. Duration 905 ms by bot id=6318766162
+2025-03-23 21:12:59,844 - ERROR - Error fetching truck details: 'NoneType' object has no attribute 'get'
+2025-03-23 21:13:00,198 - INFO - Update id=760402643 is handled. Duration 7156 ms by bot id=6318766162
+2025-03-23 21:13:03,331 - INFO - Update id=760402644 is handled. Duration 734 ms by bot id=6318766162
+2025-03-23 21:13:03,810 - INFO - Update id=760402645 is handled. Duration 937 ms by bot id=6318766162
+2025-03-23 21:13:05,482 - INFO - Update id=760402646 is handled. Duration 531 ms by bot id=6318766162
+2025-03-23 21:13:18,863 - INFO - Update id=760402647 is handled. Duration 10109 ms by bot id=6318766162
+2025-03-23 21:15:04,693 - INFO - Running truck synchronization...
+2025-03-23 21:15:34,495 - INFO - Update id=760402648 is handled. Duration 656 ms by bot id=6318766162
+2025-03-23 21:15:36,581 - INFO - Update id=760402649 is handled. Duration 406 ms by bot id=6318766162
+2025-03-23 21:15:38,778 - INFO - Update id=760402650 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 21:15:41,005 - INFO - Update id=760402651 is handled. Duration 656 ms by bot id=6318766162
+2025-03-23 21:15:42,360 - INFO - Update id=760402652 is handled. Duration 234 ms by bot id=6318766162
+2025-03-23 21:15:44,135 - INFO - Update id=760402653 is handled. Duration 234 ms by bot id=6318766162
+2025-03-23 21:15:55,744 - INFO - Update id=760402654 is handled. Duration 10313 ms by bot id=6318766162
+2025-03-23 21:16:46,191 - INFO - No user found with id: 6095810791
+2025-03-23 21:16:46,470 - INFO - Update id=760402655 is handled. Duration 640 ms by bot id=6318766162
+2025-03-23 21:17:35,689 - INFO - Running truck synchronization...
+2025-03-23 21:17:51,885 - INFO - Update id=760402656 is handled. Duration 140 ms by bot id=6318766162
+2025-03-23 21:17:53,114 - INFO - Update id=760402657 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 21:17:55,836 - INFO - Update id=760402658 is handled. Duration 187 ms by bot id=6318766162
+2025-03-23 21:17:57,851 - INFO - Update id=760402659 is handled. Duration 672 ms by bot id=6318766162
+2025-03-23 21:17:58,625 - INFO - Update id=760402660 is handled. Duration 391 ms by bot id=6318766162
+2025-03-23 21:18:00,169 - INFO - Update id=760402661 is handled. Duration 610 ms by bot id=6318766162
+2025-03-23 21:18:28,538 - INFO - Update id=760402662 is handled. Duration 203 ms by bot id=6318766162
+2025-03-23 21:18:31,742 - INFO - Update id=760402663 is handled. Duration 438 ms by bot id=6318766162
+2025-03-23 21:18:34,300 - INFO - Update id=760402664 is handled. Duration 468 ms by bot id=6318766162
+2025-03-23 21:18:38,171 - INFO - Update id=760402665 is handled. Duration 235 ms by bot id=6318766162
+2025-03-23 21:18:46,978 - INFO - Update id=760402667 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-23 21:18:47,204 - INFO - Update id=760402666 is handled. Duration 7297 ms by bot id=6318766162
+2025-03-23 21:20:06,350 - INFO - Running truck synchronization...
+2025-03-23 21:22:36,986 - INFO - Running truck synchronization...
+2025-03-23 21:25:07,325 - INFO - Running truck synchronization...
+2025-03-23 21:25:57,131 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:25:57,131 - INFO - Polling stopped
+2025-03-23 21:26:00,547 - INFO - Starting...
+2025-03-23 21:26:00,547 - INFO - Start polling
+2025-03-23 21:26:00,547 - INFO - Running truck synchronization...
+2025-03-23 21:26:00,918 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:26:20,181 - INFO - Update id=760402668 is handled. Duration 641 ms by bot id=6318766162
+2025-03-23 21:26:22,613 - INFO - Update id=760402669 is handled. Duration 202 ms by bot id=6318766162
+2025-03-23 21:26:24,785 - INFO - Update id=760402670 is handled. Duration 312 ms by bot id=6318766162
+2025-03-23 21:26:26,957 - INFO - Update id=760402671 is handled. Duration 922 ms by bot id=6318766162
+2025-03-23 21:26:28,481 - INFO - Update id=760402672 is handled. Duration 577 ms by bot id=6318766162
+2025-03-23 21:26:36,573 - INFO - Update id=760402673 is handled. Duration 452 ms by bot id=6318766162
+2025-03-23 21:26:55,606 - INFO - Update id=760402674 is handled. Duration 9015 ms by bot id=6318766162
+2025-03-23 21:28:30,223 - INFO - Running truck synchronization...
+2025-03-23 21:29:18,036 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:29:18,036 - INFO - Polling stopped
+2025-03-23 21:29:21,162 - INFO - Starting...
+2025-03-23 21:29:21,162 - INFO - Start polling
+2025-03-23 21:29:21,162 - INFO - Running truck synchronization...
+2025-03-23 21:29:22,364 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:29:41,777 - INFO - Polling stopped
+2025-03-23 21:29:41,777 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:29:45,511 - INFO - Starting...
+2025-03-23 21:29:45,512 - INFO - Start polling
+2025-03-23 21:29:45,512 - INFO - Running truck synchronization...
+2025-03-23 21:29:45,830 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:29:57,040 - INFO - Update id=760402675 is handled. Duration 672 ms by bot id=6318766162
+2025-03-23 21:30:09,064 - INFO - Update id=760402676 is handled. Duration 9703 ms by bot id=6318766162
+2025-03-23 21:32:16,505 - INFO - Running truck synchronization...
+2025-03-23 21:34:47,245 - INFO - Running truck synchronization...
+2025-03-23 21:36:14,941 - INFO - Update id=760402677 is handled. Duration 422 ms by bot id=6318766162
+2025-03-23 21:36:20,118 - INFO - Update id=760402678 is handled. Duration 234 ms by bot id=6318766162
+2025-03-23 21:36:32,509 - INFO - Update id=760402679 is handled. Duration 297 ms by bot id=6318766162
+2025-03-23 21:36:34,000 - INFO - Update id=760402680 is handled. Duration 311 ms by bot id=6318766162
+2025-03-23 21:36:35,762 - INFO - Update id=760402681 is handled. Duration 343 ms by bot id=6318766162
+2025-03-23 21:36:37,034 - INFO - Update id=760402682 is handled. Duration 750 ms by bot id=6318766162
+2025-03-23 21:36:59,721 - INFO - Update id=760402683 is handled. Duration 312 ms by bot id=6318766162
+2025-03-23 21:37:22,490 - INFO - Running truck synchronization...
+2025-03-23 21:38:00,049 - INFO - Polling stopped
+2025-03-23 21:38:00,049 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:38:03,340 - INFO - Starting...
+2025-03-23 21:38:03,340 - INFO - Start polling
+2025-03-23 21:38:03,340 - INFO - Running truck synchronization...
+2025-03-23 21:38:04,256 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:38:43,387 - INFO - Update id=760402684 is handled. Duration 1686 ms by bot id=6318766162
+2025-03-23 21:39:00,165 - INFO - Update id=760402685 is handled. Duration 218 ms by bot id=6318766162
+2025-03-23 21:39:03,233 - INFO - Update id=760402686 is handled. Duration 187 ms by bot id=6318766162
+2025-03-23 21:39:04,669 - INFO - Update id=760402687 is handled. Duration 312 ms by bot id=6318766162
+2025-03-23 21:39:05,531 - INFO - Update id=760402688 is handled. Duration 312 ms by bot id=6318766162
+2025-03-23 21:39:06,398 - INFO - Update id=760402689 is handled. Duration 281 ms by bot id=6318766162
+2025-03-23 21:39:08,229 - INFO - Update id=760402690 is handled. Duration 1047 ms by bot id=6318766162
+2025-03-23 21:39:11,964 - INFO - Update id=760402691 is handled. Duration 468 ms by bot id=6318766162
+2025-03-23 21:39:13,693 - INFO - Update id=760402692 is handled. Duration 406 ms by bot id=6318766162
+2025-03-23 21:40:35,052 - INFO - Running truck synchronization...
+2025-03-23 21:41:21,264 - INFO - Update id=760402693 is handled. Duration 358 ms by bot id=6318766162
+2025-03-23 21:41:26,584 - INFO - Update id=760402694 is handled. Duration 296 ms by bot id=6318766162
+2025-03-23 21:41:27,975 - INFO - Update id=760402695 is handled. Duration 266 ms by bot id=6318766162
+2025-03-23 21:41:29,234 - INFO - Update id=760402696 is handled. Duration 297 ms by bot id=6318766162
+2025-03-23 21:41:30,181 - INFO - Update id=760402697 is handled. Duration 233 ms by bot id=6318766162
+2025-03-23 21:41:32,028 - INFO - Update id=760402698 is handled. Duration 827 ms by bot id=6318766162
+2025-03-23 21:41:40,833 - INFO - Update id=760402699 is handled. Duration 7561 ms by bot id=6318766162
+2025-03-23 21:41:44,209 - INFO - Update id=760402700 is handled. Duration 483 ms by bot id=6318766162
+2025-03-23 21:42:27,260 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:42:27,260 - INFO - Polling stopped
+2025-03-23 21:42:30,419 - INFO - Starting...
+2025-03-23 21:42:30,419 - INFO - Start polling
+2025-03-23 21:42:30,420 - INFO - Running truck synchronization...
+2025-03-23 21:42:31,781 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:42:34,862 - INFO - Update id=760402701 is handled. Duration 547 ms by bot id=6318766162
+2025-03-23 21:42:38,320 - INFO - Update id=760402702 is handled. Duration 1110 ms by bot id=6318766162
+2025-03-23 21:42:41,904 - INFO - Update id=760402703 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 21:42:46,177 - INFO - Update id=760402704 is handled. Duration 1172 ms by bot id=6318766162
+2025-03-23 21:42:47,976 - INFO - Update id=760402705 is handled. Duration 250 ms by bot id=6318766162
+2025-03-23 21:42:50,893 - INFO - Update id=760402706 is handled. Duration 343 ms by bot id=6318766162
+2025-03-23 21:43:01,054 - ERROR - Error fetching truck details: 'float' object has no attribute 'split'
+2025-03-23 21:43:01,433 - INFO - Update id=760402707 is handled. Duration 9422 ms by bot id=6318766162
+2025-03-23 21:43:05,817 - INFO - Update id=760402708 is handled. Duration 358 ms by bot id=6318766162
+2025-03-23 21:43:07,514 - INFO - Update id=760402709 is handled. Duration 405 ms by bot id=6318766162
+2025-03-23 21:43:18,373 - ERROR - Error fetching truck details: 'float' object has no attribute 'split'
+2025-03-23 21:43:18,594 - INFO - Update id=760402710 is handled. Duration 8733 ms by bot id=6318766162
+2025-03-23 21:43:39,082 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:43:39,082 - INFO - Polling stopped
+2025-03-23 21:43:42,059 - INFO - Starting...
+2025-03-23 21:43:42,059 - INFO - Start polling
+2025-03-23 21:43:42,061 - INFO - Running truck synchronization...
+2025-03-23 21:43:43,028 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:43:46,724 - INFO - Update id=760402711 is handled. Duration 468 ms by bot id=6318766162
+2025-03-23 21:43:48,180 - INFO - Update id=760402712 is handled. Duration 687 ms by bot id=6318766162
+2025-03-23 21:43:58,124 - INFO - Update id=760402713 is handled. Duration 8468 ms by bot id=6318766162
+2025-03-23 21:44:05,456 - INFO - Polling stopped
+2025-03-23 21:44:05,457 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:44:08,431 - INFO - Starting...
+2025-03-23 21:44:08,431 - INFO - Start polling
+2025-03-23 21:44:08,431 - INFO - Running truck synchronization...
+2025-03-23 21:44:09,754 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:44:10,271 - INFO - Polling stopped
+2025-03-23 21:44:10,271 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:44:13,425 - INFO - Starting...
+2025-03-23 21:44:13,425 - INFO - Start polling
+2025-03-23 21:44:13,425 - INFO - Running truck synchronization...
+2025-03-23 21:44:13,738 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-23 21:44:16,326 - INFO - Update id=760402714 is handled. Duration 500 ms by bot id=6318766162
+2025-03-23 21:44:19,034 - INFO - Update id=760402715 is handled. Duration 422 ms by bot id=6318766162
+2025-03-23 21:44:32,230 - INFO - Update id=760402716 is handled. Duration 9280 ms by bot id=6318766162
+2025-03-23 21:46:44,649 - INFO - Running truck synchronization...
