@@ -1017,3 +1017,55 @@ keyboard
 2025-03-23 07:21:22,415 - WARNING - Received SIGINT signal
 2025-03-23 07:21:22,416 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
 2025-03-23 07:21:22,416 - INFO - Polling stopped
+2025-03-23 17:23:46,862 - INFO - Starting...
+2025-03-23 17:23:46,863 - INFO - Start polling
+2025-03-23 17:23:46,863 - INFO - Running truck synchronization...
+2025-03-23 17:23:46,935 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<sync_trucks_periodically() done, defined at C:\Users\shohj\PycharmProjects\truck\src\jobs.py:5> exception=InvalidPasswordError('password authentication failed for user "postgres"')>
+Traceback (most recent call last):
+  File "C:\Users\shohj\PycharmProjects\truck\src\jobs.py", line 8, in sync_trucks_periodically
+    await sync_trucks()
+  File "C:\Users\shohj\PycharmProjects\truck\src\functions.py", line 12, in sync_trucks
+    companies = await company_service.get_all()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shohj\PycharmProjects\truck\src\services\company_service.py", line 7, in get_all
+    conn = await db.get_db_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shohj\PycharmProjects\truck\src\db.py", line 5, in get_db_connection
+    return await asyncpg.connect(**config.DB_CONFIG)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shohj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\asyncpg\connection.py", line 2421, in connect
+    return await connect_utils._connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<20 lines>...
+    )
+    ^
+  File "C:\Users\shohj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\asyncpg\connect_utils.py", line 1049, in _connect
+    conn = await _connect_addr(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\Users\shohj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\asyncpg\connect_utils.py", line 886, in _connect_addr
+    return await __connect_addr(params, True, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\shohj\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\asyncpg\connect_utils.py", line 934, in __connect_addr
+    await connected
+asyncpg.exceptions.InvalidPasswordError: password authentication failed for user "postgres"
+2025-03-23 17:23:47,201 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 17:23:51,521 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 17:23:51,521 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7864064435)
+2025-03-23 17:23:57,205 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 17:23:57,206 - WARNING - Sleep for 1.287438 seconds and try again... (tryings = 1, bot id = 7864064435)
+2025-03-23 18:02:32,441 - INFO - Starting...
+2025-03-23 18:02:32,441 - INFO - Start polling
+2025-03-23 18:02:32,441 - INFO - Running truck synchronization...
+2025-03-23 18:02:32,801 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 18:02:37,107 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:02:37,107 - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 7864064435)
+2025-03-23 18:02:42,516 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:02:42,516 - WARNING - Sleep for 1.291425 seconds and try again... (tryings = 1, bot id = 7864064435)
+2025-03-23 18:02:48,251 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:02:48,251 - WARNING - Sleep for 1.552011 seconds and try again... (tryings = 2, bot id = 7864064435)
+2025-03-23 18:02:54,375 - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-03-23 18:02:54,375 - WARNING - Sleep for 1.754882 seconds and try again... (tryings = 3, bot id = 7864064435)

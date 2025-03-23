@@ -1,7 +1,8 @@
-import db
-from models import User
 from logger import logger
-import constants
+
+from src import constants, db
+from src.models import User
+from typing import Optional
 
 async def get_all():
     conn = await db.get_db_connection()
@@ -25,7 +26,8 @@ async def get_all():
     finally:
         await conn.close()
 
-async def get_by_id(id: int, id_column: str | None = "id"):
+
+async def get_by_id(id: int, id_column: Optional[str] = "id"):
     conn = await db.get_db_connection()
     query = f"SELECT * FROM {constants.USER_TABLE} WHERE {id_column} = $1"
 
@@ -49,6 +51,7 @@ async def get_by_id(id: int, id_column: str | None = "id"):
         return None
     finally:
         await conn.close()
+
 
 async def get_by_full_name(name: str):
     conn = await db.get_db_connection()
@@ -75,6 +78,7 @@ async def get_by_full_name(name: str):
     finally:
         await conn.close()
 
+
 async def create(user: User):
     conn = await db.get_db_connection()
     query = f"INSERT INTO {constants.USER_TABLE}(telegram_id, full_name, company_id, balance) VALUES ($1, $2, $3, $4)"
@@ -90,7 +94,8 @@ async def create(user: User):
     except Exception as ex:
         logger.error(f"Eror with creating user: {ex}")
     finally:
-        await conn.close()  
+        await conn.close()
+
 
 async def update(user: User):
     conn = await db.get_db_connection()
@@ -110,7 +115,8 @@ async def update(user: User):
     finally:
         await conn.close()
 
-async def delete_by_id(id: int, id_column: str | None = "id"):
+
+async def delete_by_id(id: int, id_column: Optional[str] = "id"):
     conn = await db.get_db_connection()
     query = f"DELETE FROM {constants.USER_TABLE} WHERE {id_column} = $1"
 

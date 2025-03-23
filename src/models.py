@@ -6,11 +6,13 @@ class User:
         self.company_id = company_id
         self.balance = balance
 
+
 class Company:
     def __init__(self, id, name, api_key):
         self.id = id
         self.name = name
         self.api_key = api_key
+
 
 class Truck:
     def __init__(self, id, name, truck_id, company_id):

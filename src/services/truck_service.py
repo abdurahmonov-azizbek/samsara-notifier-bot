@@ -1,7 +1,10 @@
-import db
-from models import Truck
+from typing import Union, Optional
+
 from logger import logger
-import constants
+
+from src import constants, db
+from src.models import Truck
+
 
 async def get_all() -> list[Truck]:
     conn = await db.get_db_connection()
@@ -23,6 +26,7 @@ async def get_all() -> list[Truck]:
         return []
     finally:
         await conn.close()
+
 
 async def get_by_company_id(companyId) -> list[Truck]:
     conn = await db.get_db_connection()
@@ -46,7 +50,7 @@ async def get_by_company_id(companyId) -> list[Truck]:
         await conn.close()
 
 
-async def get_by_id(id: int, id_column: str | None = "id") -> Truck | None:
+async def get_by_id(id: int, id_column: Union[str, None] = "id") -> Union[Truck, None]:
     conn = await db.get_db_connection()
     query = f"SELECT * FROM {constants.TRUCK_TABLE} WHERE {id_column} = $1"
     try:
@@ -68,6 +72,7 @@ async def get_by_id(id: int, id_column: str | None = "id") -> Truck | None:
     finally:
         await conn.close()
 
+
 async def create(truck: Truck):
     conn = await db.get_db_connection()
     query = f"INSERT INTO {constants.TRUCK_TABLE}(name, truck_id, company_id) VALUES ($1, $2, $3)"
@@ -84,7 +89,8 @@ async def create(truck: Truck):
     finally:
         await conn.close()
 
-async def update(truck: Truck, update_by: str | None = "id"):
+
+async def update(truck: Truck, update_by: Optional[str] = "id"):
     conn = await db.get_db_connection()
     query = f"UPDATE {constants.TRUCK_TABLE} SET name = $1, truck_id = $2, company_id = $3 WHERE {update_by} = $4"
     try:
@@ -101,7 +107,8 @@ async def update(truck: Truck, update_by: str | None = "id"):
     finally:
         await conn.close()
 
-async def delete_by_id(id: int, id_column: str | None = "id"):
+
+async def delete_by_id(id: int, id_column: Optional[str] = "id"):
     conn = await db.get_db_connection()
     query = f"DELETE FROM {constants.TRUCK_TABLE} WHERE {id_column} = $1"
     try:

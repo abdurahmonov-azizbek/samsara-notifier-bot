@@ -1,11 +1,10 @@
-from aiogram import Router, F
-from aiogram.types import *
+from aiogram import Router
 from aiogram.filters import Command
-from services import user_service
+from aiogram.types import *
 from logger import logger
-import constants
-import functions as fn
-import keyboards
+
+from src import keyboards, constants, functions as fn
+from src.services import user_service
 
 router = Router()
 
@@ -17,7 +16,7 @@ async def welcome(message: Message):
         if await fn.is_admin(user_id):
             await message.answer("👮‍♂️You are admin!\n\n\tWelcome to admin menu", reply_markup=keyboards.admin_menu)
             return
-        
+
         user = await user_service.get_by_id(user_id, constants.TELEGRAM_ID)
         if not user:
             await message.answer("You have no access for using this bot!", reply_markup=ReplyKeyboardRemove())
