@@ -183,9 +183,9 @@ class SamsaraClient:
 
         if trips_data and "trips" in trips_data and len(trips_data["trips"]) > 0:
             latest_trip = trips_data["trips"][-1]
-            start_location = latest_trip.get('startLocation', 'Unknown Start')
+            # start_location = latest_trip.get('startLocation', 'Unknown Start')
             end_location = latest_trip.get('endLocation', 'Unknown End')
-            details["route"] = f"From {start_location} to {end_location}"
+            details["route"] = f"  {end_location}"
 
             end_coords = latest_trip.get('endCoordinates', {})
             end_lat = end_coords.get('latitude', None)
