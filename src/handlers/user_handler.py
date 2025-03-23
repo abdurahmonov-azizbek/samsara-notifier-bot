@@ -161,6 +161,8 @@ async def process_truck_selection(callback: types.CallbackQuery, state: FSMConte
             if not selected_truck:
                 await callback.message.answer("Truck not found.")
                 return
+            await callback.message.answer("Fetching status...")
+
             await fetch_truck_details(bot, callback.message.chat.id, selected_truck.truck_id, data["api_key"])
             await state.clear()
             await callback.message.delete()
@@ -193,8 +195,10 @@ async def process_truck_name_input(message: types.Message, state: FSMContext, bo
         if not selected_truck:
             await message.answer("Truck not found. Try again or select from the list.")
             return
+        await message.answer("Fetching status...")
 
         await fetch_truck_details(bot, message.chat.id, selected_truck.truck_id, data["api_key"])
+
         await state.clear()
     except Exception as e:
         logger.error(f"Error in process_truck_name_input: {e}")
@@ -236,7 +240,7 @@ async def fetch_truck_details(bot: Bot, chat_id: int, truck_id: int, api_key: st
             f"👤 *Driver*: **{details['driver_name']}**\n"
             f"⛽️ Fuel: {details['fuel_percent']}\n"
             f"📍 Coordinates: {details['coordinates']}\n"
-            f"🚀 Speed: {details['speed']} m/h\n"
+            f"🚀 Speed: {details['speed']} MPH\n"
             f"⚙️ Engine: {details['engine_state']}\n"
             f"⏰ Time: {time_str}\n"
             f"🌍 Location: {details['location']}\n"

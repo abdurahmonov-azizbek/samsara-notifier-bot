@@ -1,8 +1,8 @@
-import math
 import time
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone, timedelta
 
 import aiohttp
+from geopy.distance import geodesic
 
 
 class SamsaraClient:
@@ -131,6 +131,7 @@ class SamsaraClient:
         print(f"Fetching details for truck ID: {truck_id}")
         start_time_ms = int((time.time() - 3600) * 1000)
         end_time_ms = int(time.time() * 1000)
+
         location_endpoint = f"v1/fleet/vehicles/{truck_id}/locations"
         location_params = {"startMs": start_time_ms, "endMs": end_time_ms}
         location_data = await self.fetch_data(location_endpoint, location_params)
@@ -139,7 +140,7 @@ class SamsaraClient:
 
         trips_endpoint = "v1/fleet/trips"
         trips_params = {
-            "startMs": int((time.time() - 3600) * 1000),
+            "startMs": start_time_ms,
             "endMs": end_time_ms,
             "vehicleId": str(truck_id)
         }
@@ -147,73 +148,69 @@ class SamsaraClient:
         vehicle_endpoint = f"/fleet/vehicles/{truck_id}"
         vehicle_data = await self.fetch_data(vehicle_endpoint)
 
-        if location_data and len(location_data) > 0:
-            truck_location = location_data[-1]
-            current_lat = truck_location.get('latitude', 0.0)
-            current_lon = truck_location.get('longitude', 0.0)
-            speed = truck_location.get('speedMilesPerHour', 0)
-            time_str = truck_location.get('timeMs', '')
-            if isinstance(time_str, str):
-                try:
-                    time_obj = datetime.strptime(time_str, '%Y-%m-%dT%H:%M:%S.%fZ')
-                    time_obj = time_obj.replace(tzinfo=timezone.utc).astimezone(timezone(timedelta(hours=-5)))
-                except ValueError:
-                    time_obj = None
-            elif isinstance(time_str, int):
-                time_obj = datetime.fromtimestamp(time_str / 1000, tz=timezone.utc)
-                time_obj = time_obj.astimezone(timezone(timedelta(hours=-5)))
-            else:
+        if not location_data or len(location_data) == 0:
+            return None
+
+        truck_location = location_data[-1]
+        current_lat = truck_location.get('latitude', 0.0)
+        current_lon = truck_location.get('longitude', 0.0)
+        speed = truck_location.get('speedMilesPerHour', 0)
+        time_str = truck_location.get('timeMs', '')
+
+        if isinstance(time_str, str):
+            try:
+                time_obj = datetime.strptime(time_str, '%Y-%m-%dT%H:%M:%S.%fZ')
+                time_obj = time_obj.replace(tzinfo=timezone.utc).astimezone(timezone(timedelta(hours=-5)))
+            except ValueError:
                 time_obj = None
+        elif isinstance(time_str, int):
+            time_obj = datetime.fromtimestamp(time_str / 1000, tz=timezone.utc)
+            time_obj = time_obj.astimezone(timezone(timedelta(hours=-5)))
+        else:
+            time_obj = None
 
-            details = {
-                "truck_id": truck_id,
-                "unit_name": vehicle_data['data'].get('name', 'Unknown'),
-                "driver_name": vehicle_data['data'].get('staticAssignedDriver', {}).get('name', 'Unknown'),
-                "fuel_percent": fuel_percent.get('fuel_percent', 'Unknown'),
-                "coordinates": f"{current_lat}, {current_lon}",
-                "speed": int(speed),
-                "engine_state": engine_stats.get('engine_state', 'Unknown'),
-                "time": time_obj.isoformat() if time_obj else '',
-                "location": truck_location.get('location', 'Unknown')
-            }
+        details = {
+            "truck_id": truck_id,
+            "unit_name": vehicle_data['data'].get('name', 'Unknown'),
+            "driver_name": vehicle_data['data'].get('staticAssignedDriver', {}).get('name', 'Unknown'),
+            "fuel_percent": fuel_percent.get('fuel_percent', 'Unknown'),
+            "coordinates": f"{current_lat}, {current_lon}",
+            "speed": int(speed),
+            "engine_state": engine_stats.get('engine_state', 'Unknown'),
+            "time": time_obj.isoformat() if time_obj else '',
+            "location": truck_location.get('location', 'Unknown')
+        }
 
-            if trips_data and "trips" in trips_data and len(trips_data["trips"]) > 0:
-                latest_trip = trips_data["trips"][-1]
+        if trips_data and "trips" in trips_data and len(trips_data["trips"]) > 0:
+            latest_trip = trips_data["trips"][-1]
+            start_location = latest_trip.get('startLocation', 'Unknown Start')
+            end_location = latest_trip.get('endLocation', 'Unknown End')
+            details["route"] = f"From {start_location} to {end_location}"
 
-                start_location = latest_trip.get('startLocation', 'Unknown Start')
-                end_location = latest_trip.get('endLocation', 'Unknown End')
-                details["route"] = f"From {start_location} to {end_location}"
+            end_coords = latest_trip.get('endCoordinates', {})
+            end_lat = end_coords.get('latitude', None)
+            end_lon = end_coords.get('longitude', None)
 
-                end_coords = latest_trip.get('endCoordinates', {})
-                end_lat = end_coords.get('latitude', None)
-                end_lon = end_coords.get('longitude', None)
-                if end_lat and end_lon:
-                    def haversine_distance(lat1, lon1, lat2, lon2):
-                        R = 3958.8
-                        lat1, lon1, lat2, lon2 = map(math.radians, [lat1, lon1, lat2, lon2])
-                        dlat = lat2 - lat1
-                        dlon = lon2 - lon1
-                        a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
-                        c = 2 * math.asin(math.sqrt(a))
-                        return R * c
+            if end_lat and end_lon:
+                current_coords = (current_lat, current_lon)
+                end_coords = (end_lat, end_lon)
+                remaining_distance = geodesic(current_coords, end_coords).miles
+                details["remaining_distance"] = round(remaining_distance, 2)
 
-                    destination_distance = haversine_distance(current_lat, current_lon, end_lat, end_lon)
-                    details["remaining_distance"] = round(destination_distance, 2)
+                if speed > 0:
 
-                    if details["speed"] > 0:
-                        hours_to_destination = destination_distance / details["speed"]
-                        arrival_time = datetime.now(timezone(timedelta(hours=-5))) + timedelta(
-                            hours=hours_to_destination)
-                        details["eta"] = arrival_time.strftime("%Y-%m-%d %H:%M:%S")
-                    else:
-                        details["eta"] = "Truck is not moving"
+                    adjusted_speed = speed * 0.85
+                    hours_to_destination = remaining_distance / adjusted_speed
+                    arrival_time = datetime.now(timezone(timedelta(hours=-5))) + timedelta(hours=hours_to_destination)
+                    details["eta"] = arrival_time.strftime("%Y-%m-%d %H:%M:%S")
                 else:
-                    details["remaining_distance"] = "Unknown (no end coordinates)"
-                    details["eta"] = "Cannot calculate (no end coordinates)"
+                    details["eta"] = "Truck is not moving"
             else:
-                details["route"] = "No active trip found"
-                details["remaining_distance"] = "Unknown"
-                details["eta"] = "No active trip"
+                details["remaining_distance"] = "Unknown (no end coordinates)"
+                details["eta"] = "Cannot calculate (no end coordinates)"
+        else:
+            details["route"] = "No active trip found"
+            details["remaining_distance"] = "Unknown"
+            details["eta"] = "No active trip"
 
-            return details
-        return None
+        return details
