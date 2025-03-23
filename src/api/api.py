@@ -115,6 +115,7 @@ class SamsaraClient:
 
     async def get_hursh_events(self, truck_id):
         safety_endpoint = f"v1/fleet/vehicles/{truck_id}/safety/harsh_event"
+
         start_time_ms = int((time.time() - 24 * 3600) * 1000)
         end_time_ms = int(time.time() * 1000)
         stats_params = {
@@ -244,6 +245,7 @@ class SamsaraClient:
 
 async def main():
     api_token = "dafsdf "
+
     client = SamsaraClient(api_token)
     await client.run()
 
