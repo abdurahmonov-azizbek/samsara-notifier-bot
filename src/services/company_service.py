@@ -1,6 +1,6 @@
-from typing import Optional
+from typing import Optional, List
 
-from logger import logger
+from src.logger import logger
 
 from src import constants, db
 from src.models import Company
@@ -11,6 +11,31 @@ async def get_all() -> list[Company]:
     query = f"SELECT * FROM {constants.COMPANY_TABLE}"
     try:
         rows = await conn.fetch(query)
+        companies = [
+            Company(
+                id=row['id'],
+                name=row['name'],
+                api_key=row['api_key']
+            )
+            for row in rows
+        ]
+        return companies
+    except Exception as ex:
+        logger.error(f"Error fetching all companies: {ex}")
+        return []
+    finally:
+        await conn.close()
+
+
+async def get_by_ids(ids: List[int], id_column: Optional[str] = "id") -> list[Company]:
+    if not ids:
+        logger.info("No IDs provided!")
+        return None
+
+    conn = await db.get_db_connection()
+    query = f"SELECT * FROM {constants.COMPANY_TABLE} WHERE {id_column} = ANY($1)"
+    try:
+        rows = await conn.fetch(query, ids)
         companies = [
             Company(
                 id=row['id'],

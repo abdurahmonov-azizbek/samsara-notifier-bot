@@ -2228,6 +2228,7 @@ asyncpg.exceptions.InvalidPasswordError: password authentication failed for user
 2025-03-23 18:43:30,161 - INFO - Update id=760402531 is handled. Duration 405 ms by bot id=6318766162
 2025-03-23 18:43:31,384 - INFO - Update id=760402532 is handled. Duration 281 ms by bot id=6318766162
 2025-03-23 18:43:32,580 - INFO - Update id=760402533 is handled. Duration 625 ms by bot id=6318766162
+<<<<<<< HEAD
 2025-03-23 18:45:34,377 - INFO - Running truck synchronization...
 2025-03-23 18:48:03,508 - INFO - Running truck synchronization...
 2025-03-23 18:50:34,565 - INFO - Running truck synchronization...
@@ -2269,3 +2270,55 @@ asyncpg.exceptions.InvalidPasswordError: password authentication failed for user
 2025-03-23 19:56:51,345 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
 2025-03-23 19:56:59,467 - INFO - Polling stopped
 2025-03-23 19:56:59,469 - INFO - Polling stopped for bot @pcouzbot id=6318766162 - 'pcouzbot'
+=======
+2025-03-23 10:29:23,208 - INFO - Starting...
+2025-03-23 10:29:23,208 - INFO - Start polling
+2025-03-23 10:29:23,208 - INFO - Running truck synchronization...
+2025-03-23 10:29:23,617 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:29:32,438 - INFO - Update id=63043688 is handled. Duration 338 ms by bot id=7864064435
+2025-03-23 10:29:37,555 - INFO - Update id=63043689 is handled. Duration 122 ms by bot id=7864064435
+2025-03-23 10:29:46,897 - INFO - Update id=63043690 is handled. Duration 157 ms by bot id=7864064435
+2025-03-23 10:29:49,333 - INFO - Update id=63043691 is handled. Duration 394 ms by bot id=7864064435
+2025-03-23 10:29:50,608 - INFO - Update id=63043692 is handled. Duration 707 ms by bot id=7864064435
+2025-03-23 10:29:51,967 - INFO - Update id=63043693 is handled. Duration 563 ms by bot id=7864064435
+2025-03-23 10:29:54,168 - ERROR - Error fetching company by id: invalid input for query argument $1: [2, 7] ('list' object cannot be interpreted as an integer)
+2025-03-23 10:29:54,169 - ERROR - Error while showing all users: 'NoneType' object has no attribute 'name'
+2025-03-23 10:29:54,383 - INFO - Update id=63043694 is handled. Duration 514 ms by bot id=7864064435
+2025-03-23 10:29:59,146 - WARNING - Received SIGINT signal
+2025-03-23 10:29:59,147 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:29:59,147 - INFO - Polling stopped
+2025-03-23 10:32:06,812 - INFO - Starting...
+2025-03-23 10:32:06,812 - INFO - Start polling
+2025-03-23 10:32:06,812 - INFO - Running truck synchronization...
+2025-03-23 10:32:07,396 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:32:08,353 - ERROR - Error while showing all users: get_by_ids() missing 1 required positional argument: 'id_column'
+2025-03-23 10:32:08,516 - INFO - Update id=63043695 is handled. Duration 923 ms by bot id=7864064435
+2025-03-23 10:32:27,227 - WARNING - Received SIGINT signal
+2025-03-23 10:32:27,228 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:32:27,232 - INFO - Polling stopped
+2025-03-23 10:33:25,198 - INFO - Starting...
+2025-03-23 10:33:25,198 - INFO - Start polling
+2025-03-23 10:33:25,199 - INFO - Running truck synchronization...
+2025-03-23 10:33:25,622 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:33:34,674 - INFO - Update id=63043696 is handled. Duration 560 ms by bot id=7864064435
+2025-03-23 10:33:47,698 - WARNING - Received SIGINT signal
+2025-03-23 10:33:47,699 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:33:47,699 - INFO - Polling stopped
+2025-03-23 10:34:13,916 - INFO - Starting...
+2025-03-23 10:34:13,917 - INFO - Start polling
+2025-03-23 10:34:13,917 - INFO - Running truck synchronization...
+2025-03-23 10:34:14,387 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:34:26,813 - INFO - Update id=63043697 is handled. Duration 562 ms by bot id=7864064435
+2025-03-23 10:34:41,902 - WARNING - Received SIGINT signal
+2025-03-23 10:34:41,903 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:34:41,903 - INFO - Polling stopped
+2025-03-23 10:34:49,662 - INFO - Starting...
+2025-03-23 10:34:49,663 - INFO - Start polling
+2025-03-23 10:34:49,663 - INFO - Running truck synchronization...
+2025-03-23 10:34:50,439 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:34:52,150 - INFO - Update id=63043698 is handled. Duration 583 ms by bot id=7864064435
+2025-03-23 10:35:27,158 - INFO - Update id=63043699 is handled. Duration 402 ms by bot id=7864064435
+2025-03-23 10:35:30,376 - WARNING - Received SIGINT signal
+2025-03-23 10:35:30,376 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-23 10:35:30,377 - INFO - Polling stopped
+>>>>>>> 50031981e7993e871434d0da9e3ae6bcb2c461ae
