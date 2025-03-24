@@ -10,6 +10,7 @@ from handlers.base_handler import router as base_router
 from handlers.startpoint_handler import router as startpoint_router
 from handlers.user_handler import router as user_router
 from jobs import sync_trucks_periodically
+from src.jobs import send_auto_notifications, send_auto_notifications_job
 
 app = FastAPI()
 
@@ -56,6 +57,8 @@ async def main():
     logger.info("Starting...")
 
     asyncio.create_task(sync_trucks_periodically())
+
+    asyncio.create_task(send_auto_notifications_job())
 
     asyncio.create_task(run_fastapi())
 

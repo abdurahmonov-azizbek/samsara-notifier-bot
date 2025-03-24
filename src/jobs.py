@@ -1,5 +1,5 @@
 import asyncio
-from functions import sync_trucks
+from functions import sync_trucks, send_auto_notifications
 from logger import logger
 
 async def sync_trucks_periodically():
@@ -8,3 +8,9 @@ async def sync_trucks_periodically():
         await sync_trucks()  
         # await asyncio.sleep(3600)
         await asyncio.sleep(120)  
+
+async def send_auto_notifications_job():
+    while True:
+        logger.info("Running sending auto notifications....")
+        await send_auto_notifications()
+        await asyncio.sleep(60)

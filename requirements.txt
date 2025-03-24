@@ -18,3 +18,5 @@ pydantic_core==2.27.2
 python-dotenv==1.0.1
 typing_extensions==4.12.2
 yarl==1.18.3
+fastpi==0.115.12
+uvicorn==0.34.0
