@@ -1,15 +1,16 @@
 import logging as logger
-
+from mailbox import Message
 from aiogram import Router, types, F, Bot
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
-from aiogram.types import InlineKeyboardButton
+from aiogram.types import InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder, InlineKeyboardMarkup
-
 from src import keyboards, constants
 from src.api.api import SamsaraClient
-from src.services import user_service, company_service
+from src.services import user_service, company_service, notification_service
 from src.services.truck_service import get_by_company_id
+from src.models import Notification
+from src.base import  bot
 
 router = Router()
 ITEMS_PER_PAGE = 10
@@ -261,3 +262,203 @@ async def fetch_truck_details(bot: Bot, chat_id: int, truck_id: int, api_key: st
     except Exception as e:
         logger.error(f"Error fetching truck details: {e}")
         await bot.send_message(chat_id, constants.ERROR_MESSAGE)
+
+class AddAutoNotificationStates(StatesGroup):
+    select_company = State()
+    select_truck = State()
+    time_in_minutes = State()
+
+
+async def show_trucks_for_auto_notification(message: types.Message, state: FSMContext, bot: Bot):
+    try:
+        data = await state.get_data()
+        company_id = data["selected_company_id"]
+        trucks = await get_by_company_id(company_id)
+        if not trucks:
+            await message.answer("No trucks found for this company.")
+            return
+
+        await state.update_data(trucks=trucks, page=0)
+        keyboard = await create_paginated_keyboard(trucks, "truck", page=0, prefix="truck_")
+        await state.set_state(AddAutoNotificationStates.select_truck)
+        await message.answer("Select a truck: ", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in show_trucks_for_auto_notification: {e}")
+        await message.answer(constants.ERROR_MESSAGE)
+
+@router.message(F.text == "⏳ Add auto notification")
+async def add_auto_notification(message: types.Message, state: FSMContext, bot: Bot):
+    try:
+        telegram_id = message.from_user.id
+        user = await user_service.get_by_id(telegram_id, id_column="telegram_id")
+        if not user or not user.company_id:
+            await message.answer("You’re not linked to any companies.")
+            return
+
+        companies = await company_service.get_by_ids(user.company_id)
+        if not companies:
+            await message.answer("No companies found for your account.")
+            return
+
+        if len(companies) == 1:
+            await state.update_data(
+                telegram_id=telegram_id,
+                selected_company_id=companies[0].id,
+                api_key=companies[0].api_key
+            )
+            await show_trucks_for_auto_notification(message, state, bot)
+        else:
+            await state.update_data(telegram_id=telegram_id, companies=companies, page=0)
+            keyboard = await create_paginated_keyboard(companies, "company", 0, prefix="comp_")
+            await state.set_state(AddAutoNotificationStates.select_company)
+            await message.answer("Select a company:", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in add_auto_notification: {e}")
+        await message.answer(constants.ERROR_MESSAGE)
+
+async def show_trucks_for_auto_notif(callback: types.CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        company_id = data["selected_company_id"]
+        trucks = await get_by_company_id(company_id)
+        if not trucks:
+            await callback.message.answer("No trucks found for this company.")
+            return
+
+        await state.update_data(trucks=trucks, page=0)
+        keyboard = await create_paginated_keyboard(trucks, "truck", page=0, prefix="truck_")
+        await state.set_state(AddAutoNotificationStates.select_truck)
+        await callback.message.answer("Select a truck (or type its name):", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in show_trucks: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+@router.callback_query(AddAutoNotificationStates.select_company)
+async def process_auto_notif_company_selection(callback: types.CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        companies = data["companies"]
+        current_page = data.get("page", 0)
+
+        if callback.data.startswith("comp_company_"):
+            company_id = int(callback.data.split("_")[2])
+            company = next((c for c in companies if c.id == company_id), None)
+            if not company or not company.api_key:
+                await callback.message.answer("API key not found for this company.")
+                return
+            await state.update_data(selected_company_id=company_id, api_key=company.api_key)
+            await show_trucks_for_auto_notif(callback, state)
+            await callback.message.delete()
+
+        elif callback.data.startswith("comp_page_"):
+            new_page = int(callback.data.split("_")[2])
+            await state.update_data(page=new_page)
+            keyboard = await create_paginated_keyboard(companies, "company", new_page, prefix="comp_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "comp_cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Operation cancelled.", reply_markup=keyboards.cancel_button)
+
+        await callback.answer()
+    except Exception as e:
+        logger.error(f"Error in process_company_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+@router.callback_query(AddAutoNotificationStates.select_truck)
+async def process_auto_notif_truck_selection(callback: types.CallbackQuery, state: FSMContext, bot: Bot):
+    try:
+        data = await state.get_data()
+        trucks = data["trucks"]
+
+        if callback.data.startswith("truck_truck_"):
+            truck_id = int(callback.data.split("_")[2])
+            selected_truck = next((t for t in trucks if t.id == truck_id), None)
+            if not selected_truck:
+                await callback.message.answer("Truck not found.")
+                return
+
+            await state.update_data(truck_id=selected_truck.truck_id)
+
+            await state.set_state(AddAutoNotificationStates.time_in_minutes)
+            times_markup = InlineKeyboardMarkup(inline_keyboard=[
+                [InlineKeyboardButton(text="⏳ 60 minutes (1 hour)", callback_data="times_60")],
+                [InlineKeyboardButton(text="⏳ 120 minutes (2 hours)", callback_data="times_120")],
+                [InlineKeyboardButton(text="⏳ 180 minutes (3 hours)", callback_data="times_180")],
+                [InlineKeyboardButton(text="⏳ 240 minutes (4 hours)", callback_data="times_240")],
+                [InlineKeyboardButton(text="⏳ 300 minutes (5 hours)", callback_data="times_300")],
+                [InlineKeyboardButton(text="❌ Cancel", callback_data="cancel")]
+            ])
+
+            await callback.message.edit_text("Choose notification time or enter your own:", reply_markup=times_markup)
+
+
+        elif callback.data.startswith("truck_page_"):
+            new_page = int(callback.data.split("_")[2])
+            await state.update_data(page=new_page)
+            keyboard = await create_paginated_keyboard(trucks, "truck", new_page, prefix="truck_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "truck_cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Operation cancelled.", reply_markup=keyboards.cancel_button)
+
+        await callback.answer()
+    except Exception as e:
+        logger.error(f"Error in process_truck_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+async def save_notification(telegram_id, truck_id, time_in_minutes, bot: Bot, state: FSMContext):
+    try:
+        notification = Notification(
+            id=None,
+            telegram_id=telegram_id,
+            truck_id=truck_id,
+            notification_type_id = None,
+            every_minutes=time_in_minutes,
+            last_send_time = None,
+            warning_type = None,
+            engine_status = None
+        )
+
+        await notification_service.create_auto_notification(notification)
+    except Exception as e:
+        await state.clear()
+        logger.error(f"Error while save notification: {e}")
+        await bot.send_message(telegram_id, constants.ERROR_MESSAGE)
+
+@router.callback_query(AddAutoNotificationStates.time_in_minutes)
+async def process_auto_notif_time(callback: CallbackQuery, state: FSMContext):
+    try:
+        if not callback.data.startswith("times_"):
+            return
+
+        time = int(callback.data.split("_")[-1])
+        data = await state.get_data()
+        await state.clear()
+
+        await save_notification(data["telegram_id"], int(data["truck_id"]), time, bot=bot, state=state)
+        await callback.message.answer("Notification added ✅", reply_markup=keyboards.user_menu)
+        await callback.message.delete()
+    except Exception as e:
+        logger.error(f"Error in process_auto_notif_time: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE, reply_markup=keyboards.user_menu)
+
+@router.message(AddAutoNotificationStates.time_in_minutes)
+async def process_auto_notif_time_b(message: types.Message, state: FSMContext):
+    try:
+        time = message.text.strip()
+        if not time.isdigit():
+            await message.answer("Please enter correct time (in minutes): ", reply_markup=keyboards.cancel_button)
+            return
+
+        data = await state.get_data()
+        await state.clear()
+
+        await save_notification(data["telegram_id"], int(data["truck_id"]), int(time), bot=bot, state=state)
+        await message.answer("Notification added ✅", reply_markup=keyboards.user_menu)
+    except Exception as e:
+        logger.error(f"Error in process_auto_notif_time: {e}")
+        await message.answer(constants.ERROR_MESSAGE, reply_markup=keyboards.user_menu)

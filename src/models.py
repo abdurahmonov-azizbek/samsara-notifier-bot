@@ -20,3 +20,14 @@ class Truck:
         self.name = name
         self.truck_id = truck_id
         self.company_id = company_id
+
+class Notification:
+    def __init__(self, id, telegram_id, truck_id, notification_type_id, every_minutes, last_send_time, warning_type, engine_status):
+        self.id = id
+        self.telegram_id = telegram_id
+        self.truck_id = truck_id
+        self.notification_type_id = notification_type_id
+        self.every_minutes = every_minutes
+        self.last_send_time = last_send_time
+        self.warning_type = warning_type
+        self.engine_status = engine_status
