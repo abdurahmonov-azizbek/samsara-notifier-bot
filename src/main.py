@@ -12,7 +12,7 @@ from handlers.base_handler import router as base_router
 from handlers.startpoint_handler import router as startpoint_router
 from handlers.user_handler import router as user_router
 from jobs import sync_trucks_periodically
-from src.jobs import send_auto_notifications, send_auto_notifications_job
+from src.jobs import send_auto_notifications_job
 from src.services.notification_service import get_notification_type_id, get_telegram_ids
 
 app = FastAPI()
@@ -43,9 +43,7 @@ async def samsara_webhook(request: Request):
     try:
         notification_type_id = await get_notification_type_id(event_type)
         logger.info(f"Detected notification_type_id: {notification_type_id} for event {event_type}")
-
-        telegram_data = await get_telegram_ids(vehicle_id, notification_type_id)
-
+        telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
         if telegram_data:
             message_text = (
                 f"🚨 *Samsara Alert* 🚨\n"
