@@ -1,5 +1,6 @@
 USER_TABLE = "sys_user"
 COMPANY_TABLE = "company"
 TRUCK_TABLE = "truck"
+NOTIFICATION_TABLE = "notification"
 TELEGRAM_ID = "telegram_id"
 ERROR_MESSAGE = "Something went wrong, please try again later!"
