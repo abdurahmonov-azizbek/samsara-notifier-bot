@@ -1,9 +1,14 @@
 from config import ADMIN_ID
 import db
-from services import company_service, truck_service
+from services import company_service, truck_service, notification_service, user_service
 from api.api import SamsaraClient
 import constants
-from models import Truck
+from models import Truck, Company, Notification
+from src.logger import logger
+from src.base import bot
+from api.api import SamsaraClient
+from handlers.user_handler import fetch_truck_details
+from datetime import  datetime
 
 async def is_admin(user_id) -> bool:
     return user_id == ADMIN_ID
@@ -53,3 +58,36 @@ async def sync_trucks():
 
         for truck in trucks_to_delete:
             await truck_service.delete(truck.id)
+
+
+async def send_auto_notifications():
+    try:
+        query = """SELECT * 
+            FROM notification
+            WHERE notification_type_id = 3
+            AND (
+                last_send_time IS NULL 
+                OR last_send_time + (every_minutes * INTERVAL '1 minute') <= NOW()
+            );
+            """
+
+        notifications = await notification_service.get_by_query(query)
+
+        for notification in notifications:
+            truck = await truck_service.get_by_id(notification.truck_id, "truck_id")
+            if not truck:
+                logger.info(f"Truck not found in send_auto_notifications with id: {notification.truck_id}")
+                continue
+            company = await company_service.get_by_id(truck.company_id)
+            if not company:
+                logger.info(f"Company not found in send_auto_notifications with id: {truck.company_id}")
+                continue
+
+            await fetch_truck_details(bot, notification.telegram_id, notification.truck_id, company.api_key)
+            newNotification = notification
+            newNotification.last_send_time = datetime.now()
+            await notification_service.update(newNotification)
+
+
+    except Exception as e:
+        logger.error(f"Error while sendint auto notifications: {e}")

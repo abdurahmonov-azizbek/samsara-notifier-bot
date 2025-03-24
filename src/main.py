@@ -12,7 +12,8 @@ from handlers.base_handler import router as base_router
 from handlers.startpoint_handler import router as startpoint_router
 from handlers.user_handler import router as user_router
 from jobs import sync_trucks_periodically
-from src.services.notification import get_notification_type_id, get_telegram_ids
+from src.jobs import send_auto_notifications, send_auto_notifications_job
+from src.services.notification_service import get_notification_type_id, get_telegram_ids
 
 app = FastAPI()
 
@@ -35,7 +36,7 @@ async def samsara_webhook(request: Request):
         utc_time = datetime.fromisoformat(start_time.replace("Z", "+00:00"))
         est_timezone = pytz.timezone("America/New_York")
         est_time = utc_time.astimezone(est_timezone)
-        formatted_time = est_time.strftime("%Y-%m-%d %I:%M:%S %p %Z")
+        formatted_time = est_time.strftime("%Y-%m-%d %I:%M:%S %p")
     else:
         formatted_time = "Unknown"
 
@@ -52,7 +53,7 @@ async def samsara_webhook(request: Request):
                 f"⏰ *Start Time*: {formatted_time}\n"
             )
 
-            for telegram_id, truck_name in telegram_data:
+            for telegram_id, truck_name in set(telegram_data):
                 full_message = f"{message_text}\n🚛 *Truck Name*: {truck_name}"
                 await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
             logger.info(f"Notification sent to Telegram for vehicle {vehicle_id}, type {notification_type_id}")
@@ -74,6 +75,8 @@ async def main():
     logger.info("Starting...")
 
     asyncio.create_task(sync_trucks_periodically())
+
+    asyncio.create_task(send_auto_notifications_job())
 
     asyncio.create_task(run_fastapi())
 

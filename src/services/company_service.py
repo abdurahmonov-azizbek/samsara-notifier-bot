@@ -52,7 +52,7 @@ async def get_by_ids(ids: List[int], id_column: Optional[str] = "id") -> list[Co
         await conn.close()
 
 
-async def get_by_id(id: int, id_column: Optional[str] = "id"):
+async def get_by_id(id: int, id_column: Optional[str] = "id") -> Company:
     conn = await db.get_db_connection()
     query = f"SELECT * FROM {constants.COMPANY_TABLE} WHERE {id_column} = $1"
 
