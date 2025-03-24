@@ -33,6 +33,7 @@ async def samsara_webhook(request: Request):
     start_time = None
     description = event_type
     is_resolved = False
+    incidentUrl = None
 
     if event_type == "AlertIncident":
         conditions = payload.get("data", {}).get("conditions", [])
@@ -46,7 +47,7 @@ async def samsara_webhook(request: Request):
         vehicle_id = condition_details.get(event_type, {}).get("vehicle", {}).get("id", "Unknown")
         start_time = payload.get("data", {}).get("happenedAtTime", "Unknown")
         is_resolved = payload.get("data", {}).get("isResolved", False)
-        incidentUrl = payload.get("data", {}).get("incidentUrl", False)
+        incidentUrl = payload.get("data", {}).get("incidentUrl", None)
     else:
         vehicle_id = payload.get("data", {}).get("data", {}).get("vehicle", {}).get("id", "Unknown")
         start_time = payload.get("data", {}).get("data", {}).get("startTime", "Unknown")
