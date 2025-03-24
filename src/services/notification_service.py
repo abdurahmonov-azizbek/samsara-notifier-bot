@@ -113,8 +113,8 @@ async def update(notification: Notification):
 async def get_notification_type_id(event_type: str) -> int:
     conn = await db.get_db_connection()
     warning_events = ['SevereSpeedingEnded', 'SevereSpeedingStarted', 'PredictiveMaintenanceAlert',
-                      'SuddenFuelLevelDrop', 'SuddenFuelLevelRise', 'GatewayUnplugged']
-    engine_events = ['running', 'stopped', 'off']
+                      'SuddenFuelLevelDrop', 'SuddenFuelLevelRise', 'GatewayUnplugged','harshEvent']
+    engine_events = ['deviceMovementStopped', 'deviceMovement']
 
     if event_type in warning_events:
         type_name = 'Warnings'

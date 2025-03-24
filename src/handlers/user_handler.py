@@ -80,6 +80,11 @@ async def create_paginated_keyboard_with_multiple_selection(items, item_type, pa
         nav_row.append(InlineKeyboardButton(text="◀️ Prev", callback_data=f"{prefix}page_{page - 1}"))
     if page < total_pages - 1:
         nav_row.append(InlineKeyboardButton(text="Next ▶️", callback_data=f"{prefix}page_{page + 1}"))
+
+    all_selected = all(item.truck_id in selected_ids for item in items)
+    select_all_text = "Deselect All" if all_selected else "Select All"
+    nav_row.append(InlineKeyboardButton(text=select_all_text, callback_data=f"{prefix}select_all"))
+
     if nav_row:
         keyboard.append(nav_row)
 
@@ -450,6 +455,19 @@ async def process_auto_notif_truck_selection(callback: types.CallbackQuery, stat
             )
             await callback.message.edit_reply_markup(reply_markup=keyboard)
 
+        elif callback.data == "truck_select_all":
+            all_truck_ids = [truck.truck_id for truck in trucks]
+            if set(selected_truck_ids) == set(all_truck_ids):
+                selected_truck_ids.clear()
+            else:
+                selected_truck_ids = all_truck_ids[:]
+
+            await state.update_data(selected_truck_ids=selected_truck_ids)
+            keyboard = await create_paginated_keyboard_with_multiple_selection(
+                trucks, "truck", data["page"], prefix="truck_", selected_ids=selected_truck_ids
+            )
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
         elif callback.data == "truck_done" and selected_truck_ids:
             await state.set_state(AddAutoNotificationStates.time_in_minutes)
             times_markup = InlineKeyboardMarkup(inline_keyboard=[
@@ -679,12 +697,25 @@ async def process_status_notif_truck_selection(callback: types.CallbackQuery, st
             )
             await callback.message.edit_reply_markup(reply_markup=keyboard)
 
+        elif callback.data == "truck_select_all":
+            all_truck_ids = [truck.truck_id for truck in trucks]
+            if set(selected_truck_ids) == set(all_truck_ids):
+                selected_truck_ids.clear()
+            else:
+                selected_truck_ids = all_truck_ids[:]
+
+            await state.update_data(selected_truck_ids=selected_truck_ids)
+            keyboard = await create_paginated_keyboard_with_multiple_selection(
+                trucks, "truck", data["page"], prefix="truck_", selected_ids=selected_truck_ids
+            )
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
         elif callback.data == "truck_done" and selected_truck_ids:
             await state.set_state(AddStatusNotificationStates.status)
             status_markup = InlineKeyboardMarkup(inline_keyboard=[
-                [InlineKeyboardButton(text="🟢 Running", callback_data="status_running")],
-                [InlineKeyboardButton(text="🔴 Stopped", callback_data="status_stopped")],
-                [InlineKeyboardButton(text="⚫️ Off", callback_data="status_off")],
+                [InlineKeyboardButton(text="🟢 Device Movement", callback_data="status_deviceMovement")],
+                [InlineKeyboardButton(text="🔴 Device Movement Stopped", callback_data="status_deviceMovementStopped")],
+                # [InlineKeyboardButton(text="⚫️ Off", callback_data="status_off")],
                 [InlineKeyboardButton(text="❌ Cancel", callback_data="cancel")]
             ])
             await callback.message.edit_text(
@@ -889,6 +920,19 @@ async def process_warning_notif_truck_selection(callback: types.CallbackQuery, s
             )
             await callback.message.edit_reply_markup(reply_markup=keyboard)
 
+        elif callback.data == "truck_select_all":
+            all_truck_ids = [truck.truck_id for truck in trucks]
+            if set(selected_truck_ids) == set(all_truck_ids):
+                selected_truck_ids.clear()
+            else:
+                selected_truck_ids = all_truck_ids[:]
+
+            await state.update_data(selected_truck_ids=selected_truck_ids)
+            keyboard = await create_paginated_keyboard_with_multiple_selection(
+                trucks, "truck", data["page"], prefix="truck_", selected_ids=selected_truck_ids
+            )
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
         elif callback.data == "truck_done" and selected_truck_ids:
             await state.set_state(AddWarningNotificationStates.warning)
             warning_markup = InlineKeyboardMarkup(inline_keyboard=[
@@ -899,6 +943,7 @@ async def process_warning_notif_truck_selection(callback: types.CallbackQuery, s
                 [InlineKeyboardButton(text="SuddenFuelLevelDrop", callback_data="warning_SuddenFuelLevelDrop")],
                 [InlineKeyboardButton(text="SuddenFuelLevelRise", callback_data="warning_SuddenFuelLevelRise")],
                 [InlineKeyboardButton(text="GatewayUnplugged", callback_data="warning_GatewayUnplugged")],
+                [InlineKeyboardButton(text="HarshEvent", callback_data="warning_harshEvent")],
                 [InlineKeyboardButton(text="❌ Cancel", callback_data="cancel")]
             ])
             await callback.message.edit_text(
