@@ -4,3 +4,4 @@ __pycache__/
 .idea
 *.pyc
 *py~
+src/bot.log
