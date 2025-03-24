@@ -3498,3 +3498,17 @@ client_session: <aiohttp.client.ClientSession object at 0x7f1a6c7320d0>
 2025-03-24 05:45:04,676 - ERROR - Unclosed client session
 client_session: <aiohttp.client.ClientSession object at 0x7ff536ef5f90>
 >>>>>>> 2f6b2796a31adda3bd10710a4384906219653dbe
+2025-03-24 15:26:36,615 - INFO - Starting...
+2025-03-24 15:26:36,615 - INFO - Start polling
+2025-03-24 15:26:36,616 - INFO - Running truck synchronization...
+2025-03-24 15:26:36,946 - INFO - Run polling for bot @pcouzbot id=6318766162 - 'pcouzbot'
+2025-03-24 15:26:54,598 - INFO - Update id=760402861 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-24 15:26:56,998 - INFO - Update id=760402862 is handled. Duration 609 ms by bot id=6318766162
+2025-03-24 15:26:59,752 - INFO - Update id=760402863 is handled. Duration 265 ms by bot id=6318766162
+2025-03-24 15:27:01,788 - INFO - Update id=760402864 is handled. Duration 391 ms by bot id=6318766162
+2025-03-24 15:27:22,745 - INFO - Update id=760402865 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-24 15:27:24,728 - INFO - Update id=760402866 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-24 15:27:25,910 - INFO - Update id=760402867 is not handled. Duration 16 ms by bot id=6318766162
+2025-03-24 15:27:27,596 - INFO - Update id=760402868 is handled. Duration 327 ms by bot id=6318766162
+2025-03-24 15:27:32,122 - INFO - Update id=760402869 is not handled. Duration 0 ms by bot id=6318766162
+2025-03-24 15:27:33,765 - INFO - Update id=760402870 is not handled. Duration 0 ms by bot id=6318766162
