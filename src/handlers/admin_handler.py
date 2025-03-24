@@ -89,7 +89,8 @@ async def show_all_companies(message: Message):
 
 
 class EditCompanyStates(StatesGroup):
-    id = State()
+    select_company = State()
+    select_option = State()
     name = State()
     api_key = State()
 
@@ -109,7 +110,7 @@ async def edit_company(message: Message, state: FSMContext):
         buttons.append([KeyboardButton(text="⬅️ Cancel")])
         markup = ReplyKeyboardMarkup(keyboard=buttons, resize_keyboard=True)
 
-        await state.set_state(EditCompanyStates.id)
+        await state.set_state(EditCompanyStates.select_company)
         await message.answer("Select company: ", reply_markup=markup)
 
     except Exception as e:
@@ -117,7 +118,7 @@ async def edit_company(message: Message, state: FSMContext):
         await message.answer(constants.ERROR_MESSAGE)
 
 
-@router.message(EditCompanyStates.id)
+@router.message(EditCompanyStates.select_company)
 async def ask_new_name(message: Message, state: FSMContext):
     try:
         company_name = message.text.strip()
@@ -126,26 +127,66 @@ async def ask_new_name(message: Message, state: FSMContext):
             await message.answer("Please use buttons!")
             return
 
-        await state.update_data(id=company.id)
-        await state.set_state(EditCompanyStates.name)
-        await message.answer("Enter company's (new) name: ", reply_markup=keyboards.cancel_button)
+        await state.update_data(id=company.id, current_company=company)
+
+        menu = InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="Change Company Name", callback_data="edit_company_name")],
+            [InlineKeyboardButton(text="Change API KEY", callback_data="edit_api_key")],
+            [InlineKeyboardButton(text="❌ Cancel", callback_data="cancel")]
+        ])
+
+        await state.set_state(EditCompanyStates.select_option)
+        await message.answer("What would you like to edit ?", reply_markup=menu)
 
     except Exception as e:
         logger.error(f"Error in ask_new_name: {e}")
         await message.answer(constants.ERROR_MESSAGE)
 
+@router.callback_query(EditCompanyStates.select_option)
+async def process_company_edit(callback: CallbackQuery, state: FSMContext):
+    try:
+        if callback.data == "edit_company_name":
+            await callback.message.edit_text("Enter company name: ", reply_markup=keyboards.cancel_inline)
+            await state.set_state(EditCompanyStates.name)
+        elif callback.data == "edit_api_key":
+            await callback.message.edit_text("Enter new API KEY: ", reply_markup=keyboards.cancel_inline)
+            await state.set_state(EditCompanyStates.api_key)
+
+    except Exception as e:
+        logger.error(f"Error while editing company: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
 
 @router.message(EditCompanyStates.name)
 async def ask_new_api_key(message: Message, state: FSMContext):
     try:
-        await state.update_data(name=message.text.strip())
-        await state.set_state(EditCompanyStates.api_key)
-        await message.answer("Enter (new) api-key: ", reply_markup=keyboards.cancel_button)
+        name = message.text.strip()
+        data = await state.get_data()
+        await state.clear()
+
+        company = data["current_company"]
+        company.name = name
+        await company_service.update(company)
+        await message.answer("Company name changed ✅", reply_markup=keyboards.admin_menu)
 
     except Exception as e:
         logger.error(f"Error in ask_new_api_key: {e}")
         await message.answer(constants.ERROR_MESSAGE)
 
+@router.message(EditCompanyStates.api_key)
+async def ask_new_api_key(message: Message, state: FSMContext):
+    try:
+        api_key = message.text.strip()
+        data = await state.get_data()
+        await state.clear()
+
+        company = data["current_company"]
+        company.api_key = api_key
+        await company_service.update(company)
+        await message.answer("Company API KEY changed ✅", reply_markup=keyboards.admin_menu)
+
+    except Exception as e:
+        logger.error(f"Error in ask_new_api_key: {e}")
+        await message.answer(constants.ERROR_MESSAGE)
 
 @router.message(EditCompanyStates.api_key)
 async def ask_new_api_key(message: Message, state: FSMContext):

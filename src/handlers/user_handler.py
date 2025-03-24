@@ -233,6 +233,15 @@ async def fetch_truck_details(bot: Bot, chat_id: int, truck_id: int, api_key: st
         if isinstance(eta_str, str):
             eta_str = eta_str.replace("T", " ").split(".")[0]
 
+        status_emoji = ""
+        engine_state = details["engine_state"].strip().lower()
+        if engine_state == "running":
+            status_emoji = "🟢"
+        elif engine_state == "stopped":
+            status_emoji = "🔴"
+        elif engine_state == "off":
+            status_emoji = "⚫️"
+
         response = (
             f"🚛 *Truck Details* 🚛\n"
             # f"🆔 *ID*: **{details['truck_id']}**\n"
@@ -241,7 +250,7 @@ async def fetch_truck_details(bot: Bot, chat_id: int, truck_id: int, api_key: st
             f"⛽️ Fuel: {details['fuel_percent']}\n"
             f"📍 Coordinates: {details['coordinates']}\n"
             f"🚀 Speed: {details['speed']} MPH\n"
-            f"⚙️ Engine: {details['engine_state']}\n"
+            f"⚙️ Engine: {details['engine_state']} {status_emoji}\n"
             f"⏰ Time: {time_str}\n"
             f"🌍 Location: {details['location']}\n"
             f"🛤️ Route: {details['route']}\n"
