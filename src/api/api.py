@@ -137,14 +137,19 @@ class SamsaraClient:
         location_data = await self.fetch_data(location_endpoint, location_params)
         engine_stats = await self.get_engine_stats(truck_id)
         fuel_percent = await self.get_fuel_percent(truck_id)
+        end_time = datetime.utcnow()
+        start_time = end_time - timedelta(hours=24)
 
-        trips_endpoint = "v1/fleet/trips"
+        start_time_rfc3339 = start_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+        end_time_rfc3339 = end_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+        trips_endpoint = f"fleet/routes"
+
         trips_params = {
-            "startMs": start_time_ms,
-            "endMs": end_time_ms,
-            "vehicleId": str(truck_id)
+            "startTime": start_time_rfc3339,
+            "endTime": end_time_rfc3339,
         }
         trips_data = await self.fetch_data(trips_endpoint, trips_params)
+        print(trips_data)
         vehicle_endpoint = f"/fleet/vehicles/{truck_id}"
         vehicle_data = await self.fetch_data(vehicle_endpoint)
 

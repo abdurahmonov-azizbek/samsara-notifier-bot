@@ -232,6 +232,17 @@ async def fetch_truck_details(bot: Bot, chat_id: int, truck_id: int, api_key: st
         eta_str = details["eta"]
         if isinstance(eta_str, str):
             eta_str = eta_str.replace("T", " ").split(".")[0]
+        engine_state = details["engine_state"]
+        if engine_state == "Running" or engine_state == "On":
+            engine_display = f"{engine_state} 🟢"
+        elif engine_state == "Stopped":
+            engine_display = f"{engine_state} 🔴"
+        elif engine_state == "Off":
+            engine_display = f"{engine_state} ⚫️"
+        elif engine_state == "Idle":
+            engine_display = f"{engine_state} 🟡"
+        else:
+            engine_display = f"{engine_state}"
 
         response = (
             f"🚛 *Truck Details* 🚛\n"
@@ -241,7 +252,7 @@ async def fetch_truck_details(bot: Bot, chat_id: int, truck_id: int, api_key: st
             f"⛽️ Fuel: {details['fuel_percent']}\n"
             f"📍 Coordinates: {details['coordinates']}\n"
             f"🚀 Speed: {details['speed']} MPH\n"
-            f"⚙️ Engine: {details['engine_state']}\n"
+            f"⚙️ Engine: {engine_display}\n"
             f"⏰ Time: {time_str}\n"
             f"🌍 Location: {details['location']}\n"
             f"🛤️ Route: {details['route']}\n"
