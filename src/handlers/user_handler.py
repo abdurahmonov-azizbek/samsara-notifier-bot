@@ -1,16 +1,14 @@
 import logging as logger
-
 from aiogram import Router, types, F, Bot
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
-from aiogram.types import InlineKeyboardButton
+from aiogram.types import InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder, InlineKeyboardMarkup
-
 from src import keyboards, constants
 from src.api.api import SamsaraClient
 from src.base import bot
 from src.models import Notification
-from src.services import user_service, company_service, notification_service
+from src.services import user_service, company_service, notification_service, truck_service
 from src.services.truck_service import get_by_company_id
 
 router = Router()
@@ -47,7 +45,7 @@ async def create_paginated_keyboard(items: list, item_type: str, page: int = 0,
         builder.row(*nav_buttons)
 
     builder.row(
-        InlineKeyboardButton(text="❌ Cancel", callback_data=f"{prefix}cancel")
+        InlineKeyboardButton(text="❌ Cancel", callback_data=f"cancel")
     )
     return builder.as_markup()
 
@@ -1005,3 +1003,163 @@ async def finish_warning_notification(callback: types.CallbackQuery, state: FSMC
     except Exception as e:
         logger.error(f"Error in finish_warning_notification: {e}")
         await callback.message.answer(constants.ERROR_MESSAGE, reply_markup=keyboards.user_menu)
+
+@router.message(F.text == "🎊 My notifications")
+async def show_all_notifications(message: types.Message, state: FSMContext):
+    try:
+        loading_message = await message.answer("Fetching your all notifications...")
+        telegram_id = message.from_user.id
+        notifications = await notification_service.get_by_query(f"select * from {constants.NOTIFICATION_TABLE} WHERE telegram_id = {telegram_id}")
+        if len(notifications) == 0:
+            await message.answer("You have no notifications yet!")
+            return
+
+        msg = "🎊 Your notifications:\n"
+        for notification in notifications:
+            if len(msg) > 3000 and len(msg) < 4096:
+                await message.answer(msg, parse_mode="Markdown")
+                msg = ""
+
+            truck = await truck_service.get_by_id(notification.truck_id, "truck_id")
+            if not truck:
+                logger.info(f"Truck not found for notification: {notification.id}, truck id: {notification.truck_id}")
+                continue
+
+            if notification.notification_type_id == 1:
+                msg += f"🏷️ *Unit*: {truck.name}\n"
+                msg += f"📍 *Notification type*: Warning ⚠️\n"
+                msg += f"⚠️ *Warning*: {notification.warning_type}\n\n"
+            elif notification.notification_type_id == 2:
+                msg += f"🏷️ *Unit*: {truck.name}\n"
+                msg += f"📍 *Notification type*: Engine status ⚙️\n"
+                emoji = ""
+                engine = str(notification.engine_status).strip().lower()
+                if engine == "running":
+                    emoji = "🟢"
+                elif engine == "stopped":
+                    emoji = "🔴"
+                elif engine == "off":
+                    emoji = "⚫️"
+                msg += f"⚙️ *Engine status*: {notification.engine_status} {emoji}\n\n"
+            elif notification.notification_type_id == 3:
+                msg += f"🏷️ *Unit*: {truck.name}\n"
+                msg += f"📍 *Notification type*: Timer ⏳\n"
+                msg += f"⏳ *Time*: {notification.every_minutes} minutes\n\n"
+
+
+        await loading_message.delete()
+        await message.answer(msg, parse_mode="Markdown")
+
+
+    except Exception as e:
+        logger.error(f"Error while show all notifications: {e}")
+
+async def create_paginated_keyboard_for_notifications(items: list, item_type: str, page: int = 0,
+                                    prefix: str = "") -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    total_pages = (len(items) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
+    start_idx = page * ITEMS_PER_PAGE
+    end_idx = min((page + 1) * ITEMS_PER_PAGE, len(items))
+
+    for item in items[start_idx:end_idx]:
+        truck = await truck_service.get_by_id(item.truck_id, "truck_id")
+        if not truck:
+            continue
+
+        text = ""
+        if item.notification_type_id == 1:
+            text = f"🏷️ {truck.name} | Warning ⚠️ | {item.warning_type}"
+        elif item.notification_type_id == 2:
+            text = f"🏷️ {truck.name} | Status ⚙️ | {item.engine_status}"
+        elif item.notification_type_id == 3:
+            text = f"🏷️ {truck.name} | Timer ⏳ | {item.every_minutes} minutes"
+        else:
+            text = "UNKNOWN"
+
+        builder.button(text=text, callback_data=f"{prefix}{item_type}_{item.id}")
+
+    builder.adjust(1)
+
+    nav_buttons = []
+    if page > 0:
+        nav_buttons.append(InlineKeyboardButton(text="⬅️ Previous", callback_data=f"{prefix}page_{page - 1}"))
+    if page < total_pages - 1:
+        nav_buttons.append(InlineKeyboardButton(text="Next ➡️", callback_data=f"{prefix}page_{page + 1}"))
+    if nav_buttons:
+        builder.row(*nav_buttons)
+
+    builder.row(
+        InlineKeyboardButton(text="❌ Cancel", callback_data=f"cancel")
+    )
+    return builder.as_markup()
+
+
+class DeleteNotificationStates(StatesGroup):
+    select_notification = State()
+
+
+@router.message(F.text == "❌ Delete notification")
+async def delete_notification(message: types.Message, state: FSMContext):
+    try:
+        telegram_id = message.from_user.id
+        notifications = await notification_service.get_by_query(
+            f"select * from {constants.NOTIFICATION_TABLE} WHERE telegram_id = {telegram_id}")
+        if len(notifications) == 0:
+            await message.answer("You have no notifications yet!")
+            return
+
+        await state.update_data(notifications=notifications)
+        await state.set_state(DeleteNotificationStates.select_notification)
+        markup = await create_paginated_keyboard_for_notifications(notifications, "notification", 0, "notif_")
+        await message.answer("Choose notification you want to delete", reply_markup=markup)
+    except Exception as e:
+        logger.error(f"Error in delete_notification: {e}")
+
+@router.callback_query(DeleteNotificationStates.select_notification)
+async def process_delete_notification(callback: CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        notifications = data["notifications"]
+
+        if callback.data.startswith("notif_page_"):
+            new_page = int(callback.data.split("_")[2])
+            keyboard = await create_paginated_keyboard_for_notifications(notifications, "notification", new_page, "notif_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data.startswith("notif_notification_"):
+            notification_id = int(callback.data.split("_")[-1])
+            await notification_service.delete_by_id(notification_id)
+            await callback.message.answer("Notification deleted ✅", reply_markup=keyboards.user_menu)
+            await callback.message.delete()
+            await state.clear()
+
+    except Exception as e:
+        logger.error(f"Error in process_delete_notification: {e}")
+
+class ClearAllNotificationsStates(StatesGroup):
+    sure = State()
+
+@router.message(F.text == "🧹 Clear all notifications")
+async def clear_all_notifications(message: types.Message, state: FSMContext):
+    try:
+        await state.set_state(ClearAllNotificationsStates.sure)
+        keyboard = InlineKeyboardMarkup(inline_keyboard=[
+            [InlineKeyboardButton(text="Yes I'm sure ✅", callback_data="delete_all")],
+            [InlineKeyboardButton(text="No, my bad ❌", callback_data="cancel")]
+        ])
+        await message.answer("*Do you want to delete all your notifications?* ", parse_mode="Markdown", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in clear_all_notifications: {e}")
+
+@router.callback_query(ClearAllNotificationsStates.sure)
+async def process_delete_all_notifications(callback: CallbackQuery, state: FSMContext):
+    try:
+        telegram_id = callback.message.chat.id
+        if callback.data == "delete_all":
+            await notification_service.delete_by_id(telegram_id, "telegram_id")
+            await callback.message.answer("Deleted ✅", reply_markup=keyboards.user_menu)
+            await callback.message.delete()
+            await state.clear()
+    except Exception as e:
+        logger.error(f"Error in clear_all_notifications: {e}")
+

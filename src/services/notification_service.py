@@ -150,3 +150,11 @@ async def get_telegram_ids(vehicle_id: str, type_id: int, event_type: str) -> li
 
     rows = await conn.fetch(query, *params)
     return [(row["telegram_id"], row["truck_name"]) for row in rows]
+
+async def delete_by_id(id, id_column: str = "id"):
+    conn = await db.get_db_connection()
+    query = f"DELETE FROM {constants.NOTIFICATION_TABLE} WHERE {id_column} = $1"
+
+    await conn.execute(query, id)
+    await conn.close()
+
