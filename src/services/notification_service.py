@@ -40,6 +40,24 @@ async def create_status_notification(notification: Notification):
     finally:
         await conn.close()
 
+async def create_warning_notification(notification: Notification):
+    try:
+        conn = await db.get_db_connection()
+        query = f"INSERT INTO {constants.NOTIFICATION_TABLE} (telegram_id, truck_id, notification_type_id, warning_type) VALUES ($1, $2, $3, $4)"
+
+        await conn.execute(
+            query,
+            notification.telegram_id,
+            notification.truck_id,
+            1,
+            notification.warning_type)
+
+        return True
+    except Exception as e:
+        logger.error(f"Error while creating warning notification: {e}")
+    finally:
+        await conn.close()
+
 async def get_by_query(query: str) -> List[Notification]:
     try:
         conn = await db.get_db_connection()

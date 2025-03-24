@@ -645,3 +645,185 @@ async def finish_status_notification(callback: CallbackQuery, state: FSMContext)
         await callback.message.delete()
     except Exception as e:
         logger.error(f"Error in finish_status_notification: {e}")
+
+
+class AddWarningNotificationStates(StatesGroup):
+    select_company = State()
+    select_truck = State()
+    warning = State()
+
+async def show_trucks_for_warning_notification_single(message: types.Message, state: FSMContext):
+    try:
+        data = await state.get_data()
+        company_id = data["selected_company_id"]
+        trucks = await get_by_company_id(company_id)
+        if not trucks:
+            await message.answer("No trucks found for this company.")
+            return
+
+        await state.update_data(trucks=trucks, page=0)
+        keyboard = await create_paginated_keyboard(trucks, "truck", page=0, prefix="truck_")
+        await state.set_state(AddWarningNotificationStates.select_truck)
+        await message.answer("Select a truck: ", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in show_trucks_for_auto_notification: {e}")
+        await message.answer(constants.ERROR_MESSAGE)
+
+@router.message(F.text == "⚠️ Add warning notification")
+async def add_warning_notification(message: types.Message, state: FSMContext, bot: Bot):
+    try:
+        telegram_id = message.from_user.id
+        user = await user_service.get_by_id(telegram_id, id_column="telegram_id")
+        if not user or not user.company_id:
+            await message.answer("You’re not linked to any companies.")
+            return
+
+        companies = await company_service.get_by_ids(user.company_id)
+        if not companies:
+            await message.answer("No companies found for your account.")
+            return
+
+        if len(companies) == 1:
+            await state.update_data(
+                telegram_id=telegram_id,
+                selected_company_id=companies[0].id,
+                api_key=companies[0].api_key
+            )
+            await show_trucks_for_warning_notification_single(message, state)
+        else:
+            await state.update_data(telegram_id=telegram_id, companies=companies, page=0)
+            keyboard = await create_paginated_keyboard(companies, "company", 0, prefix="comp_")
+            await state.set_state(AddWarningNotificationStates.select_company)
+            await message.answer("Select a company:", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in add_auto_notification: {e}")
+        await message.answer(constants.ERROR_MESSAGE)
+
+async def show_trucks_for_warning_notification(callback: types.CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        company_id = data["selected_company_id"]
+        trucks = await get_by_company_id(company_id)
+        if not trucks:
+            await callback.message.answer("No trucks found for this company.")
+            return
+
+        await state.update_data(trucks=trucks, page=0)
+        keyboard = await create_paginated_keyboard(trucks, "truck", page=0, prefix="truck_")
+        await state.set_state(AddWarningNotificationStates.select_truck)
+        await callback.message.answer("Select a truck (or type its name):", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in show_trucks: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+@router.callback_query(AddWarningNotificationStates.select_company)
+async def process_warning_notif_company_selection(callback: types.CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        companies = data["companies"]
+        current_page = data.get("page", 0)
+
+        if callback.data.startswith("comp_company_"):
+            company_id = int(callback.data.split("_")[2])
+            company = next((c for c in companies if c.id == company_id), None)
+            if not company or not company.api_key:
+                await callback.message.answer("API key not found for this company.")
+                return
+            await state.update_data(selected_company_id=company_id, api_key=company.api_key)
+            await show_trucks_for_warning_notification(callback, state)
+
+        elif callback.data.startswith("comp_page_"):
+            new_page = int(callback.data.split("_")[2])
+            await state.update_data(page=new_page)
+            keyboard = await create_paginated_keyboard(companies, "company", new_page, prefix="comp_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "comp_cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Operation cancelled.", reply_markup=keyboards.cancel_button)
+
+        await callback.answer()
+    except Exception as e:
+        logger.error(f"Error in process_company_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+@router.callback_query(AddWarningNotificationStates.select_truck)
+async def process_warning_notif_truck_selection(callback: types.CallbackQuery, state: FSMContext, bot: Bot):
+    try:
+        data = await state.get_data()
+        trucks = data["trucks"]
+
+        if callback.data.startswith("truck_truck_"):
+            truck_id = int(callback.data.split("_")[2])
+            selected_truck = next((t for t in trucks if t.id == truck_id), None)
+            if not selected_truck:
+                await callback.message.answer("Truck not found.")
+                return
+
+            await state.update_data(truck_id=selected_truck.truck_id)
+
+            await state.set_state(AddWarningNotificationStates.warning)
+            warning_markup = InlineKeyboardMarkup(inline_keyboard=[
+                [InlineKeyboardButton(text="SevereSpeedingEnded", callback_data="warning_SevereSpeedingEnded")],
+                [InlineKeyboardButton(text="SevereSpeedingStarted", callback_data="warning_SevereSpeedingStarted")],
+                [InlineKeyboardButton(text="PredictiveMaintenanceAlert", callback_data="warning_PredictiveMaintenanceAlert")],
+                [InlineKeyboardButton(text="SuddenFuelLevelDrop", callback_data="warning_SuddenFuelLevelDrop")],
+                [InlineKeyboardButton(text="SuddenFuelLevelRise", callback_data="warning_SuddenFuelLevelRise")],
+                [InlineKeyboardButton(text="GatewayUnplugged", callback_data="warning_GatewayUnplugged")],
+                [InlineKeyboardButton(text="❌ Cancel", callback_data="cancel")]
+            ])
+
+            await callback.message.edit_text("Choose engine status:", reply_markup=warning_markup)
+
+        elif callback.data.startswith("truck_page_"):
+            new_page = int(callback.data.split("_")[2])
+            await state.update_data(page=new_page)
+            keyboard = await create_paginated_keyboard(trucks, "truck", new_page, prefix="truck_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "truck_cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Operation cancelled.", reply_markup=keyboards.cancel_button)
+
+        await callback.answer()
+    except Exception as e:
+        logger.error(f"Error in process_truck_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+async def save_warning_notification(telegram_id, truck_id, warning):
+    try:
+        notification = Notification(
+            id=None,
+            telegram_id=telegram_id,
+            truck_id=truck_id,
+            notification_type_id=1,
+            every_minutes=None,
+            last_send_time=None,
+            warning_type=warning,
+            engine_status=None)
+
+        await notification_service.create_warning_notification(notification)
+        return True
+
+    except Exception as e:
+        logger.error(f"Error while saving warning notification: {e}")
+
+
+
+@router.callback_query(AddWarningNotificationStates.warning)
+async def finish_warning_notification(callback: CallbackQuery, state: FSMContext):
+    try:
+        if not callback.data.startswith("warning_"):
+            return
+
+        warning_type = callback.data.strip().split("_")[-1]
+        data = await state.get_data()
+        await state.clear()
+        await save_warning_notification(data["telegram_id"], int(data["truck_id"]), warning_type)
+
+        await callback.message.answer("Notification added ✅", reply_markup=keyboards.user_menu)
+        await callback.message.delete()
+    except Exception as e:
+        logger.error(f"Error in finish_status_notification: {e}")
