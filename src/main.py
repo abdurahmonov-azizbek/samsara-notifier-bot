@@ -13,7 +13,7 @@ from handlers.startpoint_handler import router as startpoint_router
 from handlers.user_handler import router as user_router
 from jobs import sync_trucks_periodically
 from src.jobs import send_auto_notifications, send_auto_notifications_job
-from src.services.notification import get_notification_type_id, get_telegram_ids
+from src.services.notification_service import get_notification_type_id, get_telegram_ids
 
 app = FastAPI()
 

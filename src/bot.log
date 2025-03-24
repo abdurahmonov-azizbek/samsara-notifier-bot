@@ -4490,3 +4490,190 @@ client_session: <aiohttp.client.ClientSession object at 0x7fa6a50dbb10>
 2025-03-24 06:31:49,809 - ERROR - Unclosed connector
 connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7fa6a514ffb0>, 12640.990581661)])']
 connector: <aiohttp.connector.TCPConnector object at 0x7fa6a50ba2c0>
+2025-03-24 06:33:44,438 - INFO - Starting...
+2025-03-24 06:33:44,438 - INFO - Start polling
+2025-03-24 06:33:44,438 - INFO - Running truck synchronization...
+2025-03-24 06:33:44,439 - INFO - Running sending auto notifications....
+2025-03-24 06:33:44,776 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 06:33:47,850 - WARNING - Received SIGINT signal
+2025-03-24 06:33:47,851 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 06:33:47,851 - INFO - Polling stopped
+2025-03-24 06:33:47,993 - WARNING - Received SIGINT signal
+2025-03-24 06:57:30,924 - INFO - Starting...
+2025-03-24 06:57:30,924 - INFO - Start polling
+2025-03-24 06:57:30,924 - INFO - Running truck synchronization...
+2025-03-24 06:57:30,926 - INFO - Running sending auto notifications....
+2025-03-24 06:57:31,733 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 06:57:32,661 - INFO - Update id=63043958 is handled. Duration 809 ms by bot id=7864064435
+2025-03-24 06:57:32,662 - INFO - Update id=63043957 is handled. Duration 810 ms by bot id=7864064435
+2025-03-24 06:57:36,373 - INFO - Update id=63043959 is handled. Duration 254 ms by bot id=7864064435
+2025-03-24 06:57:37,955 - INFO - Update id=63043960 is handled. Duration 604 ms by bot id=7864064435
+2025-03-24 06:57:38,557 - INFO - Update id=63043961 is not handled. Duration 1 ms by bot id=7864064435
+2025-03-24 06:57:40,367 - INFO - Update id=63043962 is not handled. Duration 1 ms by bot id=7864064435
+2025-03-24 06:57:41,970 - INFO - Update id=63043963 is handled. Duration 204 ms by bot id=7864064435
+2025-03-24 06:57:43,418 - INFO - Update id=63043964 is handled. Duration 319 ms by bot id=7864064435
+2025-03-24 06:57:45,246 - INFO - Update id=63043965 is handled. Duration 512 ms by bot id=7864064435
+2025-03-24 06:57:47,090 - INFO - Update id=63043966 is handled. Duration 406 ms by bot id=7864064435
+2025-03-24 06:57:48,692 - INFO - Update id=63043967 is handled. Duration 412 ms by bot id=7864064435
+2025-03-24 06:57:49,954 - INFO - Update id=63043968 is handled. Duration 268 ms by bot id=7864064435
+2025-03-24 06:57:50,871 - INFO - Update id=63043969 is handled. Duration 304 ms by bot id=7864064435
+2025-03-24 06:57:51,599 - INFO - Update id=63043970 is handled. Duration 257 ms by bot id=7864064435
+2025-03-24 06:57:53,131 - INFO - Update id=63043971 is handled. Duration 509 ms by bot id=7864064435
+2025-03-24 06:57:58,865 - INFO - Update id=63043972 is handled. Duration 599 ms by bot id=7864064435
+2025-03-24 06:58:00,564 - WARNING - Received SIGINT signal
+2025-03-24 06:58:00,565 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 06:58:00,565 - INFO - Polling stopped
+2025-03-24 06:58:00,711 - WARNING - Received SIGINT signal
+2025-03-24 06:58:01,079 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fbb97e36990>
+2025-03-24 06:58:01,079 - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7fbb96cd09b0>, 14222.371687288)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7fbb97e423f0>
+2025-03-24 07:07:09,621 - INFO - Starting...
+2025-03-24 07:07:09,621 - INFO - Start polling
+2025-03-24 07:07:09,621 - INFO - Running truck synchronization...
+2025-03-24 07:07:09,622 - INFO - Running sending auto notifications....
+2025-03-24 07:07:10,186 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:07:19,349 - INFO - Update id=63043973 is handled. Duration 545 ms by bot id=7864064435
+2025-03-24 07:07:21,362 - INFO - Update id=63043974 is handled. Duration 523 ms by bot id=7864064435
+2025-03-24 07:07:22,377 - INFO - Update id=63043975 is handled. Duration 413 ms by bot id=7864064435
+2025-03-24 07:07:24,012 - INFO - Update id=63043976 is handled. Duration 407 ms by bot id=7864064435
+2025-03-24 07:07:25,807 - WARNING - Received SIGINT signal
+2025-03-24 07:07:25,808 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:07:25,808 - INFO - Polling stopped
+2025-03-24 07:07:25,960 - WARNING - Received SIGINT signal
+2025-03-24 07:07:26,244 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fedb6746e90>
+2025-03-24 07:07:26,244 - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7fedb680a8d0>, 14787.514497013)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7fedb673e3f0>
+2025-03-24 07:09:02,822 - INFO - Starting...
+2025-03-24 07:09:02,822 - INFO - Start polling
+2025-03-24 07:09:02,822 - INFO - Running truck synchronization...
+2025-03-24 07:09:02,824 - INFO - Running sending auto notifications....
+2025-03-24 07:09:03,258 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:09:03,855 - INFO - Update id=63043977 is handled. Duration 453 ms by bot id=7864064435
+2025-03-24 07:09:05,414 - INFO - Update id=63043978 is handled. Duration 207 ms by bot id=7864064435
+2025-03-24 07:09:06,609 - ERROR - Error in process_company_selection: show_trucks_for_status_notification() missing 1 required positional argument: 'bot'
+2025-03-24 07:09:06,825 - INFO - Update id=63043979 is handled. Duration 217 ms by bot id=7864064435
+2025-03-24 07:09:14,133 - WARNING - Received SIGINT signal
+2025-03-24 07:09:14,133 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:09:14,134 - INFO - Polling stopped
+2025-03-24 07:09:14,290 - WARNING - Received SIGINT signal
+2025-03-24 07:09:39,598 - INFO - Starting...
+2025-03-24 07:09:39,598 - INFO - Start polling
+2025-03-24 07:09:39,598 - INFO - Running truck synchronization...
+2025-03-24 07:09:39,600 - INFO - Running sending auto notifications....
+2025-03-24 07:09:40,213 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:09:42,016 - INFO - Update id=63043980 is handled. Duration 545 ms by bot id=7864064435
+2025-03-24 07:09:43,684 - INFO - Update id=63043981 is handled. Duration 547 ms by bot id=7864064435
+2025-03-24 07:09:52,216 - INFO - Update id=63043982 is handled. Duration 235 ms by bot id=7864064435
+2025-03-24 07:09:54,231 - INFO - Update id=63043983 is handled. Duration 613 ms by bot id=7864064435
+2025-03-24 07:09:58,956 - WARNING - Received SIGINT signal
+2025-03-24 07:09:58,957 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:09:58,961 - INFO - Polling stopped
+2025-03-24 07:09:59,138 - WARNING - Received SIGINT signal
+2025-03-24 07:09:59,416 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fe28601a990>
+2025-03-24 07:09:59,416 - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7fe285ec6b70>, 14932.286066332)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7fe28603e190>
+2025-03-24 07:11:29,738 - INFO - Starting...
+2025-03-24 07:11:29,738 - INFO - Start polling
+2025-03-24 07:11:29,738 - INFO - Running truck synchronization...
+2025-03-24 07:11:29,740 - INFO - Running sending auto notifications....
+2025-03-24 07:11:30,126 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:11:32,779 - INFO - Update id=63043984 is handled. Duration 425 ms by bot id=7864064435
+2025-03-24 07:11:34,535 - INFO - Update id=63043985 is handled. Duration 395 ms by bot id=7864064435
+2025-03-24 07:11:40,848 - WARNING - Received SIGINT signal
+2025-03-24 07:11:40,848 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:11:40,848 - INFO - Polling stopped
+2025-03-24 07:11:41,035 - WARNING - Received SIGINT signal
+2025-03-24 07:11:45,081 - INFO - Starting...
+2025-03-24 07:11:45,081 - INFO - Start polling
+2025-03-24 07:11:45,081 - INFO - Running truck synchronization...
+2025-03-24 07:11:45,082 - INFO - Running sending auto notifications....
+2025-03-24 07:11:45,647 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:11:46,574 - INFO - Update id=63043986 is handled. Duration 577 ms by bot id=7864064435
+2025-03-24 07:11:47,873 - INFO - Update id=63043987 is handled. Duration 409 ms by bot id=7864064435
+2025-03-24 07:11:49,173 - INFO - Update id=63043988 is handled. Duration 269 ms by bot id=7864064435
+2025-03-24 07:11:49,758 - INFO - Update id=63043989 is handled. Duration 269 ms by bot id=7864064435
+2025-03-24 07:11:50,663 - INFO - Update id=63043990 is handled. Duration 367 ms by bot id=7864064435
+2025-03-24 07:11:51,755 - INFO - Update id=63043991 is handled. Duration 199 ms by bot id=7864064435
+2025-03-24 07:11:52,945 - INFO - Update id=63043992 is handled. Duration 262 ms by bot id=7864064435
+2025-03-24 07:11:54,449 - INFO - Update id=63043993 is handled. Duration 613 ms by bot id=7864064435
+2025-03-24 07:11:55,457 - INFO - Update id=63043994 is handled. Duration 495 ms by bot id=7864064435
+2025-03-24 07:11:56,395 - INFO - Update id=63043995 is handled. Duration 408 ms by bot id=7864064435
+2025-03-24 07:11:56,804 - INFO - Update id=63043996 is handled. Duration 359 ms by bot id=7864064435
+2025-03-24 07:12:00,897 - INFO - Update id=63043997 is handled. Duration 603 ms by bot id=7864064435
+2025-03-24 07:12:01,998 - INFO - Update id=63043998 is handled. Duration 572 ms by bot id=7864064435
+2025-03-24 07:12:04,542 - INFO - Update id=63043999 is handled. Duration 243 ms by bot id=7864064435
+2025-03-24 07:12:05,302 - INFO - Update id=63044000 is handled. Duration 251 ms by bot id=7864064435
+2025-03-24 07:12:06,430 - INFO - Update id=63044001 is handled. Duration 305 ms by bot id=7864064435
+2025-03-24 07:12:07,149 - INFO - Update id=63044002 is handled. Duration 309 ms by bot id=7864064435
+2025-03-24 07:12:07,828 - INFO - Update id=63044003 is handled. Duration 295 ms by bot id=7864064435
+2025-03-24 07:12:08,424 - INFO - Update id=63044004 is handled. Duration 294 ms by bot id=7864064435
+2025-03-24 07:12:09,402 - INFO - Update id=63044005 is handled. Duration 460 ms by bot id=7864064435
+2025-03-24 07:12:18,045 - INFO - Update id=63044006 is handled. Duration 172 ms by bot id=7864064435
+2025-03-24 07:12:22,544 - INFO - Update id=63044007 is handled. Duration 206 ms by bot id=7864064435
+2025-03-24 07:12:45,143 - INFO - Running sending auto notifications....
+2025-03-24 07:13:50,626 - INFO - Running truck synchronization...
+2025-03-24 07:13:52,928 - INFO - Running sending auto notifications....
+2025-03-24 07:14:20,890 - WARNING - Received SIGINT signal
+2025-03-24 07:14:20,890 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:14:20,890 - INFO - Polling stopped
+2025-03-24 07:14:21,082 - WARNING - Received SIGINT signal
+2025-03-24 07:14:21,357 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7f92aaa0ec10>
+2025-03-24 07:14:24,183 - INFO - Starting...
+2025-03-24 07:14:24,183 - INFO - Start polling
+2025-03-24 07:14:24,183 - INFO - Running truck synchronization...
+2025-03-24 07:14:24,185 - INFO - Running sending auto notifications....
+2025-03-24 07:14:24,592 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:14:25,215 - INFO - Update id=63044008 is handled. Duration 436 ms by bot id=7864064435
+2025-03-24 07:14:26,755 - INFO - Update id=63044009 is handled. Duration 343 ms by bot id=7864064435
+2025-03-24 07:14:28,698 - INFO - Update id=63044010 is handled. Duration 125 ms by bot id=7864064435
+2025-03-24 07:15:19,255 - WARNING - Received SIGINT signal
+2025-03-24 07:15:19,256 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:15:19,260 - INFO - Polling stopped
+2025-03-24 07:15:19,406 - WARNING - Received SIGINT signal
+2025-03-24 07:17:39,094 - INFO - Starting...
+2025-03-24 07:17:39,094 - INFO - Start polling
+2025-03-24 07:17:39,094 - INFO - Running truck synchronization...
+2025-03-24 07:17:39,096 - INFO - Running sending auto notifications....
+2025-03-24 07:17:39,848 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:17:42,313 - INFO - Update id=63044011 is handled. Duration 636 ms by bot id=7864064435
+2025-03-24 07:17:43,840 - INFO - Update id=63044012 is handled. Duration 410 ms by bot id=7864064435
+2025-03-24 07:17:45,375 - INFO - Update id=63044013 is handled. Duration 717 ms by bot id=7864064435
+2025-03-24 07:17:46,398 - INFO - Update id=63044014 is handled. Duration 407 ms by bot id=7864064435
+2025-03-24 07:17:47,217 - INFO - Update id=63044015 is handled. Duration 409 ms by bot id=7864064435
+2025-03-24 07:17:48,349 - INFO - Update id=63044016 is handled. Duration 312 ms by bot id=7864064435
+2025-03-24 07:17:52,747 - INFO - Update id=63044017 is handled. Duration 409 ms by bot id=7864064435
+2025-03-24 07:17:54,554 - INFO - Update id=63044018 is handled. Duration 226 ms by bot id=7864064435
+2025-03-24 07:17:56,007 - INFO - Update id=63044019 is handled. Duration 276 ms by bot id=7864064435
+2025-03-24 07:17:57,764 - INFO - Update id=63044020 is handled. Duration 509 ms by bot id=7864064435
+2025-03-24 07:17:59,141 - INFO - Update id=63044021 is handled. Duration 406 ms by bot id=7864064435
+2025-03-24 07:18:09,800 - WARNING - Received SIGINT signal
+2025-03-24 07:18:09,801 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:18:09,801 - INFO - Polling stopped
+2025-03-24 07:18:09,963 - WARNING - Received SIGINT signal
+2025-03-24 07:18:10,265 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x7fa2e7e1f610>
+2025-03-24 07:18:10,266 - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x7fa2e7e9a3f0>, 15416.22834452)])']
+connector: <aiohttp.connector.TCPConnector object at 0x7fa2e7e9d6e0>
+2025-03-24 07:19:43,847 - INFO - Starting...
+2025-03-24 07:19:43,847 - INFO - Start polling
+2025-03-24 07:19:43,847 - INFO - Running truck synchronization...
+2025-03-24 07:19:43,849 - INFO - Running sending auto notifications....
+2025-03-24 07:19:44,383 - INFO - Run polling for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:19:46,961 - INFO - Update id=63044022 is handled. Duration 939 ms by bot id=7864064435
+2025-03-24 07:19:48,349 - INFO - Update id=63044023 is handled. Duration 298 ms by bot id=7864064435
+2025-03-24 07:19:49,521 - INFO - Update id=63044024 is handled. Duration 239 ms by bot id=7864064435
+2025-03-24 07:19:50,796 - INFO - Update id=63044025 is handled. Duration 282 ms by bot id=7864064435
+2025-03-24 07:19:53,182 - INFO - Update id=63044026 is handled. Duration 215 ms by bot id=7864064435
+2025-03-24 07:19:55,467 - INFO - Update id=63044027 is handled. Duration 548 ms by bot id=7864064435
+2025-03-24 07:19:56,949 - WARNING - Received SIGINT signal
+2025-03-24 07:19:56,950 - INFO - Polling stopped for bot @SamsaraNotifier_bot id=7864064435 - 'Samsara Notifier Demo'
+2025-03-24 07:19:56,951 - INFO - Polling stopped
+2025-03-24 07:19:57,151 - WARNING - Received SIGINT signal
