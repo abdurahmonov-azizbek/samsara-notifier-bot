@@ -1,9 +1,11 @@
 import logging as logger
+
 from aiogram import Router, types, F, Bot
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder, InlineKeyboardMarkup
+
 from src import keyboards, constants
 from src.api.api import SamsaraClient
 from src.base import bot
@@ -944,9 +946,21 @@ async def process_warning_notif_truck_selection(callback: types.CallbackQuery, s
                 [InlineKeyboardButton(text="HarshEvent", callback_data="warning_harshEvent")],
                 [InlineKeyboardButton(text="❌ Cancel", callback_data="cancel")]
             ])
+            warning_descriptions = (
+                f"Selected {len(selected_truck_ids)} truck(s). Choose warning type:\n\n"
+                f"1. *SevereSpeedingEnded*: Indicates that a period of severe speeding has ended. The vehicle is now within normal speed limits.\n"
+                f"2. *SevereSpeedingStarted*: Alerts that the vehicle has begun severely exceeding the speed limit, posing a safety risk.\n"
+                f"3. *PredictiveMaintenanceAlert*: Warns that the vehicle may need maintenance soon based on predictive data to prevent breakdowns.\n"
+                f"4. *SuddenFuelLevelDrop*: Notifies a rapid, unexpected decrease in fuel level, possibly indicating a leak or malfunction.\n"
+                f"5. *SuddenFuelLevelRise*: Signals an unusual sudden increase in fuel level, possibly due to refueling or a sensor error.\n"
+                f"6. *GatewayUnplugged*: Warns that the vehicle's tracking or diagnostic gateway device has been disconnected.\n"
+                f"7. *HarshEvent*: Indicates a harsh driving event like sudden braking or sharp acceleration, affecting safety or condition."
+            )
+
             await callback.message.edit_text(
-                f"Selected {len(selected_truck_ids)} truck(s). Choose warning type:",
-                reply_markup=warning_markup
+                warning_descriptions,
+                reply_markup=warning_markup,
+                parse_mode="Markdown"
             )
 
         elif callback.data == "truck_cancel":
@@ -1004,12 +1018,14 @@ async def finish_warning_notification(callback: types.CallbackQuery, state: FSMC
         logger.error(f"Error in finish_warning_notification: {e}")
         await callback.message.answer(constants.ERROR_MESSAGE, reply_markup=keyboards.user_menu)
 
+
 @router.message(F.text == "🎊 My notifications")
 async def show_all_notifications(message: types.Message, state: FSMContext):
     try:
         loading_message = await message.answer("Fetching your all notifications...")
         telegram_id = message.from_user.id
-        notifications = await notification_service.get_by_query(f"select * from {constants.NOTIFICATION_TABLE} WHERE telegram_id = {telegram_id}")
+        notifications = await notification_service.get_by_query(
+            f"select * from {constants.NOTIFICATION_TABLE} WHERE telegram_id = {telegram_id}")
         if len(notifications) == 0:
             await message.answer("You have no notifications yet!")
             return
@@ -1046,7 +1062,6 @@ async def show_all_notifications(message: types.Message, state: FSMContext):
                 msg += f"📍 *Notification type*: Timer ⏳\n"
                 msg += f"⏳ *Time*: {notification.every_minutes} minutes\n\n"
 
-
         await loading_message.delete()
         await message.answer(msg, parse_mode="Markdown")
 
@@ -1054,8 +1069,9 @@ async def show_all_notifications(message: types.Message, state: FSMContext):
     except Exception as e:
         logger.error(f"Error while show all notifications: {e}")
 
+
 async def create_paginated_keyboard_for_notifications(items: list, item_type: str, page: int = 0,
-                                    prefix: str = "") -> InlineKeyboardMarkup:
+                                                      prefix: str = "") -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     total_pages = (len(items) + ITEMS_PER_PAGE - 1) // ITEMS_PER_PAGE
     start_idx = page * ITEMS_PER_PAGE
@@ -1115,6 +1131,7 @@ async def delete_notification(message: types.Message, state: FSMContext):
     except Exception as e:
         logger.error(f"Error in delete_notification: {e}")
 
+
 @router.callback_query(DeleteNotificationStates.select_notification)
 async def process_delete_notification(callback: CallbackQuery, state: FSMContext):
     try:
@@ -1123,7 +1140,8 @@ async def process_delete_notification(callback: CallbackQuery, state: FSMContext
 
         if callback.data.startswith("notif_page_"):
             new_page = int(callback.data.split("_")[2])
-            keyboard = await create_paginated_keyboard_for_notifications(notifications, "notification", new_page, "notif_")
+            keyboard = await create_paginated_keyboard_for_notifications(notifications, "notification", new_page,
+                                                                         "notif_")
             await callback.message.edit_reply_markup(reply_markup=keyboard)
 
         elif callback.data.startswith("notif_notification_"):
@@ -1136,8 +1154,10 @@ async def process_delete_notification(callback: CallbackQuery, state: FSMContext
     except Exception as e:
         logger.error(f"Error in process_delete_notification: {e}")
 
+
 class ClearAllNotificationsStates(StatesGroup):
     sure = State()
+
 
 @router.message(F.text == "🧹 Clear all notifications")
 async def clear_all_notifications(message: types.Message, state: FSMContext):
@@ -1147,9 +1167,11 @@ async def clear_all_notifications(message: types.Message, state: FSMContext):
             [InlineKeyboardButton(text="Yes I'm sure ✅", callback_data="delete_all")],
             [InlineKeyboardButton(text="No, my bad ❌", callback_data="cancel")]
         ])
-        await message.answer("*Do you want to delete all your notifications?* ", parse_mode="Markdown", reply_markup=keyboard)
+        await message.answer("*Do you want to delete all your notifications?* ", parse_mode="Markdown",
+                             reply_markup=keyboard)
     except Exception as e:
         logger.error(f"Error in clear_all_notifications: {e}")
+
 
 @router.callback_query(ClearAllNotificationsStates.sure)
 async def process_delete_all_notifications(callback: CallbackQuery, state: FSMContext):
@@ -1162,4 +1184,3 @@ async def process_delete_all_notifications(callback: CallbackQuery, state: FSMCo
             await state.clear()
     except Exception as e:
         logger.error(f"Error in clear_all_notifications: {e}")
-
