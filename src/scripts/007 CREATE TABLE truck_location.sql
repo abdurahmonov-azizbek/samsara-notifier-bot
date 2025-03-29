@@ -1,0 +1,4 @@
+CREATE TABLE truck_location(
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    truck_id INTEGER NOT NULL,
+    location VARCHAR(1024) NOT NULL)

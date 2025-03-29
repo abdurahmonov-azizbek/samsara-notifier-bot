@@ -1,7 +1,6 @@
 import asyncio
 import datetime
 from typing import Dict, Optional
-
 import aiohttp
 from geopy.distance import geodesic
 
@@ -106,3 +105,6 @@ class AsyncLocationFinder:
 #
 #     result = await finder.get_travel_info(start_place, end_place, speed_mph)
 #     print(result)
+#
+# if __name__ == "__main__":
+#     asyncio.run(main())

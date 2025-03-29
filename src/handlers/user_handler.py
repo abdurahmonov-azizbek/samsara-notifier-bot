@@ -1,17 +1,19 @@
 import logging as logger
+from pyexpat.errors import messages
 
 from aiogram import Router, types, F, Bot
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import InlineKeyboardButton, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder, InlineKeyboardMarkup
-
 from src import keyboards, constants
 from src.api.api import SamsaraClient
+from src.api.get_cordinates import AsyncLocationFinder
 from src.base import bot
-from src.models import Notification
-from src.services import user_service, company_service, notification_service, truck_service
+from src.models import Notification, TruckLocation
+from src.services import user_service, company_service, notification_service, truck_service, truck_location_service
 from src.services.truck_service import get_by_company_id
+from src.config import TOMTOM_API_KEY
 
 router = Router()
 ITEMS_PER_PAGE = 10
@@ -1184,3 +1186,329 @@ async def process_delete_all_notifications(callback: CallbackQuery, state: FSMCo
             await state.clear()
     except Exception as e:
         logger.error(f"Error in clear_all_notifications: {e}")
+
+class SetToLocationStates(StatesGroup):
+    select_company = State()
+    select_truck = State()
+    location = State()
+
+async def show_trucks_for_set_to_location_single(message: types.Message, state: FSMContext, bot: Bot):
+    try:
+        data = await state.get_data()
+        company_id = data["selected_company_id"]
+        trucks = await get_by_company_id(company_id)
+        if not trucks:
+            await message.answer("No trucks found for this company.")
+            return
+
+        await state.update_data(trucks=trucks, page=0, selected_truck_ids=[])
+        keyboard = await create_paginated_keyboard(trucks, "truck", page=0, prefix="truck_")
+        await state.set_state(SetToLocationStates.select_truck)
+        await message.answer("Select one or more trucks (tap to toggle):", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in show_trucks_for_set_to_location_single: {e}")
+        await message.answer(constants.ERROR_MESSAGE)
+
+@router.message(F.text == "🗺 Set To Location")
+async def set_to_location(message: types.Message, state: FSMContext):
+    try:
+        telegram_id = message.from_user.id
+        user = await user_service.get_by_id(telegram_id, id_column="telegram_id")
+        if not user or not user.company_id:
+            await message.answer("You are not linked to any companies")
+            return
+
+        companies = await company_service.get_by_ids(user.company_id)
+        if not companies:
+            await message.answer("No companies found for your account.")
+            return
+
+        if len(companies) == 1:
+            await state.update_data(
+                telegram_id=telegram_id,
+                selected_company_id=companies[0].id,
+                api_key=companies[0].api_key
+            )
+            await show_trucks_for_set_to_location_single(message, state, bot)
+
+        else:
+            await state.update_data(telegram_id=telegram_id, companies=companies, page=0)
+            keyboard = await create_paginated_keyboard(companies, "company", 0, prefix="comp_")
+            await state.set_state(SetToLocationStates.select_company)
+            await message.answer("Select a company:", reply_markup=keyboard)
+
+    except Exception as e:
+        logger.error(f"Error in set_to_location: {e}")
+        await message.answer(constants.ERROR_MESSAGE)
+
+async def show_trucks_for_set_to_location(callback: types.CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        company_id = data["selected_company_id"]
+        trucks = await get_by_company_id(company_id)
+        if not trucks:
+            await callback.message.answer("No trucks found for this company.")
+            return
+
+        await state.update_data(trucks=trucks, page=0, selected_truck_ids=[])
+        keyboard = await create_paginated_keyboard(trucks, "truck", page=0, prefix="truck_")
+        await state.set_state(SetToLocationStates.select_truck)
+        await callback.message.answer("Select one or more trucks (tap to toggle):", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in show_trucks: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+@router.callback_query(SetToLocationStates.select_company)
+async def process_setlocation_compant_selection(callback: types.CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        companies = data["companies"]
+        current_page = data.get("page", 0)
+
+        if callback.data.startswith("comp_company_"):
+            company_id = int(callback.data.split("_")[2])
+            company = next((c for c in companies if c.id == company_id), None)
+            if not company or not company.api_key:
+                await callback.message.answer("API key not found for this company.")
+                return
+            await state.update_data(selected_company_id=company_id, api_key=company.api_key)
+            await show_trucks_for_set_to_location(callback, state)
+            await callback.message.delete()
+
+        elif callback.data.startswith("comp_page_"):
+            new_page = int(callback.data.split("_")[2])
+            await state.update_data(page=new_page)
+            keyboard = await create_paginated_keyboard(companies, "company", new_page, prefix="comp_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "comp_cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Operation cancelled.", reply_markup=keyboards.cancel_button)
+
+        await callback.answer()
+    except Exception as e:
+        logger.error(f"Error in process_company_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+@router.callback_query(SetToLocationStates.select_truck)
+async def process_auto_notif_truck_selection(callback: types.CallbackQuery, state: FSMContext, bot: Bot):
+    try:
+        data = await state.get_data()
+        trucks = data["trucks"]
+
+        if callback.data.startswith("truck_truck_"):
+            truck_id = int(callback.data.split("_")[2])
+            await state.update_data(truck_id=truck_id)
+            await state.set_state(SetToLocationStates.location)
+            await callback.message.edit_text("Enter location: ", reply_markup=keyboards.cancel_inline)
+
+        elif callback.data.startswith("truck_page_"):
+            new_page = int(callback.data.split("_")[2])
+            await state.update_data(page=new_page)
+            keyboard = await create_paginated_keyboard(
+                trucks, "truck", new_page, prefix="truck_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "truck_cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Operation cancelled.", reply_markup=keyboards.user_menu)
+
+        await callback.answer()
+    except Exception as e:
+        logger.error(f"Error in process_truck_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+
+@router.message(SetToLocationStates.location)
+async def save_truck_location(message: types.Message, state: FSMContext):
+    try:
+        data = await state.get_data()
+        truck_id = data['truck_id']
+        telegram_id = message.from_user.id
+        location = message.text.strip()
+        truck_location = await truck_location_service.get_by_id(truck_id)
+        if truck_location:
+            truck_location_for_update = TruckLocation(
+                id=truck_location.id,
+                truck_id=truck_location.truck_id,
+                location=location,
+            )
+            await truck_location_service.update(truck_location_for_update)
+        else:
+            new_truck_location = TruckLocation(
+                id=None,
+                truck_id=truck_id,
+                location=location
+            )
+            await truck_location_service.create(new_truck_location)
+
+        await state.clear()
+        await message.answer("Updated ✅", reply_markup=keyboards.user_menu)
+    except Exception as e:
+        logger.error(f"Error in save_truck_location: {e}")
+
+class GetETAStates(StatesGroup):
+    select_company = State()
+    select_truck = State()
+
+async def show_trucks_for_get_eta_single(message: types.Message, state: FSMContext, bot: Bot):
+    try:
+        data = await state.get_data()
+        company_id = data["selected_company_id"]
+        trucks = await get_by_company_id(company_id)
+        if not trucks:
+            await message.answer("No trucks found for this company.")
+            return
+
+        await state.update_data(trucks=trucks, page=0, selected_truck_ids=[])
+        keyboard = await create_paginated_keyboard(trucks, "truck", page=0, prefix="truck_")
+        await state.set_state(GetETAStates.select_truck)
+        await message.answer("Select one or more trucks (tap to toggle):", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in show_trucks_for_set_to_location_single: {e}")
+        await message.answer(constants.ERROR_MESSAGE)
+
+
+@router.message(F.text == "🕔 Distance left/ETA")
+async def get_eta(message: types.Message, state: FSMContext):
+    try:
+        telegram_id = message.from_user.id
+        user = await user_service.get_by_id(telegram_id, id_column="telegram_id")
+        if not user or not user.company_id:
+            await message.answer("You are not linked to any companies")
+            return
+
+        companies = await company_service.get_by_ids(user.company_id)
+        if not companies:
+            await message.answer("No companies found for your account.")
+            return
+
+        if len(companies) == 1:
+            await state.update_data(
+                telegram_id=telegram_id,
+                selected_company_id=companies[0].id,
+                api_key=companies[0].api_key
+            )
+            await show_trucks_for_get_eta_single(message, state, bot)
+
+        else:
+            await state.update_data(telegram_id=telegram_id, companies=companies, page=0)
+            keyboard = await create_paginated_keyboard(companies, "company", 0, prefix="comp_")
+            await state.set_state(GetETAStates.select_company)
+            await message.answer("Select a company:", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(e)
+        await message.answer(constants.ERROR_MESSAGE)
+
+async def show_trucks_for_get_eta(callback: types.CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        company_id = data["selected_company_id"]
+        trucks = await get_by_company_id(company_id)
+        if not trucks:
+            await callback.message.answer("No trucks found for this company.")
+            return
+
+        await state.update_data(trucks=trucks, page=0, selected_truck_ids=[])
+        keyboard = await create_paginated_keyboard(trucks, "truck", page=0, prefix="truck_")
+        await state.set_state(GetETAStates.select_truck)
+        await callback.message.answer("Select one or more trucks (tap to toggle):", reply_markup=keyboard)
+    except Exception as e:
+        logger.error(f"Error in show_trucks: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+@router.callback_query(GetETAStates.select_company)
+async def process_get_eta(callback: types.CallbackQuery, state: FSMContext):
+    try:
+        data = await state.get_data()
+        companies = data["companies"]
+        current_page = data.get("page", 0)
+
+        if callback.data.startswith("comp_company_"):
+            company_id = int(callback.data.split("_")[2])
+            company = next((c for c in companies if c.id == company_id), None)
+            if not company or not company.api_key:
+                await callback.message.answer("API key not found for this company.")
+                return
+            await state.update_data(selected_company_id=company_id, api_key=company.api_key)
+            await show_trucks_for_get_eta(callback, state)
+            await callback.message.delete()
+
+        elif callback.data.startswith("comp_page_"):
+            new_page = int(callback.data.split("_")[2])
+            await state.update_data(page=new_page)
+            keyboard = await create_paginated_keyboard(companies, "company", new_page, prefix="comp_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "comp_cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Operation cancelled.", reply_markup=keyboards.cancel_button)
+
+        await callback.answer()
+    except Exception as e:
+        logger.error(f"Error in process_company_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)
+
+@router.callback_query(GetETAStates.select_truck)
+async def process_select_truck_get_eta(callback: types.CallbackQuery, state: FSMContext, bot: Bot):
+    try:
+        data = await state.get_data()
+        trucks = data["trucks"]
+
+        if callback.data.startswith("truck_truck_"):
+            truck_id = int(callback.data.split("_")[2])
+            # logger.warn("TRUCK_ID: ", truck_id)
+            await state.update_data(truck_id=truck_id)
+            wait_message = await callback.message.edit_text("Wait....")
+            truck_location = await truck_location_service.get_by_id(truck_id, "truck_id")
+            if not truck_location:
+                await callback.message.answer("B location not found for this truck.Please set first!")
+                return
+
+            truck = await truck_service.get_by_id(truck_id)
+            if not truck:
+                await callback.message.answer("Truck not found, please contact support.")
+                return
+
+
+            api_key = data['api_key']
+            samsara_client = SamsaraClient(api_key)
+            truck_details = await samsara_client.get_truck_details(truck.truck_id)
+            a_location = truck_details.get("location", "Unknown")
+            b_location = truck_location.location
+            truck_speed = float(truck_details.get("speed", "Unknown"))
+
+            location_finder = AsyncLocationFinder(TOMTOM_API_KEY)
+            result = await location_finder.get_travel_info(a_location, b_location, truck_speed)
+            text = "🚛 **Info**\n"
+            text += f"**🅰️ Location: ** {a_location}\n"
+            text += f"**🅱️ Location: ** {b_location}\n"
+            text += f"🚀**Speed: ** {truck_speed} MPH\n"
+            text += f"📏 **Distance Left**: {result.get('distance_miles', 'Unknown')} mi\n"
+            time = result.get('estimated_arrival')
+            if not time:
+                await callback.message.answer(constants.ERROR_MESSAGE)
+                return
+            text += f"🕔 **ETA**: {time}\n"
+            await callback.message.answer(text, parse_mode="Markdown")
+            await wait_message.delete()
+
+        elif callback.data.startswith("truck_page_"):
+            new_page = int(callback.data.split("_")[2])
+            await state.update_data(page=new_page)
+            keyboard = await create_paginated_keyboard(
+                trucks, "truck", new_page, prefix="truck_")
+            await callback.message.edit_reply_markup(reply_markup=keyboard)
+
+        elif callback.data == "truck_cancel":
+            await state.clear()
+            await callback.message.delete()
+            await callback.message.answer("Operation cancelled.", reply_markup=keyboards.user_menu)
+
+        await callback.answer()
+    except Exception as e:
+        logger.error(f"Error in process_truck_selection: {e}")
+        await callback.message.answer(constants.ERROR_MESSAGE)

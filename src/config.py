@@ -13,3 +13,4 @@ DB_CONFIG = {
 }
 
 ADMIN_ID = int(os.getenv("ADMIN"))
+TOMTOM_API_KEY = os.getenv("TOMTOM_API_KEY")

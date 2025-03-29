@@ -17,6 +17,7 @@ user_menu = ReplyKeyboardMarkup(
     keyboard=[
         [KeyboardButton(text="⏳ Add auto notification"), KeyboardButton(text="🔎 Provide currently status")],
         [KeyboardButton(text="➕ Add status notification"), KeyboardButton(text="⚠️ Add warning notification")],
+        [KeyboardButton(text="🗺 Set To Location"), KeyboardButton(text="🕔 Distance left/ETA")],
         [KeyboardButton(text="🎊 My notifications"), KeyboardButton(text="❌ Delete notification")],
         [KeyboardButton(text="🧹 Clear all notifications")]
     ]

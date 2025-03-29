@@ -31,3 +31,9 @@ class Notification:
         self.last_send_time = last_send_time
         self.warning_type = warning_type
         self.engine_status = engine_status
+
+class TruckLocation:
+    def __init__(self, id, truck_id, location):
+        self.id = id
+        self.truck_id = truck_id
+        self.location = location
