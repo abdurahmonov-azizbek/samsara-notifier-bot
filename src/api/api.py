@@ -29,6 +29,32 @@ class SamsaraClient:
                 print(f"Network error: {e}")
                 return None
 
+    async def post_data(self, endpoint, data):
+        async with aiohttp.ClientSession() as session:
+            url = f"{self.base_url}/{endpoint}"
+            try:
+                async with session.post(url, headers=self.headers, json=data) as response:
+                    if response.status == 200:
+                        return await response.json()
+                    else:
+                        error_text = await response.text()
+                        print(f"Error: {response.status} - {error_text} at {url}")
+                        return None
+            except aiohttp.ClientError as e:
+                print(f"Network error: {e}")
+                return None
+
+    async def create_webhook(self, webhook_url):
+        endpoint = "v1/webhooks"
+        data = {
+            "version": "2024-02-27",
+            "eventTypes": ["SuddenFuelLevelDrop", "SevereSpeedingStarted", "EngineFaultOff", "EngineFaultOn",
+                           "SuddenFuelLevelRise", "SevereSpeedingEnded", "RouteStopResequence", "RouteStopDeparture",
+                           "RouteStopArrival", "IssueCreated"],
+            "name": "Test",
+            "url": "https://www.Webhook-123.com/webhook/listener"}
+        return await self.post_data(endpoint, data)
+
     async def get_all_trucks(self):
         endpoint = "/fleet/vehicles"
         data = await self.fetch_data(endpoint)
@@ -219,3 +245,14 @@ class SamsaraClient:
             details["eta"] = "No active trip"
 
         return details
+
+
+async def run():
+    api = SamsaraClient(api_token="samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6")
+    details = await api.create_webhook("Test")
+    print(details)
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(run())
