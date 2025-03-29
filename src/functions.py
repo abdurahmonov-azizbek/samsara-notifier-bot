@@ -1,13 +1,13 @@
-from config import ADMIN_ID
-import db
-from services import company_service, truck_service, notification_service, user_service
-from api.api import SamsaraClient
-import constants
-from models import Truck, Company, Notification
+from src.config import ADMIN_ID
+from src import  db
+from src.services import company_service, truck_service, notification_service, user_service
+from src.api.api import SamsaraClient
+from src import constants
+from src.models import Truck, Company, Notification
 from src.logger import logger
 from src.base import bot
-from api.api import SamsaraClient
-from handlers.user_handler import fetch_truck_details
+from src.api.api import SamsaraClient
+from src.handlers.user_handler import fetch_truck_details
 from datetime import  datetime
 
 async def is_admin(user_id) -> bool:

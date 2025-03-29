@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import *
-from logger import logger
+from src.logger import logger
 
 from src import keyboards, constants, functions as fn
 from src.services import user_service

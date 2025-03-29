@@ -1,6 +1,6 @@
 from typing import Union, Optional
 
-from logger import logger
+from src.logger import logger
 
 from src import constants, db
 from src.models import Truck

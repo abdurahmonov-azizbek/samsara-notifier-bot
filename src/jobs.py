@@ -1,6 +1,6 @@
 import asyncio
-from functions import sync_trucks, send_auto_notifications
-from logger import logger
+from src.functions import sync_trucks, send_auto_notifications
+from src.logger import logger
 
 async def sync_trucks_periodically():
     while True:

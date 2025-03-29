@@ -2,7 +2,7 @@ from aiogram import F, Router, types
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import *
-from logger import logger
+from src.logger import logger
 from src.models import Company, User
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from src import constants, keyboards

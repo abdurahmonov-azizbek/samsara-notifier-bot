@@ -3,15 +3,15 @@ from datetime import datetime
 
 import pytz
 from fastapi import FastAPI, Request
-from logger import logger
+from src.logger import logger
 from uvicorn import Config, Server
 
-from base import bot, dp
-from handlers.admin_handler import router as admin_router
-from handlers.base_handler import router as base_router
-from handlers.startpoint_handler import router as startpoint_router
-from handlers.user_handler import router as user_router
-from jobs import sync_trucks_periodically
+from src.base import bot, dp
+from src.handlers.admin_handler import router as admin_router
+from src.handlers.base_handler import router as base_router
+from src.handlers.startpoint_handler import router as startpoint_router
+from src.handlers.user_handler import router as user_router
+from src.jobs import sync_trucks_periodically
 from src.jobs import send_auto_notifications_job
 from src.services.notification_service import get_notification_type_id, get_telegram_ids
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
