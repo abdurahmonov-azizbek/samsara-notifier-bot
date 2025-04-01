@@ -161,6 +161,18 @@ class SamsaraClient:
         location_endpoint = f"v1/fleet/vehicles/{truck_id}/locations"
         location_params = {"startMs": start_time_ms, "endMs": end_time_ms}
         location_data = await self.fetch_data(location_endpoint, location_params)
+        if not location_data:
+            vehicle_locations = await self.fetch_data("fleet/vehicles/locations")
+            if vehicle_locations:
+                vehicle_locations = vehicle_locations["data"]
+                for vh_location in vehicle_locations:
+                    if int(vh_location["id"]) == truck_id:
+                        location_data = [{
+                            "id": int(vh_location["id"]),
+                            "location": vh_location["location"]["reverseGeo"]["formattedLocation"]
+                        }]
+                        break
+
         engine_stats = await self.get_engine_stats(truck_id)
         fuel_percent = await self.get_fuel_percent(truck_id)
         end_time = datetime.utcnow()

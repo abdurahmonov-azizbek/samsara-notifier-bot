@@ -304,7 +304,7 @@ async def fetch_truck_details(bot: Bot, chat_id: int, truck_id: int, api_key: st
             f"📍 Coordinates: {details['coordinates']}\n"
             f"🚀 Speed: {details['speed']} MPH\n"
             f"⚙️ Engine: {engine_display}\n"
-            f"⏰ Time: {time_str}\n"
+            f"⏰ Time: {time_str} ETD\n"
             f"🌍 Location: {details['location']}\n"
             f"🛤️ Route: {details['route']}\n"
             f"📏 Distance Left: {details['remaining_distance']} mi\n"

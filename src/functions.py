@@ -84,9 +84,9 @@ async def send_auto_notifications():
                 continue
 
             await fetch_truck_details(bot, notification.telegram_id, notification.truck_id, company.api_key)
-            newNotification = notification
-            newNotification.last_send_time = datetime.now()
-            await notification_service.update(newNotification)
+            new_notification = notification
+            new_notification.last_send_time = datetime.now()
+            await notification_service.update(new_notification)
 
 
     except Exception as e:
