@@ -63,7 +63,7 @@ async def samsara_webhook(request: Request):
     utc_time = datetime.fromisoformat(start_time.replace("Z", "+00:00"))
     est_timezone = pytz.timezone("America/New_York")
     est_time = utc_time.astimezone(est_timezone)
-    formatted_time = est_time.strftime("%Y-%m-%d %I:%M:%S %p")
+    formatted_time = est_time.strftime("%Y-%m-%d %I:%M:%S %p %Z")
 
     try:
         notification_type_id = await get_notification_type_id(event_type)
