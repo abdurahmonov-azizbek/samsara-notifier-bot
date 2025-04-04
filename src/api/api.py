@@ -69,6 +69,13 @@ class SamsaraClient:
             return data["data"]
         return []
 
+    async def get_harsh_event(self, truck_id, timestamp):
+        safety_endpoint = f"v1/fleet/vehicles/{truck_id}/safety/harsh_event"
+        stats_params = {"timestamp": timestamp}
+
+        return await self.fetch_data(safety_endpoint, stats_params)
+
+
     async def get_company_trucks(self, company_id):
         endpoint = "v1/fleet/vehicles"
         params = {"groupId": company_id}
@@ -137,21 +144,6 @@ class SamsaraClient:
             return safety_data
         return None
 
-    async def get_hursh_events(self, truck_id):
-        safety_endpoint = f"v1/fleet/vehicles/{truck_id}/safety/harsh_event"
-
-        start_time_ms = int((time.time() - 24 * 3600) * 1000)
-        end_time_ms = int(time.time() * 1000)
-        stats_params = {
-            "vehicleId": str(truck_id),
-            "startMs": start_time_ms,
-            "endMs": end_time_ms
-        }
-        safety_data = await self.fetch_data(safety_endpoint, stats_params)
-
-        if safety_data:
-            return safety_data
-        return None
 
     async def get_truck_details(self, truck_id):
         print(f"Fetching details for truck ID: {truck_id}")
@@ -261,10 +253,11 @@ class SamsaraClient:
 
 async def run():
     api = SamsaraClient(api_token="samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6")
-    details = await api.create_webhook("Test")
+    details = await api.get_harsh_event("281474990627914",1743534676305)
     print(details)
 
 
 if __name__ == "__main__":
     import asyncio
+
     asyncio.run(run())

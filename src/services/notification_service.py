@@ -158,3 +158,18 @@ async def delete_by_id(id, id_column: str = "id"):
     await conn.execute(query, id)
     await conn.close()
 
+async def get_api_key_by_truck_id(truck_id: int) -> str:
+    conn = await db.get_db_connection()
+
+    query = """
+        SELECT c.api_key
+        FROM truck t
+        JOIN company c ON t.company_id = c.id
+        WHERE t.truck_id = $1
+    """
+    row = await conn.fetchrow(query, truck_id)
+
+    if row:
+        return row["api_key"]
+    else:
+        return None

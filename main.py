@@ -1,20 +1,23 @@
 import asyncio
+import re
 from datetime import datetime
 
 import pytz
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from fastapi import FastAPI, Request
-from src.logger import logger
 from uvicorn import Config, Server
 
+from src.api.api import SamsaraClient
 from src.base import bot, dp
 from src.handlers.admin_handler import router as admin_router
 from src.handlers.base_handler import router as base_router
 from src.handlers.startpoint_handler import router as startpoint_router
 from src.handlers.user_handler import router as user_router
-from src.jobs import sync_trucks_periodically
 from src.jobs import send_auto_notifications_job
-from src.services.notification_service import get_notification_type_id, get_telegram_ids
-from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from src.jobs import sync_trucks_periodically
+from src.logger import logger
+from src.services.notification_service import get_notification_type_id, get_telegram_ids, get_api_key_by_truck_id
+
 app = FastAPI()
 
 dp.include_router(startpoint_router)
@@ -48,6 +51,7 @@ async def samsara_webhook(request: Request):
         start_time = payload.get("data", {}).get("happenedAtTime", "Unknown")
         is_resolved = payload.get("data", {}).get("isResolved", False)
         incidentUrl = payload.get("data", {}).get("incidentUrl", None)
+
     else:
         vehicle_id = payload.get("data", {}).get("data", {}).get("vehicle", {}).get("id", "Unknown")
         start_time = payload.get("data", {}).get("data", {}).get("startTime", "Unknown")
@@ -65,64 +69,72 @@ async def samsara_webhook(request: Request):
         notification_type_id = await get_notification_type_id(event_type)
         logger.info(f"Detected notification_type_id: {notification_type_id} for event {event_type}")
 
-        telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
-        if telegram_data:
-            if event_type == "deviceMovement":
-                message_text = (
-                    f"🚛 *Truck Started Moving* 🚛\n"
-                    f"📢 *Event*: {description}\n"
-                    f"⏰ *Time*: {formatted_time}\n"
-                )
-            elif event_type == "deviceMovementStopped":
-                message_text = (
-                    f"🛑 *Truck Stopped Moving* 🛑\n"
-                    f"📢 *Event*: {description}\n"
-                    f"⏰ *Time*: {formatted_time}\n"
-                )
-            elif event_type == "harshEvent":
+        if event_type == "harshEvent" and incidentUrl:
+            pattern = r'(\d+)/(\d+)$'
+            match = re.search(pattern, incidentUrl)
+            truck_id = match.group(1)
+            timestamp = match.group(2)
+            api_key = await get_api_key_by_truck_id(truck_id)
+            samsara_client = SamsaraClient(api_key)
+            harsh_event = await samsara_client.get_harsh_event(truck_id, timestamp)
+
+            if harsh_event:
+                event_type = harsh_event["harshEventType"]
+                video = harsh_event["downloadForwardVideoUrl"]
+                location = harsh_event["location"]["address"]
+                telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
                 message_text = (
                     f"⚠️ *Harsh Driving Detected* ⚠️\n"
                     f"📢 *Event*: {description}\n"
                     f"⏰ *Time*: {formatted_time}\n"
+                    f"📍 *Location*: {location}\n"
+                    f"🎥 *Video*: {video}\n"
+                    f"⚠️ *Harsh Event Type:* {event_type} ⚠️\n"
                 )
-            elif event_type == "SevereSpeedingStarted":
-                message_text = (
-                    f"🚨 *Severe Speeding Detected* 🚨\n"
-                    f"📢 *Event*: {description}\n"
-                    f"⏰ *Time*: {formatted_time}\n"
-                )
-            else:
-                message_text = (
-                    f"🚨 *Samsara Alert* 🚨\n"
-                    f"📢 *Event*: {description}\n"
-                    f"⏰ *Time*: {formatted_time}\n"
-                )
+                if is_resolved:
+                    message_text += "✅ *Status*: Resolved\n"
 
-            if is_resolved:
-                message_text += "✅ *Status*: Resolved\n"
+                for telegram_id, truck_name in set(telegram_data):
+                    full_message = f"{message_text}🚛 *Truck Name*: {truck_name}"
+                    if incidentUrl:
+                        keyboard = [[InlineKeyboardButton(text="Incident Details", url=incidentUrl)]]
+                        reply_markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
+                        await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown",
+                                               reply_markup=reply_markup)
+                        await bot.send_video(chat_id=telegram_id, video=video)
+                    else:
+                        await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
 
-            for telegram_id, truck_name in set(telegram_data):
-                full_message = f"{message_text}🚛 *Truck Name*: {truck_name}"
-                if incidentUrl:
-                    keyboard = [
-                        [InlineKeyboardButton(text="Incident Details", url=incidentUrl)]
-                    ]
-                    reply_markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
-                    await bot.send_message(
-                        chat_id=telegram_id,
-                        text=full_message,
-                        parse_mode="Markdown",
-                        reply_markup=reply_markup
-                    )
-                else:
-                    await bot.send_message(
-                        chat_id=telegram_id,
-                        text=full_message,
-                        parse_mode="Markdown"
-                    )
-            logger.info(f"Notification sent to Telegram for vehicle {vehicle_id}, type {notification_type_id}")
         else:
-            logger.info(f"No notification configured for vehicle {vehicle_id} and type {notification_type_id}")
+            telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
+            if telegram_data:
+                event_messages = {
+                    "deviceMovement": "🚛 *Truck Started Moving* 🚛",
+                    "deviceMovementStopped": "🛑 *Truck Stopped Moving* 🛑",
+                    "harshEvent": "⚠️ *Harsh Driving Detected* ⚠️",
+                    "SevereSpeedingStarted": "🚨 *Severe Speeding Detected* 🚨",
+                }
+
+                message_text = event_messages.get(event_type, "🚨 *Samsara Alert* 🚨")
+                message_text += f"\n📢 *Event*: {description}\n⏰ *Time*: {formatted_time}\n"
+
+                if is_resolved:
+                    message_text += "✅ *Status*: Resolved\n"
+
+                for telegram_id, truck_name in set(telegram_data):
+                    full_message = f"{message_text}🚛 *Truck Name*: {truck_name}"
+                    if incidentUrl:
+                        keyboard = [[InlineKeyboardButton(text="Incident Details", url=incidentUrl)]]
+                        reply_markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
+                        await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown",
+                                               reply_markup=reply_markup)
+                    else:
+                        await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
+
+                logger.info(f"Notification sent to Telegram for vehicle {vehicle_id}, type {notification_type_id}")
+            else:
+                logger.info(f"No notification configured for vehicle {vehicle_id} and type {notification_type_id}")
+
     except Exception as e:
         logger.error(f"Failed to process webhook: {e}")
 
