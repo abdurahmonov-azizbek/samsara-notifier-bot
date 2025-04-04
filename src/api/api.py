@@ -1,8 +1,8 @@
 import time
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta
 
 import aiohttp
-from geopy.distance import geodesic
+import pytz
 
 
 class SamsaraClient:
@@ -75,7 +75,6 @@ class SamsaraClient:
 
         return await self.fetch_data(safety_endpoint, stats_params)
 
-
     async def get_company_trucks(self, company_id):
         endpoint = "v1/fleet/vehicles"
         params = {"groupId": company_id}
@@ -144,7 +143,6 @@ class SamsaraClient:
             return safety_data
         return None
 
-
     async def get_truck_details(self, truck_id):
         print(f"Fetching details for truck ID: {truck_id}")
         start_time_ms = int((time.time() - 3600) * 1000)
@@ -195,12 +193,15 @@ class SamsaraClient:
         if isinstance(time_str, str):
             try:
                 time_obj = datetime.strptime(time_str, '%Y-%m-%dT%H:%M:%S.%fZ')
-                time_obj = time_obj.replace(tzinfo=timezone.utc).astimezone(timezone(timedelta(hours=-5)))
+                time_obj = pytz.utc.localize(time_obj)
+                est_timezone = pytz.timezone("America/New_York")
+                time_obj = time_obj.astimezone(est_timezone)
             except ValueError:
                 time_obj = None
         elif isinstance(time_str, int):
-            time_obj = datetime.fromtimestamp(time_str / 1000, tz=timezone.utc)
-            time_obj = time_obj.astimezone(timezone(timedelta(hours=-5)))
+            time_obj = datetime.fromtimestamp(time_str / 1000, tz=pytz.utc)
+            est_timezone = pytz.timezone("America/New_York")
+            time_obj = time_obj.astimezone(est_timezone)
         else:
             time_obj = None
 
@@ -216,44 +217,16 @@ class SamsaraClient:
             "location": truck_location.get('location', 'Unknown')
         }
 
-        if trips_data and "trips" in trips_data and len(trips_data["trips"]) > 0:
-            latest_trip = trips_data["trips"][-1]
-            # start_location = latest_trip.get('startLocation', 'Unknown Start')
-            end_location = latest_trip.get('endLocation', 'Unknown End')
-            details["route"] = f"  {end_location}"
-
-            end_coords = latest_trip.get('endCoordinates', {})
-            end_lat = end_coords.get('latitude', None)
-            end_lon = end_coords.get('longitude', None)
-
-            if end_lat and end_lon:
-                current_coords = (current_lat, current_lon)
-                end_coords = (end_lat, end_lon)
-                remaining_distance = geodesic(current_coords, end_coords).miles
-                details["remaining_distance"] = round(remaining_distance, 2)
-
-                if speed > 0:
-
-                    adjusted_speed = speed * 0.85
-                    hours_to_destination = remaining_distance / adjusted_speed
-                    arrival_time = datetime.now(timezone(timedelta(hours=-5))) + timedelta(hours=hours_to_destination)
-                    details["eta"] = arrival_time.strftime("%Y-%m-%d %H:%M:%S")
-                else:
-                    details["eta"] = "Truck is not moving"
-            else:
-                details["remaining_distance"] = "Unknown (no end coordinates)"
-                details["eta"] = "Cannot calculate (no end coordinates)"
-        else:
-            details["route"] = "No active trip found"
-            details["remaining_distance"] = "Unknown"
-            details["eta"] = "No active trip"
+        details["route"] = "No active trip found"
+        details["remaining_distance"] = "Unknown"
+        details["eta"] = "No active trip"
 
         return details
 
 
 async def run():
     api = SamsaraClient(api_token="samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6")
-    details = await api.get_harsh_event("281474990627914",1743534676305)
+    details = await api.get_harsh_event("281474990627914", 1743534676305)
     print(details)
 
 
