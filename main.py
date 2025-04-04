@@ -88,7 +88,6 @@ async def samsara_webhook(request: Request):
                     f"📢 *Event*: {description}\n"
                     f"⏰ *Time*: {formatted_time}\n"
                     f"📍 *Location*: {location}\n"
-                    f"🎥 *Video*: {video}\n"
                     f"⚠️ *Harsh Event Type:* {event_type} ⚠️\n"
                 )
                 if is_resolved:
