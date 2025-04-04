@@ -98,9 +98,8 @@ async def samsara_webhook(request: Request):
                     if incidentUrl:
                         keyboard = [[InlineKeyboardButton(text="Incident Details", url=incidentUrl)]]
                         reply_markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
-                        await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown",
-                                               reply_markup=reply_markup)
-                        await bot.send_video(chat_id=telegram_id, video=video)
+
+                        await bot.send_video(chat_id=telegram_id, video=video, caption=full_message, parse_mode="Markdown", reply_markup=reply_markup)
                     else:
                         await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
 
