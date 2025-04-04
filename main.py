@@ -74,15 +74,15 @@ async def samsara_webhook(request: Request):
             match = re.search(pattern, incidentUrl)
             truck_id = match.group(1)
             timestamp = match.group(2)
-            api_key = await get_api_key_by_truck_id(truck_id)
+            api_key = await get_api_key_by_truck_id(int(truck_id))
             samsara_client = SamsaraClient(api_key)
             harsh_event = await samsara_client.get_harsh_event(truck_id, timestamp)
 
             if harsh_event:
-                event_type = harsh_event["harshEventType"]
                 video = harsh_event["downloadForwardVideoUrl"]
                 location = harsh_event["location"]["address"]
                 telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
+                event_type = harsh_event["harshEventType"]
                 message_text = (
                     f"⚠️ *Harsh Driving Detected* ⚠️\n"
                     f"📢 *Event*: {description}\n"
@@ -111,7 +111,6 @@ async def samsara_webhook(request: Request):
                 event_messages = {
                     "deviceMovement": "🚛 *Truck Started Moving* 🚛",
                     "deviceMovementStopped": "🛑 *Truck Stopped Moving* 🛑",
-                    "harshEvent": "⚠️ *Harsh Driving Detected* ⚠️",
                     "SevereSpeedingStarted": "🚨 *Severe Speeding Detected* 🚨",
                 }
 
