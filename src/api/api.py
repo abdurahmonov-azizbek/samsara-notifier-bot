@@ -5,7 +5,6 @@ from datetime import datetime, timedelta
 import aiohttp
 import pytz
 
-from src.api.RoadSpeedChecker import RoadSpeedChecker
 
 
 class SamsaraClient:
@@ -163,13 +162,10 @@ class SamsaraClient:
         longitude = location_data["data"][0]["gps"][0]['longitude']
         latitude = location_data["data"][0]["gps"][0]['latitude']
 
-        max_speed = RoadSpeedChecker(location,latitude,longitude).get_maxspeed_json()
-        max_speed = json.loads(max_speed)
         if location_data:
             return {
                 "location": location,
                 "speed": f"{int(speed)} mph",
-                "max_speed": list(max_speed["similar_roads"].values())[0]
             }
         return None
 

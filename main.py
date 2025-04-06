@@ -120,7 +120,7 @@ async def samsara_webhook(request: Request):
                     f"⏰ *Time*: {formatted_time}\n"
                     f"📍 *Location*: {location}\n"
                     f"⚠️ *Speed*: {speed} ⚠️\n"
-                    f"⚠️ *Max Speed*: {max_speed} ⚠️\n"
+                    # f"⚠️ *Max Speed*: {max_speed} ⚠️\n"
                 )
                 if is_resolved:
                     message_text += "✅ *Status*: Resolved\n"
