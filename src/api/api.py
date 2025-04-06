@@ -1,8 +1,11 @@
+import json
 import time
 from datetime import datetime, timedelta
 
 import aiohttp
 import pytz
+
+from src.api.RoadSpeedChecker import RoadSpeedChecker
 
 
 class SamsaraClient:
@@ -143,6 +146,30 @@ class SamsaraClient:
             return safety_data
         return None
 
+    async def get_location_stats(self, truck_id, start_time):
+        location_endpoint = f"fleet/vehicles/stats/history"
+        start_dt = datetime.strptime(start_time, "%Y-%m-%dT%H:%M:%S.%fZ")
+        end_dt = start_dt + timedelta(seconds=2)
+        end_time = end_dt.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+        stats_params = {
+            "vehicleIds": str(truck_id),
+            "startTime": start_time,
+            "endTime": end_time,
+            "types": "gps"
+        }
+        location_data = await self.fetch_data(location_endpoint, stats_params)
+        location = location_data["data"][0]["gps"][0]['reverseGeo']['formattedLocation']
+        speed = location_data["data"][0]["gps"][0]['speedMilesPerHour']
+
+        max_speed = RoadSpeedChecker(location).get_maxspeed_json()
+        max_speed = json.loads(max_speed)
+        if location_data:
+            return {
+                "location": location,
+                "speed": f"{int(speed)} mph",
+                "max_speed": list(max_speed.values())[0]}
+        return None
+
     async def get_truck_details(self, truck_id):
         print(f"Fetching details for truck ID: {truck_id}")
         start_time_ms = int((time.time() - 3600) * 1000)
@@ -226,7 +253,7 @@ class SamsaraClient:
 
 async def run():
     api = SamsaraClient(api_token="samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6")
-    details = await api.get_harsh_event("281474990627914", 1743534676305)
+    details = await api.get_location_stats("281474992397558", "2025-03-24T09:02:05.987Z")
     print(details)
 
 

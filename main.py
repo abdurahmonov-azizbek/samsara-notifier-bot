@@ -99,9 +99,36 @@ async def samsara_webhook(request: Request):
                         keyboard = [[InlineKeyboardButton(text="Incident Details", url=incidentUrl)]]
                         reply_markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
 
-                        await bot.send_video(chat_id=telegram_id, video=video, caption=full_message, parse_mode="Markdown", reply_markup=reply_markup)
+                        await bot.send_video(chat_id=telegram_id, video=video, caption=full_message,
+                                             parse_mode="Markdown", reply_markup=reply_markup)
                     else:
                         await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
+        elif event_type == "SevereSpeedingStarted" or event_type == "SevereSpeedingStopped":
+            api_key = await get_api_key_by_truck_id(int(vehicle_id))
+            samsara_client = SamsaraClient(api_key)
+            severe_speeding = await samsara_client.get_location_stats(vehicle_id, start_time)
+
+            if severe_speeding:
+                location = severe_speeding["location"]
+                speed = severe_speeding["speed"]
+                max_speed = severe_speeding["max_speed"]
+                message_text = (
+                    f"⚠️ *Severe Speeding Detected* ⚠️\n"
+                    f"📢 *Event*: {description}\n"
+                    f"⏰ *Time*: {formatted_time}\n"
+                    f"📍 *Location*: {location}\n"
+                    f"⚠️ *Speed*: {speed} ⚠️\n"
+                    f"⚠️ *Max Speed*: {max_speed} ⚠️\n"
+                )
+                if is_resolved:
+                    message_text += "✅ *Status*: Resolved\n"
+
+                telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
+                for telegram_id, truck_name in set(telegram_data):
+                    full_message = f"{message_text}🚛 *Truck Name*: {truck_name}"
+                    await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
+
+
 
         else:
             telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
@@ -109,7 +136,9 @@ async def samsara_webhook(request: Request):
                 event_messages = {
                     "deviceMovement": "🚛 *Truck Started Moving* 🚛",
                     "deviceMovementStopped": "🛑 *Truck Stopped Moving* 🛑",
-                    "SevereSpeedingStarted": "🚨 *Severe Speeding Detected* 🚨",
+                    "SuddenFuelLevelRise": "🚨 *Sudden Fuel Level Rise Detected* 🚨",
+                    "SuddenFuelLevelDrop": "🚨 *Sudden Fuel Level Drop Detected* 🚨",
+                    "GatewayUnplugged": "🚨 *Gateway Unplugged* 🚨",
                 }
 
                 message_text = event_messages.get(event_type, "🚨 *Samsara Alert* 🚨")
