@@ -1,34 +1,38 @@
 import json
 from difflib import get_close_matches
-
 import requests
 
 
 class RoadSpeedChecker:
-    def __init__(self, target_road_name):
+    def __init__(self, target_road_name=None, lat=None, lon=None):
         self.target_road_name = target_road_name
-        self.lat = None
-        self.lon = None
+        self.lat = lat
+        self.lon = lon
         self.location = None
         self.road_info = {}
 
     def get_coordinates(self):
-        nominatim_url = "https://nominatim.openstreetmap.org/search"
-        params = {
-            "q": self.target_road_name,
-            "format": "json",
-            "limit": 1
-        }
-        response = requests.get(nominatim_url, params=params, headers={"User-Agent": "RoadSpeedCheckerApp"})
-        data = response.json()
-        if data:
-            self.lat = float(data[0]["lat"])
-            self.lon = float(data[0]["lon"])
-            self.location = data[0].get("display_name", "")
-            return True
-        return False
+        if self.target_road_name and not (self.lat and self.lon):  # If target_road_name is given but not lat/lon
+            nominatim_url = "https://nominatim.openstreetmap.org/search"
+            params = {
+                "q": self.target_road_name,
+                "format": "json",
+                "limit": 1
+            }
+            response = requests.get(nominatim_url, params=params, headers={"User-Agent": "RoadSpeedCheckerApp"})
+            data = response.json()
+            if data:
+                self.lat = float(data[0]["lat"])
+                self.lon = float(data[0]["lon"])
+                self.location = data[0].get("display_name", "")
+                return True
+            return False
+        return True  # Coordinates provided
 
     def fetch_road_data(self):
+        if self.lat is None or self.lon is None:
+            return
+
         query = f"""
         [out:json][timeout:25];
         way["name"](around:10000, {self.lat}, {self.lon});
@@ -46,6 +50,9 @@ class RoadSpeedChecker:
                 }
 
     def find_similar_maxspeeds(self):
+        if not self.target_road_name:
+            return {}
+
         all_names = list(self.road_info.keys())
         similar = get_close_matches(self.target_road_name, all_names, n=10, cutoff=0.4)
         results = {}
@@ -68,8 +75,20 @@ class RoadSpeedChecker:
             return json.dumps(
                 {"message": f"'{self.target_road_name}' ga o‘xshash yo‘l topilmadi yoki maksimal tezlik yo‘q."})
 
-        return json.dumps(results, indent=4)
+        # Return only the max speed and similar road names
+        maxspeed = results.get(self.target_road_name, None)
+        similar_roads = {name: speed for name, speed in results.items() if name != self.target_road_name}
+
+        output = {
+            "target_road_name": self.target_road_name,
+            "maxspeed": maxspeed,
+            "similar_roads": similar_roads
+        }
+
+        return json.dumps(output, indent=4)
 
 
 if __name__ == "__main__":
-    checker = RoadSpeedChecker("Gerald R. Ford Memorial Highway")
+    # Misol uchun
+    checker = RoadSpeedChecker(target_road_name="5394 I 70;US 40, Columbia, MO, 65201", lat=38.9706, lon=-92.2593)
+    print(checker.get_maxspeed_json())
