@@ -141,6 +141,7 @@ async def samsara_webhook(request: Request):
                     "SuddenFuelLevelRise": "🚨 *Sudden Fuel Level Rise Detected* 🚨",
                     "SuddenFuelLevelDrop": "🚨 *Sudden Fuel Level Drop Detected* 🚨",
                     "GatewayUnplugged": "🚨 *Gateway Unplugged* 🚨",
+                    "PredictiveMaintenanceAlert": "🚨 *Predictive Maintenance Alert* 🚨",
                 }
 
                 message_text = event_messages.get(event_type, "🚨 *Samsara Alert* 🚨")
