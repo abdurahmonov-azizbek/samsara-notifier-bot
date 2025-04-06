@@ -105,7 +105,7 @@ async def samsara_webhook(request: Request):
                                              parse_mode="Markdown", reply_markup=reply_markup)
                     else:
                         await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
-        elif event_type == "SevereSpeedingStarted" or event_type == "SevereSpeedingStopped":
+        elif event_type == "SevereSpeedingStarted" or event_type == "SevereSpeedingEnded":
             api_key = await get_api_key_by_truck_id(int(vehicle_id))
             samsara_client = SamsaraClient(api_key)
             severe_speeding = await samsara_client.get_location_stats(vehicle_id, start_time1)
