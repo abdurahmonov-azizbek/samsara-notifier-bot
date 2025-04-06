@@ -54,9 +54,9 @@ async def samsara_webhook(request: Request):
         incidentUrl = payload.get("data", {}).get("incidentUrl", None)
 
     else:
-        vehicle_id = payload.get("data", {}).get("data", {}).get("vehicle", {}).get("id", "Unknown")
-        start_time = payload.get("data", {}).get("data", {}).get("startTime", "Unknown")
-        start_time1 = payload.get("data", {}).get("data", {}).get("startTime", "Unknown")
+        vehicle_id = payload.get("data", {}).get("vehicle", {}).get("id", "Unknown")
+        start_time = payload.get("data", {}).get("startTime", "Unknown")
+        start_time1 = payload.get("data", {}).get("startTime", "Unknown")
 
     if vehicle_id == "Unknown" or start_time == "Unknown":
         logger.error("Missing vehicle_id or start_time in payload")
