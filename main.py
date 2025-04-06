@@ -113,7 +113,7 @@ async def samsara_webhook(request: Request):
             if severe_speeding:
                 location = severe_speeding["location"]
                 speed = severe_speeding["speed"]
-                max_speed = severe_speeding["max_speed"]
+                # max_speed = severe_speeding["max_speed"]
                 message_text = (
                     f"⚠️ *Severe Speeding Detected* ⚠️\n"
                     f"📢 *Event*: {description}\n"
