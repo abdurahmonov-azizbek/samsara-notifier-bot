@@ -34,6 +34,7 @@ async def samsara_webhook(request: Request):
     event_type = payload.get("eventType")
     vehicle_id = None
     start_time = None
+    start_time1 = None
     description = event_type
     is_resolved = False
     incidentUrl = None
@@ -55,6 +56,7 @@ async def samsara_webhook(request: Request):
     else:
         vehicle_id = payload.get("data", {}).get("data", {}).get("vehicle", {}).get("id", "Unknown")
         start_time = payload.get("data", {}).get("data", {}).get("startTime", "Unknown")
+        start_time1 = payload.get("data", {}).get("data", {}).get("startTime", "Unknown")
 
     if vehicle_id == "Unknown" or start_time == "Unknown":
         logger.error("Missing vehicle_id or start_time in payload")
@@ -106,7 +108,7 @@ async def samsara_webhook(request: Request):
         elif event_type == "SevereSpeedingStarted" or event_type == "SevereSpeedingStopped":
             api_key = await get_api_key_by_truck_id(int(vehicle_id))
             samsara_client = SamsaraClient(api_key)
-            severe_speeding = await samsara_client.get_location_stats(vehicle_id, start_time)
+            severe_speeding = await samsara_client.get_location_stats(vehicle_id, start_time1)
 
             if severe_speeding:
                 location = severe_speeding["location"]
