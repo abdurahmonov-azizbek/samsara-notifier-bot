@@ -79,32 +79,63 @@ async def samsara_webhook(request: Request):
             api_key = await get_api_key_by_truck_id(int(truck_id))
             samsara_client = SamsaraClient(api_key)
             harsh_event = await samsara_client.get_harsh_event(truck_id, timestamp)
+            max_retries = 3
+            retry_count = 0
+            success = False
 
             if harsh_event:
-                video = harsh_event["downloadForwardVideoUrl"]
-                location = harsh_event["location"]["address"]
-                telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
-                event_type = harsh_event["harshEventType"]
-                message_text = (
-                    f"⚠️ *Harsh Driving Detected* ⚠️\n"
-                    f"📢 *Event*: {description}\n"
-                    f"⏰ *Time*: {formatted_time}\n"
-                    f"📍 *Location*: {location}\n"
-                    f"⚠️ *Harsh Event Type:* {event_type} ⚠️\n"
-                )
-                if is_resolved:
-                    message_text += "✅ *Status*: Resolved\n"
+                while retry_count < max_retries:
+                    try:
+                        video = harsh_event["downloadForwardVideoUrl"]
+                        location = harsh_event["location"]["address"]
+                        telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
+                        event_type = harsh_event["harshEventType"]
+                        message_text = (
+                            f"⚠️ *Harsh Driving Detected* ⚠️\n"
+                            f"📢 *Event*: {description}\n"
+                            f"⏰ *Time*: {formatted_time}\n"
+                            f"📍 *Location*: {location}\n"
+                            f"⚠️ *Harsh Event Type:* {event_type} ⚠️\n"
+                        )
+                        if is_resolved:
+                            message_text += "✅ *Status*: Resolved\n"
 
-                for telegram_id, truck_name in set(telegram_data):
-                    full_message = f"{message_text}🚛 *Truck Name*: {truck_name}"
-                    if incidentUrl:
-                        keyboard = [[InlineKeyboardButton(text="Incident Details", url=incidentUrl)]]
-                        reply_markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
+                        for telegram_id, truck_name in set(telegram_data):
+                            full_message = f"{message_text}🚛 *Truck Name*: {truck_name}"
+                            if incidentUrl:
+                                keyboard = [[InlineKeyboardButton(text="Incident Details", url=incidentUrl)]]
+                                reply_markup = InlineKeyboardMarkup(inline_keyboard=keyboard)
 
-                        await bot.send_video(chat_id=telegram_id, video=video, caption=full_message,
-                                             parse_mode="Markdown", reply_markup=reply_markup)
-                    else:
-                        await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
+                                await bot.send_video(chat_id=telegram_id, video=video, caption=full_message,
+                                                     parse_mode="Markdown", reply_markup=reply_markup)
+                            else:
+                                await bot.send_message(chat_id=telegram_id, text=full_message, parse_mode="Markdown")
+                        success = True
+                        break
+
+                    except KeyError as e:
+                        retry_count += 1
+                        if retry_count >= max_retries:
+                            try:
+                                location = harsh_event["location"]["address"]
+                                telegram_data = await get_telegram_ids(vehicle_id, notification_type_id, event_type)
+                                event_type = harsh_event.get("harshEventType", "Unknown")
+                                message_text = (
+                                    f"⚠️ *Harsh Driving Detected* ⚠️\n"
+                                    f"📢 *Event*: {description}\n"
+                                    f"⏰ *Time*: {formatted_time}\n"
+                                    f"📍 *Location*: {location}\n"
+                                    f"⚠️ *Harsh Event Type:* {event_type} ⚠️\n"
+                                )
+                                if is_resolved:
+                                    message_text += "✅ *Status*: Resolved\n"
+
+                                for telegram_id, truck_name in set(telegram_data):
+                                    full_message = f"{message_text}🚛 *Truck Name*: {truck_name}"
+                                    await bot.send_message(chat_id=telegram_id, text=full_message,
+                                                           parse_mode="Markdown")
+                            except Exception as ex:
+                                print(f"ERROR sending fallback message: {ex}")
         elif event_type == "SevereSpeedingStarted" or event_type == "SevereSpeedingEnded":
             api_key = await get_api_key_by_truck_id(int(vehicle_id))
             samsara_client = SamsaraClient(api_key)

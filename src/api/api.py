@@ -252,7 +252,7 @@ class SamsaraClient:
 
 async def run():
     api = SamsaraClient(api_token="samsara_api_iQ9uNP0KqJfP3oEx1yI9LMBZFKign6")
-    details = await api.get_location_stats("281474992397558", "2025-03-24T09:02:05.987Z")
+    details = await api.get_harsh_event("281474992397558", "1744313972296")
     print(details)
 
 
